@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var s=sessionStorage.getItem('apn-nav');if(!s)return;var c=s==='Circle wipe'?'#C6DBBA':s==='Green slide'?'#0E5A06':'#EDF3EA';document.write('<style id="apn-fx-hold">html{background:'+c+' !important}html::after{content:"";position:fixed;inset:0;z-index:2147483000;background:'+c+';pointer-events:none}</style>');setTimeout(function(){var h=document.getElementById('apn-fx-hold');if(h)h.remove();},3500);}catch(e){}})();</script>
+<script src="./apn-fx.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  html, body { margin: 0; padding: 0; background: #FFFFFF; }
+</style>
+</helmet>
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}"><dc-import name="APN Hero" hint-size="100%,100vh"></dc-import></sc-if>
+<sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}"><dc-import name="About" hint-size="100%,100vh"></dc-import></sc-if>
+<sc-if value="{{ isServices }}" hint-placeholder-val="{{ false }}"><dc-import name="Services" hint-size="100%,100vh"></dc-import></sc-if>
+<sc-if value="{{ isProducts }}" hint-placeholder-val="{{ false }}"><dc-import name="Products" hint-size="100%,100vh"></dc-import></sc-if>
+<sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}"><dc-import name="Contact" hint-size="100%,100vh"></dc-import></sc-if>
+<sc-if value="{{ isPrivacy }}" hint-placeholder-val="{{ false }}"><dc-import name="Omni Privacy Statement" hint-size="100%,100vh"></dc-import></sc-if>
+<sc-if value="{{ isEula }}" hint-placeholder-val="{{ false }}"><dc-import name="Omni EULA" hint-size="100%,100vh"></dc-import></sc-if>
+<sc-if value="{{ isAup }}" hint-placeholder-val="{{ false }}"><dc-import name="Acceptable Use Policy" hint-size="100%,100vh"></dc-import></sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  static PAGES = {
+    'apn hero': 'home', 'about': 'about', 'services': 'services', 'products': 'products', 'contact': 'contact',
+    'omni privacy statement': 'privacy', 'omni eula': 'eula', 'acceptable use policy': 'aup'
+  };
+  state = { page: (() => { try { return sessionStorage.getItem('apn-full-page') || 'home'; } catch (e) { return 'home'; } })() };
+  keyFor(url) {
+    try {
+      const u = new URL(url, location.href);
+      const name = decodeURIComponent(u.pathname.split('/').pop() || '').replace(/\.dc\.html$/i, '').toLowerCase();
+      return { key: Component.PAGES[name], hash: u.hash };
+    } catch (e) { return {}; }
+  }
+  go(key, hash) {
+    try { sessionStorage.setItem('apn-full-page', key); } catch (e) {}
+    this.setState({ page: key }, () => {
+      window.scrollTo(0, 0);
+      if (!hash || hash.length < 2) return;
+      let n = 0;
+      const seek = () => {
+        const el = document.getElementById(hash.slice(1));
+        if (el) window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - 10);
+        else if (++n < 40) setTimeout(seek, 50);
+      };
+      setTimeout(seek, 120);
+    });
+  }
+  componentDidMount() {
+    window.APN_ROUTER = (url) => {
+      const { key, hash } = this.keyFor(url);
+      if (!key) return false;
+      this.go(key, hash);
+      return true;
+    };
+    this.onClick = (e) => {
+      if (window.APNFX || e.defaultPrevented || e.button !== 0) return;
+      const a = e.target.closest && e.target.closest('a[href]');
+      if (!a || !/\.dc\.html(#.*)?$/i.test(decodeURIComponent(a.getAttribute('href') || ''))) return;
+      const { key, hash } = this.keyFor(a.href);
+      if (!key) return;
+      e.preventDefault();
+      this.go(key, hash);
+    };
+    document.addEventListener('click', this.onClick);
+  }
+  componentWillUnmount() {
+    if (window.APN_ROUTER) delete window.APN_ROUTER;
+    document.removeEventListener('click', this.onClick);
+  }
+  renderVals() {
+    const p = this.state.page;
+    return {
+      isHome: p === 'home', isAbout: p === 'about', isServices: p === 'services', isProducts: p === 'products',
+      isContact: p === 'contact', isPrivacy: p === 'privacy', isEula: p === 'eula', isAup: p === 'aup'
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var s=sessionStorage.getItem('apn-nav');if(!s)return;var c=s==='Circle wipe'?'#C6DBBA':s==='Green slide'?'#0E5A06':'#EDF3EA';document.write('<style id="apn-fx-hold">html{background:'+c+' !important}html::after{content:"";position:fixed;inset:0;z-index:2147483000;background:'+c+';pointer-events:none}</style>');setTimeout(function(){var h=document.getElementById('apn-fx-hold');if(h)h.remove();},3500);}catch(e){}})();</script>
+<script src="./apn-fx.js" defer></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
+<style>
+  html { scrollbar-width: thin; scrollbar-color: rgba(14,90,6,.38) transparent; }
+  * { scrollbar-width: thin; scrollbar-color: rgba(14,90,6,.3) transparent; }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background-color: rgba(14,90,6,.3); border-radius: 999px; border: 1px solid transparent; background-clip: padding-box; }
+  ::-webkit-scrollbar-thumb:hover { background-color: rgba(14,90,6,.55); }
+  ::-webkit-scrollbar-corner { background: transparent; }
+  
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Poppins', system-ui, sans-serif; font-weight: 400; background: #F3F6F2; color: #0C1F0E; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #1E8A00; text-decoration: none; }
+  a:hover { color: #30C000; }
+  @keyframes apn-marquee-rev { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+  @keyframes apn-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @property --apn-trace { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+  @keyframes apn-trace { to { --apn-trace: 360deg; } }
+  @keyframes apn-vup { from { transform: translateY(0); } to { transform: translateY(calc(-50% - 9px)); } }
+  @keyframes apn-vdown { from { transform: translateY(calc(-50% - 9px)); } to { transform: translateY(0); } }
+  @keyframes apn-dash { to { stroke-dashoffset: -90; } }
+  @keyframes apn-ping { 0% { transform: scale(.6); opacity: 1; } 80%,100% { transform: scale(2.8); opacity: 0; } }
+  @keyframes apn-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-11px); } }
+  @keyframes apn-shadow { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(.86); opacity: .6; } }
+  @keyframes apn-hxr { from { left: -60%; } to { left: 100%; } }
+  @keyframes apn-hxl { from { left: 100%; } to { left: -60%; } }
+  @keyframes apn-pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .45; transform: scale(.8); } }
+</style>
+<script src="./image-slot.js"></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+</helmet>
+<div style="--accent: #30C000; --accent-dark: #1E8A00; --ink: #0C1F0E; position: relative; width: 100%; overflow-x: clip; background: #F3F6F2;">
+
+  <div ref="{{ navRef }}" style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 22px; display: flex; justify-content: center; pointer-events: none;">
+    <div ref="{{ navInnerRef }}" style="pointer-events: auto; width: 100%; max-width: 1340px; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 10px 6px 10px 4px; border-radius: 999px; background: transparent; box-shadow: none; will-change: max-width, padding;">
+      <a href="APN Hero.dc.html" style="display: flex; align-items: center; flex-shrink: 0;">
+        <img ref="{{ logoRef }}" src="assets/logo.png" alt="Asia Pacific Network" style="height: 34px; width: auto; display: block; filter: drop-shadow(0 0 3px rgba(255,255,255,.95)) drop-shadow(0 0 10px rgba(255,255,255,.75)) drop-shadow(0 0 22px rgba(255,255,255,.45));">
+      </a>
+      <div style="display: flex; align-items: center; gap: 2px; flex-shrink: 0;" data-navlinks="1">
+        <a href="About.dc.html" style="font-size: 15px; font-weight: 400; color: #334735; letter-spacing: -0.1px; white-space: nowrap; padding: 8px 10px; border-radius: 999px; background-color: transparent; background-image: linear-gradient(90deg, rgba(48,192,0,0), #1E9A08 30%, #1E9A08 70%, rgba(48,192,0,0)); background-repeat: no-repeat; background-position: 50% calc(100% - 3px); background-size: 0% 1.5px; transition: color .4s cubic-bezier(.16,1,.3,1), background-size .55s cubic-bezier(.16,1,.3,1), text-shadow .4s ease;" style-hover="color: #0A3F05; background-size: 70% 1.5px; text-shadow: 0 0 18px rgba(48,192,0,.35);">About</a>
+        <a href="Services.dc.html" style="font-size: 15px; font-weight: 400; color: #334735; letter-spacing: -0.1px; white-space: nowrap; padding: 8px 10px; border-radius: 999px; background-color: transparent; background-image: linear-gradient(90deg, rgba(48,192,0,0), #1E9A08 30%, #1E9A08 70%, rgba(48,192,0,0)); background-repeat: no-repeat; background-position: 50% calc(100% - 3px); background-size: 0% 1.5px; transition: color .4s cubic-bezier(.16,1,.3,1), background-size .55s cubic-bezier(.16,1,.3,1), text-shadow .4s ease;" style-hover="color: #0A3F05; background-size: 70% 1.5px; text-shadow: 0 0 18px rgba(48,192,0,.35);">Services</a>
+        <a href="Products.dc.html" style="font-size: 15px; font-weight: 400; color: #334735; letter-spacing: -0.1px; white-space: nowrap; padding: 8px 10px; border-radius: 999px; background-color: transparent; background-image: linear-gradient(90deg, rgba(48,192,0,0), #1E9A08 30%, #1E9A08 70%, rgba(48,192,0,0)); background-repeat: no-repeat; background-position: 50% calc(100% - 3px); background-size: 0% 1.5px; transition: color .4s cubic-bezier(.16,1,.3,1), background-size .55s cubic-bezier(.16,1,.3,1), text-shadow .4s ease;" style-hover="color: #0A3F05; background-size: 70% 1.5px; text-shadow: 0 0 18px rgba(48,192,0,.35);">Products</a>
+        
+        <a href="Contact.dc.html" style="font-size: 15px; font-weight: 400; color: #334735; letter-spacing: -0.1px; white-space: nowrap; padding: 8px 10px; border-radius: 999px; background-color: transparent; background-image: linear-gradient(90deg, rgba(48,192,0,0), #1E9A08 30%, #1E9A08 70%, rgba(48,192,0,0)); background-repeat: no-repeat; background-position: 50% calc(100% - 3px); background-size: 0% 1.5px; transition: color .4s cubic-bezier(.16,1,.3,1), background-size .55s cubic-bezier(.16,1,.3,1), text-shadow .4s ease;" style-hover="color: #0A3F05; background-size: 70% 1.5px; text-shadow: 0 0 18px rgba(48,192,0,.35);">Contact Us</a>
+      </div>
+      <a href="#login" onClick="{{ openLogin }}" onMouseEnter="{{ btnEnter }}" onMouseLeave="{{ btnLeave }}" style="flex-shrink: 0; display: inline-flex; align-items: center; gap: 10px; padding: 5px 5px 5px 20px; border-radius: 999px; background-color: rgba(255,255,255,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); color: #0C1F0E; font-size: 14px; font-weight: 500; letter-spacing: -0.1px; box-shadow: inset 0 1px 0 rgba(255,255,255,.95), inset 0 0 0 1px rgba(12,31,14,.05), 0 6px 16px -6px rgba(12,31,14,.22); transition: box-shadow .35s ease, transform .35s ease, background-color .35s ease;" style-hover="background-color: rgba(255,255,255,.92); box-shadow: inset 0 1px 0 rgba(255,255,255,1), inset 0 0 0 1px rgba(48,192,0,.22), 0 10px 24px -8px rgba(12,31,14,.26); transform: translateY(-1px); color: #0C1F0E;">
+        <span style="display: block; height: 19px; overflow: hidden; white-space: nowrap;">
+          <span data-roll="1" style="display: block; width: max-content; white-space: nowrap; transition: transform .45s cubic-bezier(.16,1,.3,1);">
+            <span style="display: block; height: 19px; line-height: 19px; white-space: nowrap;">Log In</span>
+            <span style="display: block; height: 19px; line-height: 19px; white-space: nowrap;">Log In</span>
+          </span>
+        </span>
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 999px; background-image: linear-gradient(180deg, #4CC02E 0%, #2E9A18 100%); color: #FFFFFF; box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 2px 6px -1px rgba(46,154,24,.45);">
+          <span data-arrow="1" style="display: inline-flex; transform: rotate(-45deg); transition: transform .45s cubic-bezier(.16,1,.3,1);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <section id="top" data-screen-label="About Hero" style="position: relative; width: 100%; min-height: 720px; padding: 190px 40px 100px; display: flex; flex-direction: column; align-items: center; overflow: hidden;">
+    <div style="position: absolute; inset: 0; z-index: 0; background: radial-gradient(120% 90% at 50% 0%, #FFFFFF 0%, #EFF5EC 45%, #E6EFE2 100%);"></div>
+    <div style="position: absolute; inset: 0; z-index: 0; opacity: .5; background: radial-gradient(38% 55% at 12% 18%, rgba(48,192,0,.18) 0%, rgba(48,192,0,0) 70%), radial-gradient(42% 60% at 88% 8%, rgba(143,224,0,.20) 0%, rgba(143,224,0,0) 70%), radial-gradient(60% 70% at 50% 100%, rgba(30,138,0,.10) 0%, rgba(30,138,0,0) 75%);"></div>
+
+    <div style="position: relative; z-index: 2; width: 100%; max-width: 940px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <span style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px 8px 14px; border-radius: 999px; background-image: linear-gradient(180deg, #D3E9C7 0%, #E4F2DB 100%); box-shadow: inset 0 2px 4px rgba(14,90,6,.16), inset 0 -1px 1px rgba(255,255,255,.85), 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(30,138,0,.1); font-size: 14px; font-weight: 400; color: #1F5A14; letter-spacing: -0.1px; text-shadow: 0 1px 0 rgba(255,255,255,.6);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1E8A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto;"><circle cx="12" cy="12" r="9"></circle><line x1="12" y1="11" x2="12" y2="16.5"></line><line x1="12" y1="7.6" x2="12.01" y2="7.6"></line></svg>About Us</span>
+
+      <span style="margin-top: 18px; font-size: 13px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: #5D6F5E;">Asia Pacific Network, Corp.</span>
+      <h1 data-rh1="1" style="margin: 14px 0 0; font-size: 72px; line-height: 1.04; font-weight: 500; letter-spacing: -2.4px; color: var(--ink, #0C1F0E); text-wrap: balance;"><span style="display: block;">Communication built on a<br><font color="#8a9c8b">stronger foundation.</font></span>
+      </h1>
+
+      <p style="margin: 26px 0 0; max-width: 680px; font-size: 18px; line-height: 1.62; font-weight: 400; color: #556756; letter-spacing: -0.2px; text-wrap: pretty;">Reliable infrastructure and modern engagement tools, managed by <span style="font-weight: 500; color: #0A5A03;">one dedicated partner</span>.</p>
+
+      <a href="#contact" onMouseEnter="{{ btnEnter }}" onMouseLeave="{{ btnLeave }}" style="margin-top: 38px; display: inline-flex; align-items: center; gap: 13px; padding: 6px 6px 6px 26px; border-radius: 999px; background-image: linear-gradient(180deg, #23930A 0%, #0E5A06 100%); color: #FFFFFF; font-size: 16px; font-weight: 500; letter-spacing: -0.2px; box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -1px 0 rgba(12,31,14,.2), 0 10px 24px -8px rgba(14,90,6,.5), 0 2px 6px rgba(12,31,14,.14); transition: box-shadow .35s ease, transform .35s ease;" style-hover="box-shadow: inset 0 1px 0 rgba(255,255,255,.6), inset 0 -1px 0 rgba(12,31,14,.22), 0 16px 34px -10px rgba(14,90,6,.6), 0 3px 8px rgba(12,31,14,.16); transform: translateY(-2px); color: #FFFFFF;">
+        <span style="display: block; height: 22px; overflow: hidden; white-space: nowrap;">
+          <span data-roll="1" style="display: block; width: max-content; white-space: nowrap; transition: transform .45s cubic-bezier(.16,1,.3,1);">
+            <span style="display: block; height: 22px; line-height: 22px; white-space: nowrap;">Get Started</span>
+            <span style="display: block; height: 22px; line-height: 22px; white-space: nowrap;">Get Started</span>
+          </span>
+        </span>
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 999px; background-color: #FFFFFF; color: #0E5A06; box-shadow: 0 2px 6px rgba(12,31,14,.18);">
+          <span data-arrow="1" style="display: inline-flex; transform: rotate(-45deg); transition: transform .45s cubic-bezier(.16,1,.3,1);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
+          </span>
+        </span>
+      </a>
+      <span style="margin-top: 22px; display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; letter-spacing: -0.1px; color: #3E5A3F;"><span style="width: 22px; height: 1px; background-color: rgba(14,90,6,.3);"></span>Simple. Powerful. <span style="color: #1E8A00;">APN.</span><span style="width: 22px; height: 1px; background-color: rgba(14,90,6,.3);"></span></span>
+    </div>
+    <div ref="{{ cylRef }}" aria-label="APN in photos" style="position: relative; z-index: 1; width: calc(100% + 80px); margin: clamp(-240px, -12.6vw, -40px) -40px 0; height: clamp(440px, 46vw, 900px); overflow: hidden; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none;">
+      <sc-for list="{{ cylCards }}" as="c" hint-placeholder-count="0">
+        <div data-cyl="1" style="position: absolute; left: 50%; top: 50%; width: 400px; height: 572px; margin: -286px 0 0 -200px; border-radius: 40px; overflow: hidden; background-color: #E6ECE4; box-shadow: inset 0 0 0 1px rgba(12,31,14,.06), 0 30px 60px -40px rgba(12,31,14,.3); transform-origin: 50% 50%; will-change: transform; visibility: hidden;">
+          <img src="{{ c.src }}" alt="" draggable="false" style="position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none; user-select: none;">
+        </div>
+      </sc-for>
+    </div>
+    <div style="position: relative; z-index: 2; width: 100%; max-width: max(64vw, 320px); margin: clamp(-205px, -10.8vw, -40px) auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); gap: 32px clamp(20px, 3vw, 44px);">
+      <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;">
+        <span style="font-size: clamp(34px, 3.4vw, 72px); font-weight: 500; line-height: .95; letter-spacing: -2.6px; color: #0C1F0E;">35+</span>
+        <span style="font-size: 14.5px; font-weight: 400; line-height: 1.42; color: #5D6F5E; text-align: left;">Years of experience<br>in global networks</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
+        <span style="font-size: clamp(34px, 3.4vw, 72px); font-weight: 500; line-height: .95; letter-spacing: -2.6px; color: #0C1F0E;">7M+</span>
+        <span style="font-size: 14.5px; font-weight: 400; line-height: 1.42; color: #5D6F5E; text-align: center">Calls connected<br>every day</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-end;">
+        <span style="font-size: clamp(34px, 3.4vw, 72px); font-weight: 500; line-height: .95; letter-spacing: -2.6px; color: #0C1F0E;">120+</span>
+        <span style="font-size: 14.5px; font-weight: 400; line-height: 1.42; color: #5D6F5E; text-align: right;">Countries connected<br>worldwide</span>
+      </div>
+    </div>
+    <div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; z-index: 0; height: clamp(160px, 18vw, 320px); background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.7) 55%, #FFFFFF 100%); pointer-events: none;"></div>
+  </section>
+
+  <section id="founder" data-screen-label="Meet APN" style="position: relative; z-index: 3; width: 100%; padding: clamp(40px, 5vw, 80px) clamp(20px, 2.2vw, 40px) clamp(90px, 8vw, 150px); background-color: #FFFFFF;">
+    <div style="display: flex; justify-content: center; overflow: hidden;">
+      <h2 style="margin: 0; height: 0.78em; overflow: hidden; font-size: clamp(64px, 11.5vw, 220px); font-weight: 500; line-height: 1; letter-spacing: -0.06em; white-space: nowrap; color: transparent; background-image: linear-gradient(180deg, #7FA878 0%, #B3CBAE 45%, rgba(225,235,222,0) 100%); -webkit-background-clip: text; background-clip: text;">Meet APN</h2>
+    </div>
+    <div style="width: 100%; max-width: 1840px; margin: clamp(36px, 4vw, 72px) auto 0; display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(32px, 4vw, 72px); align-items: center;">
+      <div style="position: relative; flex: 1 1 380px; width: 100%; max-width: 680px; aspect-ratio: 5 / 5.2; border-radius: 24px; overflow: hidden; background-color: #EEF2EC; box-shadow: 0 1px 2px rgba(12,31,14,.05), 0 30px 60px -36px rgba(12,31,14,.35);">
+        <img src="assets/meet-apn.png" alt="The Asia Pacific Network team" draggable="false" style="position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; user-select: none;">
+        <span aria-hidden="true" style="position: absolute; top: 26px; right: 26px; width: 9px; height: 9px; border-top: 2px solid #30C000; border-right: 2px solid #30C000; pointer-events: none;"></span>
+      </div>
+      <div style="flex: 1 1 440px; min-width: 0; max-width: 900px; display: flex; flex-direction: column;">
+        <div style="position: relative;">
+          <h3 style="margin: 0; font-size: clamp(32px, 3.2vw, 60px); font-weight: 500; line-height: 1.08; letter-spacing: -0.045em; color: #0C1F0E; text-wrap: balance;">History Built on <span style="color: #1E9A08;">Meaningful Connections</span></h3>
+        </div>
+        <p style="margin: clamp(22px, 2vw, 34px) 0 0; max-width: 720px; font-size: clamp(16px, 1.1vw, 19px); line-height: 1.7; color: #6B776A; text-wrap: pretty;">For over 35 years, Asia Pacific Network has supported global business communications through reliable carrier infrastructure, network systems, and modern customer engagement solutions. <span style="color: #0C1F0E; font-weight: 500;">What began with connectivity has evolved into a fully integrated communications environment</span> where voice, email, messaging, and customer interactions are managed through a single provider that understands the entire ecosystem end to end.</p>
+        <div style="margin-top: clamp(32px, 3vw, 52px); height: 1px; background-color: rgba(14,90,6,.16);"></div>
+        <div style="margin-top: clamp(28px, 2.6vw, 44px); display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 18px; font-weight: 500; letter-spacing: -0.3px; color: #0C1F0E;">Asia Pacific Network</span>
+            <span style="font-size: 14px; color: #6B776A;">35+ years of global business communications</span>
+          </div>
+          <div aria-hidden="true" style="position: relative; flex: 0 0 auto; width: clamp(64px, 5.5vw, 96px); aspect-ratio: 1 / 1;">
+            <div style="position: absolute; inset: 8%; border-radius: 50%; background-image: radial-gradient(circle at 50% 46%, rgba(48,192,0,.22) 0%, rgba(48,192,0,0) 70%);"></div>
+            <div style="position: absolute; left: 16%; right: 16%; bottom: -4%; height: 9%; border-radius: 50%; background-image: radial-gradient(50% 50% at 50% 50%, rgba(12,31,14,.2) 0%, rgba(12,31,14,0) 72%); animation: apn-shadow 5.5s ease-in-out infinite;"></div>
+            <img src="assets/logo-mark.png" alt="" style="position: relative; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 12px 16px rgba(14,90,6,.3)) drop-shadow(0 4px 6px rgba(12,31,14,.14)); animation: apn-float 5.5s ease-in-out infinite;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="branches" data-screen-label="Our Branches" style="position: relative; z-index: 3; width: 100%; overflow: hidden; padding: clamp(90px, 8vw, 150px) 24px clamp(120px, 10vw, 180px); background-color: #EAF5E5; background-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 80%, #FFFFFF 100%), radial-gradient(60% 45% at 50% 45%, rgba(48,192,0,.12) 0%, rgba(48,192,0,0) 70%), linear-gradient(180deg, #EFF8EB 0%, #E3F2DC 50%, #EFF8EB 100%);">
+    <div style="width: 100%; max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+      <div data-reveal="1" data-reveal-delay="0" style="display: flex; justify-content: center;">
+        <span style="display: inline-flex; align-items: center; padding: 8px 18px; border-radius: 999px; background-image: linear-gradient(180deg, #D3DDD0 0%, #E2EADF 100%); box-shadow: inset 0 2px 4px rgba(12,31,14,.16), inset 0 -1px 1px rgba(255,255,255,.85), 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(12,31,14,.06); font-size: 14px; font-weight: 400; color: #4A564A; letter-spacing: -0.1px; text-shadow: 0 1px 0 rgba(255,255,255,.7);">Our branches</span>
+      </div>
+      <div data-reveal="1" data-reveal-delay=".1" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <h2 style="margin: 22px 0 0; max-width: 820px; font-size: clamp(34px, 3.9vw, 64px); font-weight: 500; line-height: 1.1; letter-spacing: -0.045em; color: #0C1F0E; text-wrap: balance;">Our <span style="color: #2A9A0E;">Philippine</span> Reach</h2>
+        <p style="margin: 18px 0 0; max-width: 460px; font-size: 15px; line-height: 1.6; font-weight: 400; color: #5D6F5E; letter-spacing: -0.1px; text-wrap: balance;">Serving businesses across Luzon, the Visayas and Mindanao from four locations in the Philippines.</p>
+      </div>
+
+      <div data-reveal="1" data-reveal-delay=".15" style="display: flex; justify-content: center; max-width: 100%;">
+        <div style="margin-top: clamp(22px, 2.2vw, 32px); display: flex; flex-wrap: wrap; justify-content: center; align-items: center; column-gap: clamp(20px, 2.6vw, 40px); row-gap: 10px;">
+          <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 400; color: #182D19; letter-spacing: -0.1px; white-space: nowrap;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#176B00" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>4 Branches Nationwide</span>
+          <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 400; color: #182D19; letter-spacing: -0.1px; white-space: nowrap;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#176B00" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V8l7-4 7 4v13"></path><path d="M9 21v-5h6v5"></path></svg>Main Branch in Manila</span>
+          <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 400; color: #182D19; letter-spacing: -0.1px; white-space: nowrap;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#176B00" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>24/7/365 NOC Support</span>
+        </div>
+      </div>
+
+      <div data-rbr="1" style="position: relative; margin-top: clamp(24px, 2.6vw, 44px); width: 100%; max-width: 1280px; aspect-ratio: 1.5 / 1;">
+        <div data-rbr-art="1" style="position: absolute; inset: 0;">
+        <img src="assets/ph-dots.svg?v=50m" alt="Dotted map of the Philippines" style="position: absolute; left: 26.2%; top: 0; width: 47.6%; height: 100%; object-fit: contain; pointer-events: none;">
+        <svg viewBox="0 0 150 100" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none;">
+          <path d="M66.36 28.25 L79.5 15 L99 15" fill="none" stroke="#6FE016" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 6" vector-effect="non-scaling-stroke" style="stroke-opacity: {{ brLnO0 }}; animation: apn-dash 3s linear infinite; transition: stroke-opacity .45s ease;"></path>
+          <circle cx="99" cy="15" r="1.1" fill="#6FE016" style="opacity: {{ brLnO0 }}; transition: opacity .45s ease;"></circle>
+          <path d="M68.86 32.7 L58.5 41 L39 41" fill="none" stroke="#6FE016" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 6" vector-effect="non-scaling-stroke" style="stroke-opacity: {{ brLnO1 }}; animation: apn-dash 3.5s linear infinite; transition: stroke-opacity .45s ease;"></path>
+          <circle cx="39" cy="41" r="1.1" fill="#6FE016" style="opacity: {{ brLnO1 }}; transition: opacity .45s ease;"></circle>
+          <path d="M89.20 62.63 L100.5 52 L111 52" fill="none" stroke="#6FE016" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 6" vector-effect="non-scaling-stroke" style="stroke-opacity: {{ brLnO2 }}; animation: apn-dash 4s linear infinite; transition: stroke-opacity .45s ease;"></path>
+          <circle cx="111" cy="52" r="1.1" fill="#6FE016" style="opacity: {{ brLnO2 }}; transition: opacity .45s ease;"></circle>
+          <path d="M101.49 86.35 L85.5 80 L51 80" fill="none" stroke="#6FE016" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 6" vector-effect="non-scaling-stroke" style="stroke-opacity: {{ brLnO3 }}; animation: apn-dash 4.5s linear infinite; transition: stroke-opacity .45s ease;"></path>
+          <circle cx="51" cy="80" r="1.1" fill="#6FE016" style="opacity: {{ brLnO3 }}; transition: opacity .45s ease;"></circle>
+        </svg>
+
+        <div data-reveal="1" data-reveal-delay="0.20" style="position: absolute; left: 44.24%; top: 28.25%; width: 0; height: 0; z-index: {{ brZ0 }};">
+          <span style="position: absolute; left: -9px; top: -3px; width: 18px; height: 6px; border-radius: 50%; background-color: rgba(12,31,14,.28); filter: blur(1.5px); pointer-events: none;"></span>
+          <span style="position: absolute; left: -11px; top: -5px; width: 22px; height: 10px; border-radius: 50%; background-color: rgba(48,192,0,.45); pointer-events: none;"></span>
+          <span style="position: absolute; left: -14px; top: -6px; width: 28px; height: 12px; border-radius: 50%; border: 2px solid #1E9A08; box-shadow: 0 0 10px rgba(48,192,0,.5); animation: apn-ping 2.4s cubic-bezier(.16,1,.3,1) infinite; animation-delay: 0.00s; pointer-events: none;"></span>
+          <span style="position: absolute; left: -14px; top: -6px; width: 28px; height: 12px; border-radius: 50%; border: 2px solid #30C000; animation: apn-ping 2.4s cubic-bezier(.16,1,.3,1) infinite; animation-delay: 1.20s; pointer-events: none;"></span>
+          <button type="button" aria-label="Pampanga" onMouseEnter="{{ brIn0 }}" onClick="{{ brIn0 }}" style="appearance: none; border: 0; padding: 0; background: none; cursor: pointer; position: absolute; left: calc(clamp(24px, 2.5vw, 38px) / -2); top: calc(clamp(24px, 2.5vw, 38px) * -1.25); width: clamp(24px, 2.5vw, 38px); height: calc(clamp(24px, 2.5vw, 38px) * 1.3); transform-origin: 50% 96%; transform: {{ brPin0 }}; transition: transform .5s cubic-bezier(.16,1,.3,1); filter: drop-shadow(0 8px 10px rgba(14,90,6,.35)) drop-shadow(0 2px 3px rgba(12,31,14,.18));">
+            <svg width="100%" height="100%" viewBox="0 0 40 52" style="position: absolute; inset: 0; display: block; overflow: visible;"><defs><linearGradient id="apnPinG1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3FBF12"></stop><stop offset=".55" stop-color="#16860A"></stop><stop offset="1" stop-color="#0A4F04"></stop></linearGradient><linearGradient id="apnPinH1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"></stop></linearGradient></defs><path d="M20 51.5C20 51.5 2.5 33 2.5 19.5a17.5 17.5 0 0 1 35 0C37.5 33 20 51.5 20 51.5z" fill="url(#apnPinG1)"></path><path d="M7 12a15 15 0 0 1 26 0" fill="none" stroke="url(#apnPinH1)" stroke-width="1.6" stroke-linecap="round"></path><circle cx="20" cy="19.5" r="12.2" fill="#FFFFFF"></circle><circle cx="20" cy="19.5" r="12.2" fill="none" stroke="rgba(10,79,4,.18)" stroke-width="1"></circle></svg>
+            <img src="assets/pin-logo.png" alt="" style="position: absolute; left: 29%; top: 20.5%; width: 42%; height: 33%; object-fit: contain; pointer-events: none;">
+          </button>
+        </div>
+        <div data-reveal="1" data-reveal-delay="0.30" style="position: absolute; left: 45.91%; top: 32.7%; width: 0; height: 0; z-index: {{ brZ1 }};">
+          <span style="position: absolute; left: -9px; top: -3px; width: 18px; height: 6px; border-radius: 50%; background-color: rgba(12,31,14,.28); filter: blur(1.5px); pointer-events: none;"></span>
+          <span style="position: absolute; left: -11px; top: -5px; width: 22px; height: 10px; border-radius: 50%; background-color: rgba(48,192,0,.45); pointer-events: none;"></span>
+          <span style="position: absolute; left: -14px; top: -6px; width: 28px; height: 12px; border-radius: 50%; border: 2px solid #1E9A08; box-shadow: 0 0 10px rgba(48,192,0,.5); animation: apn-ping 2.4s cubic-bezier(.16,1,.3,1) infinite; animation-delay: 0.45s; pointer-events: none;"></span>
+          <span style="position: absolute; left: -14px; top: -6px; width: 28px; height: 12px; border-radius: 50%; border: 2px solid #30C000; animation: apn-ping 2.4s cubic-bezier(.16,1,.3,1) infinite; animation-delay: 1.65s; pointer-events: none;"></span>
+          <button type="button" aria-label="Manila" onMouseEnter="{{ brIn1 }}" onClick="{{ brIn1 }}" style="appearance: none; border: 0; padding: 0; background: none; cursor: pointer; position: absolute; left: calc(clamp(24px, 2.5vw, 38px) / -2); top: calc(clamp(24px, 2.5vw, 38px) * -1.25); width: clamp(24px, 2.5vw, 38px); height: calc(clamp(24px, 2.5vw, 38px) * 1.3); transform-origin: 50% 96%; transform: {{ brPin1 }}; transition: transform .5s cubic-bezier(.16,1,.3,1); filter: drop-shadow(0 8px 10px rgba(14,90,6,.35)) drop-shadow(0 2px 3px rgba(12,31,14,.18));">
+            <svg width="100%" height="100%" viewBox="0 0 40 52" style="position: absolute; inset: 0; display: block; overflow: visible;"><defs><linearGradient id="apnPinG2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3FBF12"></stop><stop offset=".55" stop-color="#16860A"></stop><stop offset="1" stop-color="#0A4F04"></stop></linearGradient><linearGradient id="apnPinH2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"></stop></linearGradient></defs><path d="M20 51.5C20 51.5 2.5 33 2.5 19.5a17.5 17.5 0 0 1 35 0C37.5 33 20 51.5 20 51.5z" fill="url(#apnPinG2)"></path><path d="M7 12a15 15 0 0 1 26 0" fill="none" stroke="url(#apnPinH2)" stroke-width="1.6" stroke-linecap="round"></path><circle cx="20" cy="19.5" r="12.2" fill="#FFFFFF"></circle><circle cx="20" cy="19.5" r="12.2" fill="none" stroke="rgba(10,79,4,.18)" stroke-width="1"></circle></svg>
+            <img src="assets/pin-logo.png" alt="" style="position: absolute; left: 29%; top: 20.5%; width: 42%; height: 33%; object-fit: contain; pointer-events: none;">
+          </button>
+        </div>
+        <div data-reveal="1" data-reveal-delay="0.40" style="position: absolute; left: 59.47%; top: 62.63%; width: 0; height: 0; z-index: {{ brZ2 }};">
+          <span style="position: absolute; left: -9px; top: -3px; width: 18px; height: 6px; border-radius: 50%; background-color: rgba(12,31,14,.28); filter: blur(1.5px); pointer-events: none;"></span>
+          <span style="position: absolute; left: -11px; top: -5px; width: 22px; height: 10px; border-radius: 50%; background-color: rgba(48,192,0,.45); pointer-events: none;"></span>
+          <span style="position: absolute; left: -14px; top: -6px; width: 28px; height: 12px; border-radius: 50%; border: 2px solid #1E9A08; box-shadow: 0 0 10px rgba(48,192,0,.5); animation: apn-ping 2.4s cubic-bezier(.16,1,.3,1) infinite; animation-delay: 0.90s; pointer-events: none;"></span>
+          <span style="position: absolute; left: -14px; top: -6px; width: 28px; height: 12px; border-radius: 50%; border: 2px solid #30C000; animation: apn-ping 2.4s cubic-bezier(.16,1,.3,1) infinite; animation-delay: 2.10s; pointer-events: none;"></span>
+          <button type="button" aria-label="Cebu" onMouseEnter="{{ brIn2 }}" onClick="{{ brIn2 }}" style="appearance: none; border: 0; padding: 0; background: none; cursor: pointer; position: absolute; left: calc(clamp(24px, 2.5vw, 38px) / -2); top: calc(clamp(24px, 2.5vw, 38px) * -1.25); width: clamp(24px, 2.5vw, 38px); height: calc(clamp(24px, 2.5vw, 38px) * 1.3); transform-origin: 50% 96%; transform: {{ brPin2 }}; transition: transform .5s cubic-bezier(.16,1,.3,1); filter: drop-shadow(0 8px 10px rgba(14,90,6,.35)) drop-shadow(0 2px 3px rgba(12,31,14,.18));">
+            <svg width="100%" height="100%" viewBox="0 0 40 52" style="position: absolute; inset: 0; display: block; overflow: visible;"><defs><linearGradient id="apnPinG3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3FBF12"></stop><stop offset=".55" stop-color="#16860A"></stop><stop offset="1" stop-color="#0A4F04"></stop></linearGradient><linearGradient id="apnPinH3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"></stop></linearGradient></defs><path d="M20 51.5C20 51.5 2.5 33 2.5 19.5a17.5 17.5 0 0 1 35 0C37.5 33 20 51.5 20 51.5z" fill="url(#apnPinG3)"></path><path d="M7 12a15 15 0 0 1 26 0" fill="none" stroke="url(#apnPinH3)" stroke-width="1.6" stroke-linecap="round"></path><circle cx="20" cy="19.5" r="12.2" fill="#FFFFFF"></circle><circle cx="20" cy="19.5" r="12.2" fill="none" stroke="rgba(10,79,4,.18)" stroke-width="1"></circle></svg>
+            <img src="assets/pin-logo.png" alt="" style="position: absolute; left: 29%; top: 20.5%; width: 42%; height: 33%; object-fit: contain; pointer-events: none;">
+          </button>
+        </div>
+        <div data-reveal="1" data-reveal-delay="0.50" style="position: absolute; left: 67.66%; top: 86.35%; width: 0; height: 0; z-index: {{ brZ3 }};">
+          <span style="position: absolute; left: -9px; top: -3px; width: 18px; height: 6px; border-radius: 50%; background-color: rgba(12,31,14,.28); filter: blur(1.5px); pointer-events: none;"></span>
+          <span style="position: absolute; left: -11px; top: -5px; width: 22px; height: 10px; border-radius: 50%; background-color: rgba(48,192,0,.45); pointer-events: none;"></span>
+          <span style="position: absolute; left: -14px; top: -6px; width: 28px; height: 12px; border-radius: 50%; border: 2px solid #1E9A08; box-shadow: 0 0 10px rgba(48,192,0,.5); animation: apn-ping 2.4s cubic-bezier(.16,1,.3,1) infinite; animation-delay: 1.35s; pointer-events: none;"></span>
+          <span style="position: absolute; left: -14px; top: -6px; width: 28px; height: 12px; border-radius: 50%; border: 2px solid #30C000; animation: apn-ping 2.4s cubic-bezier(.16,1,.3,1) infinite; animation-delay: 2.55s; pointer-events: none;"></span>
+          <button type="button" aria-label="Davao" onMouseEnter="{{ brIn3 }}" onClick="{{ brIn3 }}" style="appearance: none; border: 0; padding: 0; background: none; cursor: pointer; position: absolute; left: calc(clamp(24px, 2.5vw, 38px) / -2); top: calc(clamp(24px, 2.5vw, 38px) * -1.25); width: clamp(24px, 2.5vw, 38px); height: calc(clamp(24px, 2.5vw, 38px) * 1.3); transform-origin: 50% 96%; transform: {{ brPin3 }}; transition: transform .5s cubic-bezier(.16,1,.3,1); filter: drop-shadow(0 8px 10px rgba(14,90,6,.35)) drop-shadow(0 2px 3px rgba(12,31,14,.18));">
+            <svg width="100%" height="100%" viewBox="0 0 40 52" style="position: absolute; inset: 0; display: block; overflow: visible;"><defs><linearGradient id="apnPinG4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3FBF12"></stop><stop offset=".55" stop-color="#16860A"></stop><stop offset="1" stop-color="#0A4F04"></stop></linearGradient><linearGradient id="apnPinH4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"></stop></linearGradient></defs><path d="M20 51.5C20 51.5 2.5 33 2.5 19.5a17.5 17.5 0 0 1 35 0C37.5 33 20 51.5 20 51.5z" fill="url(#apnPinG4)"></path><path d="M7 12a15 15 0 0 1 26 0" fill="none" stroke="url(#apnPinH4)" stroke-width="1.6" stroke-linecap="round"></path><circle cx="20" cy="19.5" r="12.2" fill="#FFFFFF"></circle><circle cx="20" cy="19.5" r="12.2" fill="none" stroke="rgba(10,79,4,.18)" stroke-width="1"></circle></svg>
+            <img src="assets/pin-logo.png" alt="" style="position: absolute; left: 29%; top: 20.5%; width: 42%; height: 33%; object-fit: contain; pointer-events: none;">
+          </button>
+        </div>
+
+                </div>
+        <div data-rbr-card="1" data-reveal="1" data-reveal-delay="0.35" style="position: absolute; left: 66%; top: 5%; width: 22%; min-width: 210px; z-index: {{ brZ0 }};">
+          <div data-br-card="0" onMouseEnter="{{ brIn0 }}" onClick="{{ brIn0 }}" style="padding: clamp(14px, 1.3vw, 22px); border-radius: 22px; cursor: pointer; background-image: linear-gradient(180deg, rgba(255,255,255,.98) 0%, rgba(250,252,249,.96) 100%); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: {{ brSh0 }}; opacity: {{ brOp0 }}; transform: {{ brLab0 }}; transition: transform .6s cubic-bezier(.16,1,.3,1), box-shadow .6s cubic-bezier(.16,1,.3,1), opacity .45s ease;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+              <span style="display: inline-flex; align-items: center; gap: 7px; min-width: 0; white-space: nowrap; font-size: clamp(10px, .7vw, 11.5px); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #7A887A;">
+                <span style="color: #0E5A06;">01</span>
+                <span style="width: clamp(6px, .8vw, 14px); height: 1px; background-color: rgba(12,31,14,.18);"></span>
+                Central Luzon
+              </span>
+              <span style="flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: {{ brChBg0 }}; color: {{ brChFg0 }}; box-shadow: inset 0 0 0 1px rgba(14,90,6,.12); transition: background-color .4s ease, color .4s ease;">
+                <span style="display: inline-flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.4"></circle></svg></span>
+              </span>
+            </div>
+            <div style="margin-top: clamp(10px, 1vw, 16px); display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <h3 style="margin: 0; font-size: clamp(19px, 1.7vw, 27px); font-weight: 500; line-height: 1.1; letter-spacing: -0.03em; color: #0C1F0E;">Pampanga</h3>
+            </div>
+            <p style="margin: clamp(8px, .8vw, 12px) 0 0; font-size: clamp(11.5px, .85vw, 13.5px); line-height: 1.62; font-weight: 400; color: #5D6B5D; text-wrap: pretty;">Supports the growing BPO and business community north of Manila with local sales and technical assistance.</p>
+            <div style="margin-top: clamp(12px, 1.2vw, 18px); height: 2px; border-radius: 2px; background-color: rgba(14,90,6,.07); overflow: hidden;">
+              <div style="width: {{ brBar0 }}; height: 100%; border-radius: 2px; background-image: linear-gradient(90deg, #0A5A03 0%, #30C000 100%); transition: width .8s cubic-bezier(.16,1,.3,1);"></div>
+            </div>
+          </div>
+        </div>
+        <div data-rbr-card="1" data-reveal="1" data-reveal-delay="0.45" style="position: absolute; left: 4%; top: 27%; width: 22%; min-width: 210px; z-index: {{ brZ1 }};">
+          <div data-br-card="1" onMouseEnter="{{ brIn1 }}" onClick="{{ brIn1 }}" style="padding: clamp(14px, 1.3vw, 22px); border-radius: 22px; cursor: pointer; background-image: linear-gradient(180deg, rgba(255,255,255,.98) 0%, rgba(250,252,249,.96) 100%); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: {{ brSh1 }}; opacity: {{ brOp1 }}; transform: {{ brLab1 }}; transition: transform .6s cubic-bezier(.16,1,.3,1), box-shadow .6s cubic-bezier(.16,1,.3,1), opacity .45s ease;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+              <span style="display: inline-flex; align-items: center; gap: 7px; min-width: 0; white-space: nowrap; font-size: clamp(10px, .7vw, 11.5px); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #7A887A;">
+                <span style="color: #0E5A06;">02</span>
+                <span style="width: clamp(6px, .8vw, 14px); height: 1px; background-color: rgba(12,31,14,.18);"></span>
+                Metro Manila
+              </span>
+              <span style="flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: {{ brChBg1 }}; color: {{ brChFg1 }}; box-shadow: inset 0 0 0 1px rgba(14,90,6,.12); transition: background-color .4s ease, color .4s ease;">
+                <span style="display: inline-flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.4"></circle></svg></span>
+              </span>
+            </div>
+            <div style="margin-top: clamp(10px, 1vw, 16px); display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <h3 style="margin: 0; font-size: clamp(19px, 1.7vw, 27px); font-weight: 500; line-height: 1.1; letter-spacing: -0.03em; color: #0C1F0E;">Manila</h3>
+              <span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px 4px 8px; border-radius: 999px; background-color: #E7F5E0; box-shadow: inset 0 0 0 1px rgba(48,160,20,.25); font-size: 11px; font-weight: 500; color: #0E5A06; white-space: nowrap;"><span style="width: 6px; height: 6px; border-radius: 50%; background-color: #1E9A08; box-shadow: 0 0 0 3px rgba(48,192,0,.18);"></span>Main branch</span>
+            </div>
+            <p style="margin: clamp(8px, .8vw, 12px) 0 0; font-size: clamp(11.5px, .85vw, 13.5px); line-height: 1.62; font-weight: 400; color: #5D6B5D; text-wrap: pretty;">Our Metro Manila hub, serving the capital’s call center corridor and coordinating with the 24/7/365 NOC.</p>
+            <div style="margin-top: clamp(12px, 1.2vw, 18px); height: 2px; border-radius: 2px; background-color: rgba(14,90,6,.07); overflow: hidden;">
+              <div style="width: {{ brBar1 }}; height: 100%; border-radius: 2px; background-image: linear-gradient(90deg, #0A5A03 0%, #30C000 100%); transition: width .8s cubic-bezier(.16,1,.3,1);"></div>
+            </div>
+          </div>
+        </div>
+        <div data-rbr-card="1" data-reveal="1" data-reveal-delay="0.55" style="position: absolute; left: 74%; top: 42%; width: 22%; min-width: 210px; z-index: {{ brZ2 }};">
+          <div data-br-card="2" onMouseEnter="{{ brIn2 }}" onClick="{{ brIn2 }}" style="padding: clamp(14px, 1.3vw, 22px); border-radius: 22px; cursor: pointer; background-image: linear-gradient(180deg, rgba(255,255,255,.98) 0%, rgba(250,252,249,.96) 100%); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: {{ brSh2 }}; opacity: {{ brOp2 }}; transform: {{ brLab2 }}; transition: transform .6s cubic-bezier(.16,1,.3,1), box-shadow .6s cubic-bezier(.16,1,.3,1), opacity .45s ease;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+              <span style="display: inline-flex; align-items: center; gap: 7px; min-width: 0; white-space: nowrap; font-size: clamp(10px, .7vw, 11.5px); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #7A887A;">
+                <span style="color: #0E5A06;">03</span>
+                <span style="width: clamp(6px, .8vw, 14px); height: 1px; background-color: rgba(12,31,14,.18);"></span>
+                Central Visayas
+              </span>
+              <span style="flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: {{ brChBg2 }}; color: {{ brChFg2 }}; box-shadow: inset 0 0 0 1px rgba(14,90,6,.12); transition: background-color .4s ease, color .4s ease;">
+                <span style="display: inline-flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.4"></circle></svg></span>
+              </span>
+            </div>
+            <div style="margin-top: clamp(10px, 1vw, 16px); display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <h3 style="margin: 0; font-size: clamp(19px, 1.7vw, 27px); font-weight: 500; line-height: 1.1; letter-spacing: -0.03em; color: #0C1F0E;">Cebu</h3>
+            </div>
+            <p style="margin: clamp(8px, .8vw, 12px) 0 0; font-size: clamp(11.5px, .85vw, 13.5px); line-height: 1.62; font-weight: 400; color: #5D6B5D; text-wrap: pretty;">Brings carrier-grade VoIP to Visayas businesses, with on-the-ground support for Cebu’s contact centers.</p>
+            <div style="margin-top: clamp(12px, 1.2vw, 18px); height: 2px; border-radius: 2px; background-color: rgba(14,90,6,.07); overflow: hidden;">
+              <div style="width: {{ brBar2 }}; height: 100%; border-radius: 2px; background-image: linear-gradient(90deg, #0A5A03 0%, #30C000 100%); transition: width .8s cubic-bezier(.16,1,.3,1);"></div>
+            </div>
+          </div>
+        </div>
+        <div data-rbr-card="1" data-reveal="1" data-reveal-delay="0.65" style="position: absolute; left: 12%; top: 74%; width: 22%; min-width: 210px; z-index: {{ brZ3 }};">
+          <div data-br-card="3" onMouseEnter="{{ brIn3 }}" onClick="{{ brIn3 }}" style="padding: clamp(14px, 1.3vw, 22px); border-radius: 22px; cursor: pointer; background-image: linear-gradient(180deg, rgba(255,255,255,.98) 0%, rgba(250,252,249,.96) 100%); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: {{ brSh3 }}; opacity: {{ brOp3 }}; transform: {{ brLab3 }}; transition: transform .6s cubic-bezier(.16,1,.3,1), box-shadow .6s cubic-bezier(.16,1,.3,1), opacity .45s ease;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+              <span style="display: inline-flex; align-items: center; gap: 7px; min-width: 0; white-space: nowrap; font-size: clamp(10px, .7vw, 11.5px); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #7A887A;">
+                <span style="color: #0E5A06;">04</span>
+                <span style="width: clamp(6px, .8vw, 14px); height: 1px; background-color: rgba(12,31,14,.18);"></span>
+                Mindanao
+              </span>
+              <span style="flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: {{ brChBg3 }}; color: {{ brChFg3 }}; box-shadow: inset 0 0 0 1px rgba(14,90,6,.12); transition: background-color .4s ease, color .4s ease;">
+                <span style="display: inline-flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.4"></circle></svg></span>
+              </span>
+            </div>
+            <div style="margin-top: clamp(10px, 1vw, 16px); display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <h3 style="margin: 0; font-size: clamp(19px, 1.7vw, 27px); font-weight: 500; line-height: 1.1; letter-spacing: -0.03em; color: #0C1F0E;">Davao</h3>
+            </div>
+            <p style="margin: clamp(8px, .8vw, 12px) 0 0; font-size: clamp(11.5px, .85vw, 13.5px); line-height: 1.62; font-weight: 400; color: #5D6B5D; text-wrap: pretty;">Our Mindanao office, extending APN’s VoIP and technical support to businesses across the south.</p>
+            <div style="margin-top: clamp(12px, 1.2vw, 18px); height: 2px; border-radius: 2px; background-color: rgba(14,90,6,.07); overflow: hidden;">
+              <div style="width: {{ brBar3 }}; height: 100%; border-radius: 2px; background-image: linear-gradient(90deg, #0A5A03 0%, #30C000 100%); transition: width .8s cubic-bezier(.16,1,.3,1);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="history" data-screen-label="Why APN" style="position: relative; z-index: 3; width: 100%; padding: clamp(80px, 7vw, 130px) clamp(20px, 4vw, 60px) clamp(80px, 7vw, 130px); background-color: #FFFFFF;">
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <span style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 999px; background-image: linear-gradient(180deg, #D9DDD8 0%, #E6E9E5 100%); box-shadow: inset 0 2px 4px rgba(12,31,14,.16), inset 0 -1px 1px rgba(255,255,255,.85), 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(12,31,14,.06); font-size: 14px; color: #4A564A; text-shadow: 0 1px 0 rgba(255,255,255,.7);"><span style="width: 6px; height: 6px; border-radius: 50%; background-color: #1E9A08;"></span>Why APN</span>
+      <h2 style="margin: 20px 0 0; font-size: clamp(40px, 4.4vw, 72px); font-weight: 500; line-height: 1.05; letter-spacing: -0.045em; color: #0C1F0E; text-wrap: balance;"><span style="color: #97A396;">One partner for</span> <span style="color: #1E9A08;">every layer</span> of your business</h2>
+    </div>
+    <div data-hx-row="1" style="width: 100%; max-width: 1320px; margin: clamp(48px, 5vw, 80px) auto 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(120px, .62fr) minmax(0, 1fr); align-items: stretch; gap: 32px 0;">
+      <div style="min-width: 0; display: grid; grid-template-rows: 1fr 1fr; gap: clamp(16px, 2.2vw, 34px);">
+        <div data-hx="l" data-hx-i="0" data-hx-n="0" style="position: relative; padding: clamp(18px, 2vw, 32px); border-radius: clamp(18px, 2vw, 26px); background-image: linear-gradient(180deg, #F8F9F7 0%, #F0F3EF 100%); box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(12,31,14,.04), 0 6px 0 #DDE3DB, 0 7px 0 rgba(12,31,14,.05), 0 24px 36px -24px rgba(12,31,14,.28); opacity: 0; transform: translateX(-40px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1), box-shadow .5s ease, filter .6s ease; display: flex; flex-direction: column;" style-hover="box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(48,192,0,.18), 0 6px 0 #D2E3CC, 0 7px 0 rgba(14,90,6,.08), 0 30px 44px -24px rgba(14,90,6,.35);">
+          <div style="display: flex; align-items: center; gap: 12px;"><span style="flex: 0 0 auto; width: 9px; height: 9px; border-radius: 50%; background-color: #1E9A08; box-shadow: 0 0 0 4px rgba(48,192,0,.14), 0 0 10px rgba(48,192,0,.45);"></span><span style="font-size: 12px; font-weight: 500; letter-spacing: 1.6px; text-transform: uppercase; color: #6B776A; white-space: nowrap;"><span data-hx-num="1" style="color: #0C1F0E;">01</span> · Our Infrastructure</span><span style="flex: 1 1 auto; height: 1px; background-image: linear-gradient(90deg, rgba(12,31,14,.16), rgba(12,31,14,0));"></span><span style="flex: 0 0 auto; width: 38px; height: 38px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(180deg, #E4F1DC 0%, #D6EACB 100%); box-shadow: inset 0 1px 2px rgba(14,90,6,.14), inset 0 -1px 0 rgba(255,255,255,.8);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E8A00" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16M7 7v10M17 7v10"></path></svg></span></div>
+          <h3 style="margin: clamp(16px, 1.6vw, 24px) 0 0; font-size: clamp(21px, 1.8vw, 30px); font-weight: 500; line-height: 1.15; letter-spacing: -0.6px; color: #1E9A08; text-wrap: balance;">The Foundation That Works Behind the Scenes</h3>
+          <p style="margin: 12px 0 0; font-size: 14.5px; line-height: 1.65; color: #5D6B5D; text-wrap: pretty;">Anchored in Tier-1 facilities like One Wilshire and DRT in Los Angeles, with direct connectivity through Cogent, NTT and HGC. Managed directly by APN for 99.999% uptime across millions of daily connections.</p>
+          
+        </div>
+        <div data-hx="l" data-hx-i="1" data-hx-n="1" style="position: relative; padding: clamp(18px, 2vw, 32px); border-radius: clamp(18px, 2vw, 26px); background-image: linear-gradient(180deg, #F8F9F7 0%, #F0F3EF 100%); box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(12,31,14,.04), 0 6px 0 #DDE3DB, 0 7px 0 rgba(12,31,14,.05), 0 24px 36px -24px rgba(12,31,14,.28); opacity: 0; transform: translateX(-40px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1), box-shadow .5s ease, filter .6s ease; display: flex; flex-direction: column;" style-hover="box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(48,192,0,.18), 0 6px 0 #D2E3CC, 0 7px 0 rgba(14,90,6,.08), 0 30px 44px -24px rgba(14,90,6,.35);">
+          <div style="display: flex; align-items: center; gap: 12px;"><span style="flex: 0 0 auto; width: 9px; height: 9px; border-radius: 50%; background-color: #1E9A08; box-shadow: 0 0 0 4px rgba(48,192,0,.14), 0 0 10px rgba(48,192,0,.45);"></span><span style="font-size: 12px; font-weight: 500; letter-spacing: 1.6px; text-transform: uppercase; color: #6B776A; white-space: nowrap;"><span data-hx-num="1" style="color: #0C1F0E;">02</span> · Our Software</span><span style="flex: 1 1 auto; height: 1px; background-image: linear-gradient(90deg, rgba(12,31,14,.16), rgba(12,31,14,0));"></span><span style="flex: 0 0 auto; width: 38px; height: 38px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(180deg, #E4F1DC 0%, #D6EACB 100%); box-shadow: inset 0 1px 2px rgba(14,90,6,.14), inset 0 -1px 0 rgba(255,255,255,.8);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E8A00" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H4zM8 20h8M12 16v4"></path></svg></span></div>
+          <h3 style="margin: clamp(16px, 1.6vw, 24px) 0 0; font-size: clamp(21px, 1.8vw, 30px); font-weight: 500; line-height: 1.15; letter-spacing: -0.6px; color: #1E9A08; text-wrap: balance;">Tools That Grow With You</h3>
+          <p style="margin: 12px 0 0; font-size: 14.5px; line-height: 1.65; color: #5D6B5D; text-wrap: pretty;">The APNTalk UCX platform brings voice, messaging, customer management and support into one interface, built to run seamlessly on APN’s own network.</p>
+          
+        </div>
+      </div>
+      <div data-hx-mid="1" style="position: relative; min-width: 0; min-height: 200px; display: flex; align-items: center; justify-content: center;">
+          <span aria-hidden="true" style="position: absolute; left: 0; top: 25%; bottom: 50%; width: 22%; border: 1px solid rgba(12,31,14,.12); border-left: 0; border-bottom: 0; border-radius: 0 16px 0 0;"></span>
+          <span aria-hidden="true" style="position: absolute; left: 0; top: 50%; bottom: 25%; width: 22%; margin-top: -1px; border: 1px solid rgba(12,31,14,.12); border-left: 0; border-top: 0; border-radius: 0 0 16px 0;"></span>
+          
+          <span aria-hidden="true" style="position: absolute; left: 22%; top: 50%; width: 11%; height: 1px; background-color: rgba(12,31,14,.12);"></span>
+          <span data-tr="lu" aria-hidden="true" style="position: absolute; left: 0; top: 25%; bottom: 50%; width: 22%; border: 1px solid #30C000; border-left: 0; border-bottom: 0; border-radius: 0 16px 0 0; clip-path: inset(100% 0 0 0); filter: drop-shadow(0 0 4px rgba(48,192,0,.6));"></span>
+          <span data-tr="ld" aria-hidden="true" style="position: absolute; left: 0; top: 50%; bottom: 25%; width: 22%; margin-top: -1px; border: 1px solid #30C000; border-left: 0; border-top: 0; border-radius: 0 0 16px 0; clip-path: inset(0 0 100% 0); filter: drop-shadow(0 0 4px rgba(48,192,0,.6));"></span>
+          <span data-tr="ls" aria-hidden="true" style="position: absolute; left: 22%; top: 50%; width: 11%; height: 1px; background-color: #30C000; clip-path: inset(0 0 0 100%); box-shadow: 0 0 6px rgba(48,192,0,.7);"></span>
+          
+          <span data-tr="lo" aria-hidden="true" style="position: absolute; left: 22%; top: 50%; width: 9px; height: 9px; margin: -4px 0 0 -4px; border-radius: 50%; background-color: #FFFFFF; box-shadow: inset 0 0 0 1.5px rgba(12,31,14,.12); transition: background-color .4s ease, box-shadow .4s ease;"></span>
+          <span aria-hidden="true" style="position: absolute; right: 0; top: 25%; bottom: 50%; width: 22%; border: 1px solid rgba(12,31,14,.12); border-right: 0; border-bottom: 0; border-radius: 16px 0 0 0;"></span>
+          <span aria-hidden="true" style="position: absolute; right: 0; top: 50%; bottom: 25%; width: 22%; margin-top: -1px; border: 1px solid rgba(12,31,14,.12); border-right: 0; border-top: 0; border-radius: 0 0 0 16px;"></span>
+          
+          <span aria-hidden="true" style="position: absolute; right: 22%; top: 50%; width: 11%; height: 1px; background-color: rgba(12,31,14,.12);"></span>
+          <span data-tr="ru" aria-hidden="true" style="position: absolute; right: 0; top: 25%; bottom: 50%; width: 22%; border: 1px solid #30C000; border-right: 0; border-bottom: 0; border-radius: 16px 0 0 0; clip-path: inset(100% 0 0 0); filter: drop-shadow(0 0 4px rgba(48,192,0,.6));"></span>
+          <span data-tr="rd" aria-hidden="true" style="position: absolute; right: 0; top: 50%; bottom: 25%; width: 22%; margin-top: -1px; border: 1px solid #30C000; border-right: 0; border-top: 0; border-radius: 0 0 0 16px; clip-path: inset(0 0 100% 0); filter: drop-shadow(0 0 4px rgba(48,192,0,.6));"></span>
+          <span data-tr="rs" aria-hidden="true" style="position: absolute; right: 22%; top: 50%; width: 11%; height: 1px; background-color: #30C000; clip-path: inset(0 100% 0 0); box-shadow: 0 0 6px rgba(48,192,0,.7);"></span>
+          
+          <span data-tr="ro" aria-hidden="true" style="position: absolute; right: 22%; top: 50%; width: 9px; height: 9px; margin: -4px -4px 0 0; border-radius: 50%; background-color: #FFFFFF; box-shadow: inset 0 0 0 1.5px rgba(12,31,14,.12); transition: background-color .4s ease, box-shadow .4s ease;"></span>
+        <div data-hx="c" style="position: relative; z-index: 1; width: clamp(64px, 34%, 150px); aspect-ratio: 1 / 1; opacity: 0; transform: scale(.8); transition: opacity .8s ease, transform 1s cubic-bezier(.16,1,.3,1);">
+          <div style="position: absolute; inset: -12%; border-radius: 50%; background-image: radial-gradient(circle, rgba(48,192,0,.26) 0%, rgba(48,192,0,0) 68%);"></div>
+          <img src="assets/logo-mark.png" alt="Asia Pacific Network" style="position: relative; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 22px 30px rgba(14,90,6,.35)); animation: apn-float 5.5s ease-in-out infinite;">
+        </div>
+      </div>
+      <div style="min-width: 0; display: grid; grid-template-rows: 1fr 1fr; gap: clamp(16px, 2.2vw, 34px);">
+        <div data-hx="r" data-hx-i="0" data-hx-n="2" style="position: relative; padding: clamp(18px, 2vw, 32px); border-radius: clamp(18px, 2vw, 26px); background-image: linear-gradient(180deg, #F8F9F7 0%, #F0F3EF 100%); box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(12,31,14,.04), 0 6px 0 #DDE3DB, 0 7px 0 rgba(12,31,14,.05), 0 24px 36px -24px rgba(12,31,14,.28); opacity: 0; transform: translateX(40px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1), box-shadow .5s ease, filter .6s ease; display: flex; flex-direction: column;" style-hover="box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(48,192,0,.18), 0 6px 0 #D2E3CC, 0 7px 0 rgba(14,90,6,.08), 0 30px 44px -24px rgba(14,90,6,.35);">
+          <div style="display: flex; align-items: center; gap: 12px;"><span style="flex: 0 0 auto; width: 9px; height: 9px; border-radius: 50%; background-color: #1E9A08; box-shadow: 0 0 0 4px rgba(48,192,0,.14), 0 0 10px rgba(48,192,0,.45);"></span><span style="font-size: 12px; font-weight: 500; letter-spacing: 1.6px; text-transform: uppercase; color: #6B776A; white-space: nowrap;"><span data-hx-num="1" style="color: #0C1F0E;">03</span> · Our Support</span><span style="flex: 1 1 auto; height: 1px; background-image: linear-gradient(90deg, rgba(12,31,14,.16), rgba(12,31,14,0));"></span><span style="flex: 0 0 auto; width: 38px; height: 38px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(180deg, #E4F1DC 0%, #D6EACB 100%); box-shadow: inset 0 1px 2px rgba(14,90,6,.14), inset 0 -1px 0 rgba(255,255,255,.8);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E8A00" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v6H5a1 1 0 0 1-1-1zM20 14h-3v6h2a1 1 0 0 0 1-1z"></path></svg></span></div>
+          <h3 style="margin: clamp(16px, 1.6vw, 24px) 0 0; font-size: clamp(21px, 1.8vw, 30px); font-weight: 500; line-height: 1.15; letter-spacing: -0.6px; color: #1E9A08; text-wrap: balance;">The Human Element</h3>
+          <p style="margin: 12px 0 0; font-size: 14.5px; line-height: 1.65; color: #5D6B5D; text-wrap: pretty;">Teams in Manila, Clark, Cebu and Davao are on call 24/7/365. One team manages your network and platform, so issues get solved in minutes.</p>
+          
+        </div>
+        <div data-hx="r" data-hx-i="1" data-hx-n="3" style="position: relative; padding: clamp(18px, 2vw, 32px); border-radius: clamp(18px, 2vw, 26px); background-image: linear-gradient(180deg, #F8F9F7 0%, #F0F3EF 100%); box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(12,31,14,.04), 0 6px 0 #DDE3DB, 0 7px 0 rgba(12,31,14,.05), 0 24px 36px -24px rgba(12,31,14,.28); opacity: 0; transform: translateX(40px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1), box-shadow .5s ease, filter .6s ease; display: flex; flex-direction: column;" style-hover="box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(48,192,0,.18), 0 6px 0 #D2E3CC, 0 7px 0 rgba(14,90,6,.08), 0 30px 44px -24px rgba(14,90,6,.35);">
+          <div style="display: flex; align-items: center; gap: 12px;"><span style="flex: 0 0 auto; width: 9px; height: 9px; border-radius: 50%; background-color: #1E9A08; box-shadow: 0 0 0 4px rgba(48,192,0,.14), 0 0 10px rgba(48,192,0,.45);"></span><span style="font-size: 12px; font-weight: 500; letter-spacing: 1.6px; text-transform: uppercase; color: #6B776A; white-space: nowrap;"><span data-hx-num="1" style="color: #0C1F0E;">04</span> · Our Value</span><span style="flex: 1 1 auto; height: 1px; background-image: linear-gradient(90deg, rgba(12,31,14,.16), rgba(12,31,14,0));"></span><span style="flex: 0 0 auto; width: 38px; height: 38px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(180deg, #E4F1DC 0%, #D6EACB 100%); box-shadow: inset 0 1px 2px rgba(14,90,6,.14), inset 0 -1px 0 rgba(255,255,255,.8);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E8A00" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-9-9.2C1.8 8.6 4 5 7.5 5c2 0 3.4 1 4.5 2.6C13.1 6 14.5 5 16.5 5 20 5 22.2 8.6 21 11.8 19 16.6 12 21 12 21z"></path></svg></span></div>
+          <h3 style="margin: clamp(16px, 1.6vw, 24px) 0 0; font-size: clamp(21px, 1.8vw, 30px); font-weight: 500; line-height: 1.15; letter-spacing: -0.6px; color: #1E9A08; text-wrap: balance;">A Commitment to Value</h3>
+          <p style="margin: 12px 0 0; font-size: 14.5px; line-height: 1.65; color: #5D6B5D; text-wrap: pretty;">Owner-managed and focused on long-term partnerships, we reinvest in our network, platform and people to deliver enterprise-grade solutions at a sensible cost.</p>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mission" data-screen-label="Mission and Vision" style="position: relative; z-index: 3; width: 100%; padding: clamp(60px, 6vw, 110px) clamp(20px, 4vw, 60px) clamp(90px, 8vw, 150px); background-color: #FFFFFF;">
+    <div style="width: 100%; max-width: 1600px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: clamp(40px, 5vw, 96px);">
+      <div style="flex: 1 1 400px; min-width: 0; max-width: 540px; display: flex; flex-direction: column; align-items: flex-start;">
+        <span style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 999px; background-image: linear-gradient(180deg, #D9DDD8 0%, #E6E9E5 100%); box-shadow: inset 0 2px 4px rgba(12,31,14,.16), inset 0 -1px 1px rgba(255,255,255,.85), 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(12,31,14,.06); font-size: 14px; font-weight: 400; color: #4A564A; letter-spacing: -0.1px; text-shadow: 0 1px 0 rgba(255,255,255,.7);"><span style="width: 6px; height: 6px; border-radius: 50%; background-color: #1E9A08;"></span>Mission &amp; Vision</span>
+        <h2 style="margin: 22px 0 0; font-size: clamp(40px, 4vw, 64px); font-weight: 500; line-height: 1.06; letter-spacing: -0.045em; color: transparent; background-image: linear-gradient(180deg, #5D6A5C 0%, #1B2A1C 100%); -webkit-background-clip: text; background-clip: text; text-wrap: balance;">What drives every <span style="color: #1E9A08;">connection</span></h2>
+        <p style="margin: 22px 0 0; font-size: 16px; line-height: 1.65; color: #6B776A; text-wrap: pretty;">Hover a card to read what we work toward <span style="color: #1E9A08; font-weight: 500;">today</span>, and where we are headed.</p>
+      </div>
+      <div data-rmv-row="1" style="flex: 999 1 560px; min-width: 0; display: flex; gap: clamp(16px, 1.6vw, 26px);">
+        <div data-rmv-card="1" onMouseEnter="{{ mvIn0 }}" onClick="{{ mvIn0 }}" style="position: relative; flex: {{ mvF0 }}; min-width: 0; height: clamp(400px, 30vw, 460px); border-radius: 28px; overflow: hidden; cursor: pointer; background-image: linear-gradient(180deg, #F8F9F7 0%, #EFF2EE 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,1), inset 0 0 0 1px rgba(12,31,14,.04), 0 7px 0 #DDE3DB, 0 8px 0 rgba(12,31,14,.06), 0 26px 40px -22px rgba(12,31,14,.28); transition: flex .8s cubic-bezier(.65,0,.25,1), transform .5s cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-3px);">
+          <div style="position: absolute; top: 26px; left: 26px; width: 58px; height: 58px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #FFFFFF; background-image: linear-gradient(180deg, #2BA60C 0%, #0E5A06 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.4), inset 0 -2px 0 rgba(8,40,4,.25), 0 14px 30px -8px rgba(30,154,8,.6);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4"></circle><circle cx="12" cy="12" r="0.8" fill="currentColor"></circle></svg></div>
+          <div data-rmv-body="1" style="position: absolute; left: 26px; right: 26px; top: 120px; bottom: 26px; display: flex; flex-direction: column; min-width: 300px; opacity: {{ mvO0 }}; transform: {{ mvT0 }}; transition: opacity .5s ease, transform .7s cubic-bezier(.16,1,.3,1); transition-delay: {{ mvD0 }};">
+            <h3 style="margin: 0; font-size: clamp(26px, 2.2vw, 34px); font-weight: 500; letter-spacing: -0.8px; color: #0C1F0E;">Our Mission</h3>
+            <div style="margin-top: 22px; height: 1px; background-image: linear-gradient(90deg, rgba(12,31,14,.12), rgba(12,31,14,0));"></div>
+            <p style="margin: 22px 0 0; max-width: 440px; font-size: 15.5px; line-height: 1.65; color: #6B776A; text-wrap: pretty;">Deliver consistent, <span style="color: #1E9A08; font-weight: 500;">carrier-grade VoIP</span> to businesses in the US, the Philippines and every major continent, backed by <span style="color: #1E9A08; font-weight: 500;">Tier-1 carriers</span> and a 24/7/365 NOC.</p>
+            <div style="margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;">
+              <span style="padding: 8px 16px; border-radius: 999px; font-size: 12.5px; font-weight: 500; letter-spacing: .6px; text-transform: uppercase; color: #3F4A3F; background-color: #F6F8F5; box-shadow: inset 0 0 0 1px rgba(12,31,14,.1), 0 1px 0 rgba(255,255,255,.9);">Today</span>
+              <span style="font-size: clamp(56px, 5vw, 84px); font-weight: 500; line-height: .8; letter-spacing: -0.06em; color: #A8B1A7;">01<span style="color: #DDE3DB;"> /02</span></span>
+            </div>
+          </div>
+          <div data-rmv-cap="1" style="position: absolute; left: 0; right: 0; bottom: 34px; display: flex; justify-content: center; opacity: {{ mvC0 }}; transition: opacity .45s ease; transition-delay: {{ mvCD0 }}; pointer-events: none;">
+            <span style="writing-mode: vertical-rl; transform: rotate(180deg); font-size: 22px; font-weight: 500; letter-spacing: -0.4px; color: #0C1F0E; white-space: nowrap;">Our Mission <span style="color: #A8B1A7;">01</span></span>
+          </div>
+        </div>
+        <div data-rmv-card="1" onMouseEnter="{{ mvIn1 }}" onClick="{{ mvIn1 }}" style="position: relative; flex: {{ mvF1 }}; min-width: 0; height: clamp(400px, 30vw, 460px); border-radius: 28px; overflow: hidden; cursor: pointer; background-image: linear-gradient(180deg, #F8F9F7 0%, #EFF2EE 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,1), inset 0 0 0 1px rgba(12,31,14,.04), 0 7px 0 #DDE3DB, 0 8px 0 rgba(12,31,14,.06), 0 26px 40px -22px rgba(12,31,14,.28); transition: flex .8s cubic-bezier(.65,0,.25,1), transform .5s cubic-bezier(.16,1,.3,1);" style-hover="transform: translateY(-3px);">
+          <div style="position: absolute; top: 26px; left: 26px; width: 58px; height: 58px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #FFFFFF; background-image: linear-gradient(180deg, #2BA60C 0%, #0E5A06 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.4), inset 0 -2px 0 rgba(8,40,4,.25), 0 14px 30px -8px rgba(30,154,8,.6);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+          <div data-rmv-body="1" style="position: absolute; left: 26px; right: 26px; top: 120px; bottom: 26px; display: flex; flex-direction: column; min-width: 300px; opacity: {{ mvO1 }}; transform: {{ mvT1 }}; transition: opacity .5s ease, transform .7s cubic-bezier(.16,1,.3,1); transition-delay: {{ mvD1 }};">
+            <h3 style="margin: 0; font-size: clamp(26px, 2.2vw, 34px); font-weight: 500; letter-spacing: -0.8px; color: #0C1F0E;">Our Vision</h3>
+            <div style="margin-top: 22px; height: 1px; background-image: linear-gradient(90deg, rgba(12,31,14,.12), rgba(12,31,14,0));"></div>
+            <p style="margin: 22px 0 0; max-width: 440px; font-size: 15.5px; line-height: 1.65; color: #6B776A; text-wrap: pretty;">To be the <span style="color: #1E9A08; font-weight: 500;">premier provider of VoIP</span> services in Asia and North America, growing alongside the call center industry we serve.</p>
+            <div style="margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;">
+              <span style="padding: 8px 16px; border-radius: 999px; font-size: 12.5px; font-weight: 500; letter-spacing: .6px; text-transform: uppercase; color: #3F4A3F; background-color: #F6F8F5; box-shadow: inset 0 0 0 1px rgba(12,31,14,.1), 0 1px 0 rgba(255,255,255,.9);">Tomorrow</span>
+              <span style="font-size: clamp(56px, 5vw, 84px); font-weight: 500; line-height: .8; letter-spacing: -0.06em; color: #A8B1A7;">02<span style="color: #DDE3DB;"> /02</span></span>
+            </div>
+          </div>
+          <div data-rmv-cap="1" style="position: absolute; left: 0; right: 0; bottom: 34px; display: flex; justify-content: center; opacity: {{ mvC1 }}; transition: opacity .45s ease; transition-delay: {{ mvCD1 }}; pointer-events: none;">
+            <span style="writing-mode: vertical-rl; transform: rotate(180deg); font-size: 22px; font-weight: 500; letter-spacing: -0.4px; color: #0C1F0E; white-space: nowrap;">Our Vision <span style="color: #A8B1A7;">02</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-screen-label="Get a Quote" style="position: relative; z-index: 3; width: 100%; padding: clamp(60px, 6vw, 110px) clamp(10px, 1vw, 12px) clamp(90px, 8vw, 150px); background-color: #FFFFFF;">
+    <div style="width: 100%; max-width: 1897px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+      <div data-reveal="1" data-reveal-delay="0" style="display: flex; flex-direction: column; align-items: center;">
+        <span style="display: inline-flex; align-items: center; padding: 8px 18px; border-radius: 999px; background-image: linear-gradient(180deg, #D9DDD8 0%, #E6E9E5 100%); box-shadow: inset 0 2px 4px rgba(12,31,14,.16), inset 0 -1px 1px rgba(255,255,255,.85), 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(12,31,14,.06); font-size: 14px; font-weight: 400; color: #4A564A; letter-spacing: -0.1px; text-shadow: 0 1px 0 rgba(255,255,255,.7);">Request a quotation</span>
+        <h2 style="margin: 14px 0 0; height: 0.78em; overflow: hidden; font-size: clamp(56px, 10.5vw, 200px); font-weight: 500; line-height: 1; letter-spacing: -0.06em; white-space: nowrap; color: transparent; background-image: linear-gradient(180deg, #A9B2A8 0%, #C9D0C8 45%, rgba(233,237,232,0) 100%); -webkit-background-clip: text; background-clip: text;">Get a Quote</h2>
+      </div>
+      <div style="width: 100%; max-width: 1897px; min-height: min(1142px, 60.2vw); box-sizing: border-box; margin-top: clamp(10px, 1.6vw, 28px); padding: clamp(28px, 6vw, 120px) clamp(20px, 7vw, 150px); border-radius: 36px; background-color: #1C870E; background-image: radial-gradient(rgba(255,255,255,.045) 1px, transparent 1.3px), radial-gradient(50% 60% at 10% 8%, rgba(255,255,255,.06) 0%, rgba(255,255,255,0) 70%), radial-gradient(70% 60% at 60% 105%, rgba(6,40,4,.16) 0%, rgba(6,40,4,0) 72%), linear-gradient(180deg, #23930F 0%, #1C870E 55%, #167A0A 100%); background-size: 3px 3px, 100% 100%, 100% 100%, 100% 100%, 100% 100%; box-shadow: inset 0 1px 0 rgba(255,255,255,.7), inset 0 0 0 1px rgba(14,90,6,.08), 0 -20px 60px -30px rgba(12,31,14,.18); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: clamp(28px, 5vw, 96px); align-items: center;">
+        <form data-reveal="1" data-reveal-delay=".15" onSubmit="{{ qSubmit }}" style="width: 100%; max-width: 560px; justify-self: center; box-sizing: border-box; padding: clamp(28px, 3vw, 48px); border-radius: 24px; background-color: #FFFFFF; box-shadow: 0 40px 80px -40px rgba(4,30,2,.6), 0 12px 28px -18px rgba(4,30,2,.35);">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+            <img src="assets/pin-logo.png" alt="Asia Pacific Network" style="width: 30px; height: 30px; object-fit: contain;">
+            <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; color: #5D6F5E;"><span style="width: 6px; height: 6px; border-radius: 50%; background-color: #30C000; box-shadow: 0 0 0 3px rgba(48,192,0,.18);"></span>Replies within 24 hours</span>
+          </div>
+          <h3 style="margin: clamp(22px, 2.2vw, 32px) 0 0; font-size: clamp(26px, 2vw, 34px); font-weight: 500; line-height: 1.12; letter-spacing: -0.04em; color: #0C1F0E;">Need a VoIP <span style="color: #1E9A08;">quotation?</span></h3>
+          <p style="margin: 10px 0 0; font-size: 14px; line-height: 1.55; color: #7A887A;">Tell us a little about your needs.</p>
+          <div ref="{{ qPickRef }}" style="position: relative; margin-top: clamp(24px, 2.2vw, 32px);"><label style="display: block; font-size: 12.5px; font-weight: 400; color: #7A887A;">What do you need a quote for?</label>
+            <button type="button" onClick="{{ qToggle }}" aria-expanded="{{ qOpen }}" style="appearance: none; width: 100%; height: 46px; padding: 0; border: 0; border-bottom: 1px solid {{ qLine }}; border-radius: 0; background-color: transparent; font-family: inherit; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: border-color .35s ease;" style-hover="border-bottom-color: #1E9A08;"><span style="flex: 1; min-width: 0; font-size: 15px; color: {{ qTrigFg }}; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ qTrigText }}</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7A887A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto; transform: {{ qChev }}; transition: transform .35s cubic-bezier(.16,1,.3,1);"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+            <div style="position: absolute; left: 0; right: 0; top: calc(100% + 8px); z-index: 20; border-radius: 18px; background-color: rgba(255,255,255,.96); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); box-shadow: 0 0 0 1px rgba(12,31,14,.08), 0 28px 56px -22px rgba(12,31,14,.4); overflow: hidden; opacity: {{ qPanOp }}; transform: {{ qPanTf }}; pointer-events: {{ qPanPe }}; transform-origin: top center; transition: opacity .25s ease, transform .4s cubic-bezier(.16,1,.3,1);">
+              <div style="padding: 14px 14px 12px; border-bottom: 1px solid rgba(12,31,14,.07);">
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                  <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: {{ qStatFg }};"><span style="width: 7px; height: 7px; border-radius: 50%; background-color: {{ qDot }}; box-shadow: {{ qDotSh }};"></span>{{ qStatus }}</span>
+                  <div style="display: flex; align-items: center; gap: 6px;">
+                    <button type="button" onClick="{{ qAll }}" style="appearance: none; height: 28px; padding: 0 12px; border: 0; border-radius: 999px; background-color: #EEF7EA; color: #0E5A06; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(30,154,8,.22); transition: background-color .25s ease;" style-hover="background-color: #E0F0D8;">Select all</button>
+                    <button type="button" onClick="{{ qClear }}" style="appearance: none; height: 28px; padding: 0 12px; border: 0; border-radius: 999px; background-color: #F4F6F3; color: #5D6F5E; font-family: inherit; font-size: 12px; font-weight: 500; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(12,31,14,.08); transition: background-color .25s ease, color .25s ease;" style-hover="background-color: #ECEFEB; color: #0C1F0E;">Clear</button>
+                  </div>
+                </div>
+                
+              </div>
+              <div data-lenis-prevent="1" style="max-height: 300px; overflow-y: auto; overscroll-behavior: contain; padding-bottom: 8px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 10px 6px;"><span style="display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: #6B776A;">Products<span style="letter-spacing: 0; text-transform: none; font-weight: 400; color: #97A396;">{{ qCntP }}</span></span><button type="button" onClick="{{ qAllP }}" style="appearance: none; border: 0; padding: 2px 0; background: none; font-family: inherit; font-size: 12px; font-weight: 500; color: #1E9A08; cursor: pointer;" style-hover="color: #0E5A06;">{{ qAllPLbl }}</button></div><div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; padding: 0 4px;"><sc-for list="{{ qProducts }}" as="o" hint-placeholder-count="4"><button type="button" onClick="{{ o.toggle }}" style="appearance: none; height: 42px; padding: 0 12px; border: 0; border-radius: 12px; background-color: {{ o.bg }}; box-shadow: {{ o.tileSh }}; font-family: inherit; font-size: 13.5px; font-weight: 500; color: {{ o.fg }}; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: background-color .25s ease, box-shadow .25s ease, color .25s ease;" style-hover="box-shadow: inset 0 0 0 1px rgba(30,154,8,.4);"><span style="flex: 0 0 auto; width: 18px; height: 18px; border-radius: 6px; display: flex; align-items: center; justify-content: center; background-image: {{ o.boxBg }}; box-shadow: {{ o.boxSh }}; transition: box-shadow .25s ease;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" style="opacity: {{ o.chk }}; transform: {{ o.chkTf }}; transition: opacity .2s ease, transform .3s cubic-bezier(.16,1,.3,1);"><polyline points="5 12.5 10 17 19 7"></polyline></svg></span><span style="min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ o.name }}</span></button></sc-for></div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 10px 6px;"><span style="display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: #6B776A;">Services<span style="letter-spacing: 0; text-transform: none; font-weight: 400; color: #97A396;">{{ qCntS }}</span></span><button type="button" onClick="{{ qAllS }}" style="appearance: none; border: 0; padding: 2px 0; background: none; font-family: inherit; font-size: 12px; font-weight: 500; color: #1E9A08; cursor: pointer;" style-hover="color: #0E5A06;">{{ qAllSLbl }}</button></div><div style="display: flex; flex-direction: column; gap: 2px; padding: 0 4px;"><sc-for list="{{ qServices }}" as="o" hint-placeholder-count="5"><button type="button" onClick="{{ o.toggle }}" style="appearance: none; width: 100%; min-height: 38px; padding: 8px 10px; border: 0; border-radius: 10px; background-color: {{ o.bg }}; font-family: inherit; font-size: 13.5px; font-weight: 400; line-height: 1.35; color: {{ o.fg }}; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: background-color .25s ease, color .25s ease;" style-hover="background-color: #F3F7F1;"><span style="flex: 0 0 auto; width: 18px; height: 18px; border-radius: 6px; display: flex; align-items: center; justify-content: center; background-image: {{ o.boxBg }}; box-shadow: {{ o.boxSh }}; transition: box-shadow .25s ease;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" style="opacity: {{ o.chk }}; transform: {{ o.chkTf }}; transition: opacity .2s ease, transform .3s cubic-bezier(.16,1,.3,1);"><polyline points="5 12.5 10 17 19 7"></polyline></svg></span><span style="min-width: 0;">{{ o.name }}</span></button></sc-for></div>
+              </div>
+              <div style="padding: 10px 14px; border-top: 1px solid rgba(12,31,14,.07); display: flex; justify-content: flex-end;"><button type="button" onClick="{{ qToggle }}" style="appearance: none; height: 34px; padding: 0 20px; border: 0; border-radius: 999px; background-image: linear-gradient(180deg, #23930A 0%, #0E5A06 100%); color: #FFFFFF; font-family: inherit; font-size: 13px; font-weight: 500; cursor: pointer; box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 6px 14px -8px rgba(14,90,6,.6);">Done</button></div>
+            </div>
+          </div>
+          <div style="margin-top: 26px; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); column-gap: 24px; row-gap: 22px;">
+            <div><label style="display: block; font-size: 12.5px; font-weight: 400; color: #7A887A;">Full name</label><input type="text" required="required" placeholder="Juan Dela Cruz" style="width: 100%; box-sizing: border-box; height: 46px; padding: 0; border: 0; border-bottom: 1px solid rgba(12,31,14,.14); border-radius: 0; background-color: transparent; font-family: inherit; font-size: 15px; color: #0C1F0E; outline: none; transition: border-color .35s ease;" style-focus="border-bottom-color: #1E9A08;"></div>
+            <div><label style="display: block; font-size: 12.5px; font-weight: 400; color: #7A887A;">Work e-mail</label><input type="email" required="required" placeholder="hello@company.com" style="width: 100%; box-sizing: border-box; height: 46px; padding: 0; border: 0; border-bottom: 1px solid rgba(12,31,14,.14); border-radius: 0; background-color: transparent; font-family: inherit; font-size: 15px; color: #0C1F0E; outline: none; transition: border-color .35s ease;" style-focus="border-bottom-color: #1E9A08;"></div>
+          </div>
+          <div style="margin-top: 22px;"><label style="display: block; font-size: 12.5px; font-weight: 400; color: #7A887A;">Message</label><textarea rows="3" placeholder="Call volume, destinations, number of seats…" style="width: 100%; box-sizing: border-box; height: 46px; padding: 0; border: 0; border-bottom: 1px solid rgba(12,31,14,.14); border-radius: 0; background-color: transparent; font-family: inherit; font-size: 15px; color: #0C1F0E; outline: none; transition: border-color .35s ease; height: 84px; padding: 12px 0; resize: none; line-height: 1.5;" style-focus="border-bottom-color: #1E9A08;"></textarea></div>
+          <button type="submit" onMouseEnter="{{ btnEnter }}" onMouseLeave="{{ btnLeave }}" style="appearance: none; margin-top: 30px; width: 100%; height: 56px; padding: 0 26px; border: 0; border-radius: 999px; background-image: linear-gradient(180deg, #4FA53A 0%, #2F8420 100%); color: #FFFFFF; font-family: inherit; font-size: 16px; font-weight: 500; letter-spacing: -0.2px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 1px 0 rgba(255,255,255,.4), inset 0 -1px 0 rgba(20,70,12,.25), 0 12px 26px -10px rgba(47,132,32,.55), 0 2px 6px rgba(20,60,12,.12); transition: box-shadow .35s ease, transform .35s ease;" style-hover="box-shadow: inset 0 1px 0 rgba(255,255,255,.6), inset 0 -1px 0 rgba(12,31,14,.22), 0 16px 34px -10px rgba(47,132,32,.65), 0 3px 8px rgba(20,60,12,.14); transform: translateY(-2px);">
+            <span style="display: block; height: 22px; overflow: hidden; white-space: nowrap;"><span data-roll="1" style="display: block; width: max-content; white-space: nowrap; transition: transform .45s cubic-bezier(.16,1,.3,1);"><span style="display: block; height: 22px; line-height: 22px;">{{ qLabel }}</span><span style="display: block; height: 22px; line-height: 22px;">{{ qLabel }}</span></span></span>
+          </button>
+          <p style="margin: 16px 0 0; font-size: 12px; color: #97A396;">By submitting, you agree to our <a href="#" style="color: #5D6F5E;">Terms</a> and <a href="#" style="color: #5D6F5E;">Privacy Policy</a>.</p>
+        </form>
+        <div data-reveal="1" data-reveal-delay=".25" style="min-width: 0;">
+          <div style="font-size: clamp(52px, 6.4vw, 128px); font-weight: 500; line-height: .95; letter-spacing: -0.06em; white-space: nowrap; color: #FFFFFF; text-shadow: 0 2px 10px rgba(20,70,10,.18);">Let’s <span style="color: #CFF59A; text-shadow: none;">talk.</span></div>
+          <p style="margin: clamp(16px, 1.8vw, 28px) 0 0; max-width: 560px; font-size: 17px; line-height: 1.55; font-weight: 400; letter-spacing: -0.2px; color: #FFFFFF; font-weight: 500; ">Tell us about your voice needs, <span style="color: rgba(255,255,255,.9); font-weight: 400;">whether it’s wholesale VoIP, SIP trunking, or a full call center setup.</span></p>
+          <div style="margin: clamp(24px, 2.6vw, 44px) 0; height: 1px; background-color: rgba(255,255,255,.4);"></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px;">
+            <div><div style="display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 500; color: #FFFFFF; "><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Quick response.</div><p style="margin: 12px 0 0; font-size: 14.5px; line-height: 1.55; color: rgba(255,255,255,.9); ">Our team is available 24/7/365, so your request never waits for business hours.</p></div>
+            <div><div style="display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 500; color: #FFFFFF; "><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4v-4h4v-4h4V8h4"></path></svg>Clear next steps.</div><p style="margin: 12px 0 0; font-size: 14.5px; line-height: 1.55; color: rgba(255,255,255,.9); ">We’ll follow up with a tailored quotation and a clear plan for going live.</p></div>
+          </div>
+          <div style="margin-top: clamp(28px, 3.4vw, 56px); display: inline-flex; gap: 6px;">
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer data-screen-label="Footer" style="position: relative; z-index: 3; width: 100%; overflow: hidden; padding: clamp(48px, 5vw, 90px) clamp(20px, 3.7vw, 70px) clamp(24px, 2.4vw, 40px); box-sizing: border-box; background-color: #FFFFFF;">
+    <div style="position: relative; width: 100%; max-width: 1760px; margin: 0 auto;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 48px clamp(32px, 4vw, 80px);">
+        <div style="flex: 1 1 300px; max-width: 460px; min-width: min(100%, 280px); display: flex; flex-direction: column;">
+          <a href="#top" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 12px; font-size: clamp(22px, 1.7vw, 28px); font-weight: 500; letter-spacing: -0.6px; color: #0C1F0E; text-decoration: none;"><img src="assets/pin-logo.png" alt="" style="width: 38px; height: 38px; object-fit: contain;">Asia Pacific Network</a>
+          <p style="margin: 14px 0 0; max-width: 540px; font-size: 16px; line-height: 1.65; color: #6B776A; text-wrap: pretty;">Texas-based provider of VoIP and value-added services, connecting the US and every major continent through <span style="font-weight: 500; color: #176B00;">Tier-1 carriers</span>. From One Wilshire in Los Angeles to our offices in Manila, Cebu and Davao, we keep businesses connected <span style="font-weight: 500; color: #176B00;">24/7/365</span>.</p>
+          <span style="margin-top: clamp(22px, 2vw, 30px); font-size: 15px; font-weight: 500; color: #0C1F0E;">Newsletter</span>
+          <form onSubmit="{{ nlSubmit }}" style="margin: 12px 0 0; position: relative; max-width: 460px; display: flex; align-items: center; height: 50px; padding: 4px; box-sizing: border-box; border-radius: 999px; background-color: #FFFFFF; box-shadow: inset 0 1px 2px rgba(12,31,14,.06), 0 0 0 1px rgba(12,31,14,.1), 0 2px 6px -2px rgba(12,31,14,.08); transition: box-shadow .3s ease;" style-focus-within="box-shadow: inset 0 1px 2px rgba(12,31,14,.06), 0 0 0 1px #1E9A08, 0 0 0 4px rgba(48,192,0,.14);">
+            <input type="email" required="required" placeholder="name@email.com" aria-label="Email address" style="flex: 1 1 auto; min-width: 0; height: 100%; padding: 0 16px 0 18px; border: 0; outline: none; background: transparent; font-family: inherit; font-size: 15px; color: #0C1F0E;">
+            <button type="submit" style="flex: 0 0 auto; height: 100%; padding: 0 20px; border: 0; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 500; color: #FFFFFF; cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; gap: 7px; background-image: linear-gradient(180deg, #4FA53A 0%, #2F8420 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.4), inset 0 -1px 0 rgba(20,70,12,.25), 0 6px 14px -6px rgba(47,132,32,.55); transition: filter .3s ease, box-shadow .4s ease;" style-hover="filter: brightness(1.08); box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -1px 0 rgba(20,70,12,.25), 0 10px 20px -8px rgba(47,132,32,.65);">Register<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg></button>
+          </form>
+          <div style="margin-top: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; font-size: 13px; color: #7A887A;"><span style="white-space: nowrap;">Get product updates and announcements.</span><span style="color: #B5C0B4;">•</span><a href="#" style="color: #3F4A3F; text-decoration: none; border-bottom: 1px solid rgba(12,31,14,.35); padding-bottom: 1px; transition: color .3s ease, border-color .3s ease;" style-hover="color: #0E5A06; border-bottom-color: #1E9A08;">Unsubscribe</a></div>
+          <div style="margin-top: 20px; display: flex; gap: 10px;"><a href="#" aria-label="Facebook" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: #4F5E50; text-decoration: none; background-color: #F2F5F0; box-shadow: inset 0 2px 3px rgba(12,31,14,.12), inset 0 -1px 1px rgba(255,255,255,.95), 0 1px 0 rgba(255,255,255,.9), 0 0 0 1px rgba(12,31,14,.05); transition: color .3s ease, background-color .3s ease, box-shadow .3s ease;" style-hover="color: #0E5A06; background-color: #E7F2E1; box-shadow: inset 0 2px 4px rgba(14,90,6,.2), inset 0 -1px 1px rgba(255,255,255,.95), 0 1px 0 rgba(255,255,255,.9), 0 0 0 1px rgba(48,192,0,.22);"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"></path></svg></a><a href="#" aria-label="Instagram" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: #4F5E50; text-decoration: none; background-color: #F2F5F0; box-shadow: inset 0 2px 3px rgba(12,31,14,.12), inset 0 -1px 1px rgba(255,255,255,.95), 0 1px 0 rgba(255,255,255,.9), 0 0 0 1px rgba(12,31,14,.05); transition: color .3s ease, background-color .3s ease, box-shadow .3s ease;" style-hover="color: #0E5A06; background-color: #E7F2E1; box-shadow: inset 0 2px 4px rgba(14,90,6,.2), inset 0 -1px 1px rgba(255,255,255,.95), 0 1px 0 rgba(255,255,255,.9), 0 0 0 1px rgba(48,192,0,.22);"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"></circle></svg></a><a href="#" aria-label="LinkedIn" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: #4F5E50; text-decoration: none; background-color: #F2F5F0; box-shadow: inset 0 2px 3px rgba(12,31,14,.12), inset 0 -1px 1px rgba(255,255,255,.95), 0 1px 0 rgba(255,255,255,.9), 0 0 0 1px rgba(12,31,14,.05); transition: color .3s ease, background-color .3s ease, box-shadow .3s ease;" style-hover="color: #0E5A06; background-color: #E7F2E1; box-shadow: inset 0 2px 4px rgba(14,90,6,.2), inset 0 -1px 1px rgba(255,255,255,.95), 0 1px 0 rgba(255,255,255,.9), 0 0 0 1px rgba(48,192,0,.22);"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><line x1="8" y1="10.5" x2="8" y2="16.5"></line><circle cx="8" cy="7.5" r=".6" fill="currentColor"></circle><path d="M12 16.5v-6M12 13a2.5 2.5 0 0 1 5 0v3.5"></path></svg></a></div>
+        </div>
+        <div style="flex: 0 1 auto; margin-left: auto; display: flex; flex-wrap: wrap; gap: 40px clamp(24px, 3vw, 64px);">
+          <div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px;">
+            <span style="margin-bottom: 6px; font-size: 15px; font-weight: 500; color: #0C1F0E;">Legal</span>
+            <a href="Omni Privacy Statement.dc.html" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">Omni Privacy Statement</a><a href="Omni EULA.dc.html" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">Omni EULA</a><a href="Acceptable Use Policy.dc.html" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">Acceptable Use Policy</a>
+          </div><div style="display: flex; flex-direction: column; gap: 10px; min-width: 110px;">
+            <span style="margin-bottom: 6px; font-size: 15px; font-weight: 500; color: #0C1F0E;">Company</span>
+            <a href="APN Hero.dc.html" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">Home</a><a href="About.dc.html" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">About</a><a href="Services.dc.html" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">Services</a><a href="Products.dc.html" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">Products</a><a href="Contact.dc.html" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">Contact Us</a>
+</div>
+          
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <span style="font-size: 15px; font-weight: 500; color: #0C1F0E;">Contact</span>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 12px; color: #8A978A;">Email</span><a href="mailto:info@apntelecom.com" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">info@apntelecom.com</a></div>
+            <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 12px; color: #8A978A;">US Toll-Free</span><a href="tel:+18003305349" style="align-self: flex-start; font-size: 15px; white-space: nowrap; font-variant-numeric: tabular-nums; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">+1 800 330-5349</a></div>
+            <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 12px; color: #8A978A;">PH Landline</span><a href="tel:+63272118720" style="align-self: flex-start; font-size: 15px; white-space: nowrap; font-variant-numeric: tabular-nums; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">+63 (2) 7211-8720</a><a href="tel:+63286727800" style="align-self: flex-start; font-size: 15px; white-space: nowrap; font-variant-numeric: tabular-nums; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">+63 (2) 8672-7800</a></div>
+            <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 12px; color: #8A978A;">PH Mobile</span><a href="tel:+639985696638" style="align-self: flex-start; font-size: 15px; white-space: nowrap; font-variant-numeric: tabular-nums; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">+63 998 569-6638</a><a href="tel:+639178240133" style="align-self: flex-start; font-size: 15px; white-space: nowrap; font-variant-numeric: tabular-nums; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">+63 917 824-0133</a></div></div>
+          </div>
+        </div>
+      </div>
+      <div data-fit-text="1" aria-hidden="true" style="margin-top: clamp(40px, 5vw, 90px); overflow: hidden; text-align: center; white-space: nowrap; line-height: 1.2; padding: .1em 0 .06em; user-select: none; font-size: clamp(56px, 15vw, 320px);"><span style="display: inline-block; font-weight: 700; letter-spacing: -0.05em; color: transparent; background-image: linear-gradient(180deg, #CFE6C4 0%, #A9D493 45%, #74B955 80%, #52A236 100%); -webkit-background-clip: text; background-clip: text; text-shadow: 0 -1.5px 1px rgba(10,64,4,.2), 0 4px 4px rgba(255,255,255,.55), 0 1.5px 1px rgba(255,255,255,.5);">APN PHILS INC</span></div>
+      <div style="margin-top: clamp(24px, 2.6vw, 40px); padding-top: 22px; border-top: 1px solid rgba(12,31,14,.1); display: flex; flex-wrap: wrap; align-items: center; gap: 16px 48px;">
+        <span style="flex: 1 1 auto; min-width: 0; text-align: center; font-size: 13.5px; color: #3E5A3F;">© Asia Pacific Network, Corp. All Rights Reserved.</span>
+        
+        
+        
+      </div>
+    </div>
+  </footer>
+
+  
+
+  
+  <div role="dialog" aria-modal="true" aria-label="{{ nmTa }}" onClick="{{ nmClose }}" style="position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; background-color: rgba(8,24,10,.38); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); opacity: {{ nmOp }}; pointer-events: {{ nmPe }}; transition: opacity .45s ease;">
+    <div onClick="{{ mdStop }}" style="position: relative; width: 100%; max-width: 440px; box-sizing: border-box; padding: 36px 34px 28px; border-radius: 28px; background-color: #F6F8F5; background-image: radial-gradient(rgba(12,31,14,.06) 1px, transparent 1px); background-size: 14px 14px; box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(12,31,14,.06), 0 5px 0 #DCE3D9, 0 40px 80px -30px rgba(8,24,10,.55); text-align: center; transform: {{ nmTf }}; transition: transform .6s cubic-bezier(.16,1,.3,1);">
+      <button type="button" aria-label="Close" onClick="{{ nmClose }}" style="position: absolute; top: 16px; right: 16px; width: 34px; height: 34px; border: 0; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #4F5E50; background-color: #EEF1EC; box-shadow: inset 0 2px 3px rgba(12,31,14,.12), inset 0 -1px 1px rgba(255,255,255,.95), 0 1px 0 rgba(255,255,255,.9); transition: color .3s ease;" style-hover="color: #0E5A06;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg></button>
+      <sc-if value="{{ nmLock }}" hint-placeholder-val="{{ false }}"><div style="margin: 0 auto; width: 84px; height: 84px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(180deg, #E1E6DF 0%, #EDF0EB 100%); box-shadow: inset 0 3px 6px rgba(12,31,14,.16), inset 0 -2px 2px rgba(255,255,255,.9), 0 1px 0 rgba(255,255,255,.95);"><div style="width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(180deg, #2BA60C 0%, #0E5A06 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 8px 18px -6px rgba(14,90,6,.55);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></div></div></sc-if>
+      <sc-if value="{{ nmCheck }}" hint-placeholder-val="{{ false }}"><div style="margin: 0 auto; width: 84px; height: 84px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(180deg, #E1E6DF 0%, #EDF0EB 100%); box-shadow: inset 0 3px 6px rgba(12,31,14,.16), inset 0 -2px 2px rgba(255,255,255,.9), 0 1px 0 rgba(255,255,255,.95);"><div style="width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(180deg, #2BA60C 0%, #0E5A06 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 8px 18px -6px rgba(14,90,6,.55);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12.5 10 17.5 19 7.5"></polyline></svg></div></div></sc-if>
+      <h3 style="margin: 24px 0 0; font-size: 26px; font-weight: 500; letter-spacing: -0.8px; line-height: 1.15; color: #0C1F0E; text-wrap: balance;">{{ nmTa }} <span style="color: #2A9A0E;">{{ nmTb }}</span></h3>
+      <p style="margin: 10px auto 0; max-width: 330px; font-size: 15px; line-height: 1.6; color: #6B776A; text-wrap: pretty;">{{ nmBody }}</p>
+      <sc-if value="{{ nmHasChip }}" hint-placeholder-val="{{ false }}"><div style="margin: 20px auto 0; display: inline-flex; align-items: center; gap: 9px; max-width: 100%; padding: 9px 16px; border-radius: 999px; background-image: linear-gradient(180deg, #DCE1DA 0%, #E9ECE7 100%); box-shadow: inset 0 2px 4px rgba(12,31,14,.14), inset 0 -1px 1px rgba(255,255,255,.85), 0 1px 0 rgba(255,255,255,.95); font-size: 14px; color: #3F4A3F;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#176B00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto;"><rect x="3" y="5" width="18" height="14" rx="2"></rect><polyline points="3 7 12 13 21 7"></polyline></svg><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ nmChip }}</span></div></sc-if>
+      <div style="margin-top: 26px; display: flex; flex-direction: column; gap: 4px;">
+        <button type="button" onClick="{{ nmPrimaryGo }}" style="appearance: none; width: 100%; height: 50px; border: 0; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 15px; font-weight: 500; color: #FFFFFF; background-image: linear-gradient(180deg, #23930A 0%, #0E5A06 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -1px 0 rgba(12,31,14,.2), 0 10px 24px -8px rgba(14,90,6,.5), 0 2px 6px rgba(12,31,14,.14); transition: box-shadow .35s ease, transform .35s ease;" style-hover="transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,.6), inset 0 -1px 0 rgba(12,31,14,.22), 0 16px 34px -10px rgba(14,90,6,.6), 0 3px 8px rgba(12,31,14,.16);">{{ nmPrimary }}</button>
+        <sc-if value="{{ nmHasCancel }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ nmClose }}" style="appearance: none; width: 100%; height: 46px; border: 0; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 14.5px; font-weight: 500; color: #3F4A3F; background-color: transparent; transition: color .3s ease;" style-hover="color: #0E5A06;">Not now</button></sc-if>
+      </div>
+    </div>
+  </div>
+
+  <div role="dialog" aria-modal="true" aria-label="Log in to Central" onClick="{{ lgClose }}" style="position: fixed; inset: 0; z-index: 1001; display: flex; align-items: center; justify-content: center; padding: 20px; background-color: rgba(8,24,10,.38); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); opacity: {{ lgOp }}; pointer-events: {{ lgPe }}; transition: opacity .45s ease;">
+    <form onClick="{{ mdStop }}" onSubmit="{{ lgSubmit }}" style="position: relative; width: 100%; max-width: 440px; box-sizing: border-box; padding: 36px 34px 28px; border-radius: 28px; background-color: #F6F8F5; background-image: radial-gradient(rgba(12,31,14,.06) 1px, transparent 1px); background-size: 14px 14px; box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(12,31,14,.06), 0 5px 0 #DCE3D9, 0 40px 80px -30px rgba(8,24,10,.55); text-align: center; transform: {{ lgTf }}; transition: transform .6s cubic-bezier(.16,1,.3,1);">
+      <button type="button" aria-label="Close" onClick="{{ lgClose }}" style="position: absolute; top: 16px; right: 16px; width: 34px; height: 34px; border: 0; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #4F5E50; background-color: #EEF1EC; box-shadow: inset 0 2px 3px rgba(12,31,14,.12), inset 0 -1px 1px rgba(255,255,255,.95), 0 1px 0 rgba(255,255,255,.9); transition: color .3s ease;" style-hover="color: #0E5A06;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg></button>
+      <div style="margin: 0 auto; width: 72px; height: 72px; border-radius: 22px; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(180deg, #FFFFFF 0%, #EEF2EC 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(12,31,14,.07), 0 4px 0 #DCE3D9, 0 14px 24px -14px rgba(12,31,14,.35);"><img src="assets/pin-logo.png" alt="" style="width: 40px; height: 40px; object-fit: contain;"></div>
+      <h3 style="margin: 22px 0 0; font-size: 26px; font-weight: 500; letter-spacing: -0.8px; line-height: 1.15; color: #0C1F0E;">Log in to <span style="color: #2A9A0E;">Central</span></h3>
+      <p style="margin: 8px auto 0; max-width: 320px; font-size: 14.5px; line-height: 1.6; color: #6B776A;">Access your APN Central account and subscriptions.</p>
+      <div style="margin-top: 22px; display: flex; flex-direction: column; gap: 16px;">
+        <label style="display: flex; flex-direction: column; gap: 6px; text-align: left;"><span style="font-size: 12.5px; color: #7A887A;">Email</span><input type="email" required="required" placeholder="name@company.com" autocomplete="email" style="height: 44px; padding: 0; border: 0; border-bottom: 1px solid rgba(12,31,14,.14); border-radius: 0; outline: none; background: transparent; font-family: inherit; font-size: 15px; color: #0C1F0E; transition: border-color .3s ease;" style-focus="border-bottom-color: #1E9A08;"></label>
+        <label style="display: flex; flex-direction: column; gap: 6px; text-align: left;"><span style="font-size: 12.5px; color: #7A887A;">Password</span><input type="password" required="required" placeholder="••••••••" autocomplete="current-password" style="height: 44px; padding: 0; border: 0; border-bottom: 1px solid rgba(12,31,14,.14); border-radius: 0; outline: none; background: transparent; font-family: inherit; font-size: 15px; color: #0C1F0E; transition: border-color .3s ease;" style-focus="border-bottom-color: #1E9A08;"></label>
+      </div>
+      <div style="margin-top: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px;">
+        <label style="display: inline-flex; align-items: center; gap: 8px; color: #4F5E50; cursor: pointer;"><input type="checkbox" style="width: 15px; height: 15px; margin: 0; accent-color: #1E9A08;">Remember me</label>
+        <a href="mailto:support@apntelecom.com" style="color: #0E5A06; text-decoration: none;" style-hover="color: #1E9A08;">Forgot password?</a>
+      </div>
+      <button type="submit" style="appearance: none; width: 100%; height: 50px; border: 0; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 15px; font-weight: 500; color: #FFFFFF; background-image: linear-gradient(180deg, #23930A 0%, #0E5A06 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -1px 0 rgba(12,31,14,.2), 0 10px 24px -8px rgba(14,90,6,.5), 0 2px 6px rgba(12,31,14,.14); transition: box-shadow .35s ease, transform .35s ease; margin-top: 24px;" style-hover="transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,.6), inset 0 -1px 0 rgba(12,31,14,.22), 0 16px 34px -10px rgba(14,90,6,.6), 0 3px 8px rgba(12,31,14,.16);">Log In</button>
+      <p style="margin: 16px 0 0; font-size: 13px; color: #7A887A;">Need an account? <a href="Contact.dc.html" style="color: #0E5A06; font-weight: 500; text-decoration: none;" style-hover="color: #1E9A08;">Contact sales</a></p>
+    </form>
+  </div>
+
+  <button type="button" data-totop="1" aria-label="Scroll to top" onClick="{{ toTop }}" style="position: fixed; right: clamp(16px, 2vw, 32px); bottom: clamp(16px, 2vw, 32px); z-index: 60; width: 60px; height: 60px; padding: 0; border: 0; border-radius: 50%; cursor: pointer; background: none; opacity: 0; transform: translateY(24px) scale(.85); pointer-events: none; transition: opacity .5s ease, transform .6s cubic-bezier(.16,1,.3,1);">
+    <svg width="60" height="60" viewBox="0 0 60 60" style="position: absolute; inset: 0; transform: rotate(-90deg); overflow: visible;">
+      <defs><linearGradient id="apnTopG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6FE016"></stop><stop offset="1" stop-color="#0E7A06"></stop></linearGradient></defs>
+      <circle cx="30" cy="30" r="27" fill="none" stroke="rgba(14,90,6,.14)" stroke-width="3"></circle>
+      <circle data-totop-ring="1" cx="30" cy="30" r="27" fill="none" stroke="url(#apnTopG)" stroke-width="3" stroke-linecap="round" stroke-dasharray="169.65" stroke-dashoffset="169.65" style="filter: drop-shadow(0 0 4px rgba(111,224,22,.6));"></circle>
+    </svg>
+    <span style="position: absolute; inset: 6px; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; background-image: linear-gradient(180deg, rgba(255,255,255,.92) 0%, rgba(240,247,236,.88) 100%); -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4); box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 0 0 1px rgba(14,90,6,.1), 0 14px 30px -12px rgba(14,90,6,.45); color: #0E5A06; transition: background-color .4s ease, color .4s ease;" style-hover="background-image: linear-gradient(180deg, #23930A 0%, #0E5A06 100%); color: #FFFFFF;">
+      <span style="position: relative; display: block; width: 18px; height: 18px; overflow: hidden;">
+        <span data-totop-arrow="1" style="position: absolute; left: 0; top: 0; display: flex; flex-direction: column; transition: transform .5s cubic-bezier(.16,1,.3,1);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="6 11 12 5 18 11"></polyline></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="6 11 12 5 18 11"></polyline></svg>
+        </span>
+      </span>
+    </span>
+  </button>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;splashScreen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page effects&quot;},&quot;replaySplash&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page effects&quot;},&quot;transitionStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Circle wipe&quot;,&quot;options&quot;:[&quot;Circle wipe&quot;,&quot;Green slide&quot;,&quot;Light slide&quot;,&quot;Fade&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Page effects&quot;},&quot;previewTransition&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page effects&quot;}}">
+class Component extends DCLogic {
+  state = {};
+  navRef = React.createRef();
+  navInnerRef = React.createRef();
+  logoRef = React.createRef();
+
+  cylRef = React.createRef();
+  setupCyl() {
+    const box = this.cylRef.current;
+    if (!box) return;
+    const N = 18, MAXS = 4.6;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const AUTO = reduce ? 0 : N / 70;
+    let off = 0, vel = AUTO, last = 0, drag = null, geo = null;
+    const measure = () => {
+      const cw = box.clientWidth;
+      const k = cw >= 760 ? cw / 1895 : cw / 1000;
+      const W = 144 * k * MAXS, H = W / 0.7;
+      box.querySelectorAll('[data-cyl]').forEach((el) => {
+        el.style.width = W + 'px'; el.style.height = H + 'px';
+        el.style.marginLeft = (-W / 2) + 'px'; el.style.marginTop = (-H / 2) + 'px';
+        el.style.borderRadius = (14 * k * MAXS) + 'px';
+      });
+      geo = { k, P: W * 1.98, half: cw / 2 };
+    };
+    const place = (el, p) => {
+      const a = Math.abs(p), sg = p < 0 ? -1 : 1;
+      const x = sg * (165.5 * a + 2.48 * a * a * a) * geo.k;
+      if (a > 4.8 || Math.abs(x) > geo.half + 300 * geo.k) { if (el.style.visibility !== 'hidden') el.style.visibility = 'hidden'; return; }
+      const sc = Math.exp(0.065 * a * a) / MAXS;
+      const r = -sg * Math.min(66, 11 * a + 0.15 * a * a * a);
+      el.style.visibility = 'visible';
+      el.style.zIndex = String(10 + Math.round(a * 10));
+      el.style.transform = 'translate3d(' + x.toFixed(2) + 'px,0,0) scale(' + sc.toFixed(4) + ') perspective(' + geo.P.toFixed(0) + 'px) rotateY(' + r.toFixed(3) + 'deg)';
+    };
+    const frame = (now) => {
+      this.cylRaf = requestAnimationFrame(frame);
+      const dt = Math.min((now - (last || now)) / 1000, 0.05); last = now;
+      if (!geo) measure();
+      if (!drag) { vel += (AUTO - vel) * (1 - Math.exp(-dt * 1.6)); off += vel * dt; }
+      off = ((off % N) + N) % N;
+      const cards = box.querySelectorAll('[data-cyl]');
+      for (let i = 0; i < cards.length; i++) {
+        let p = ((i - off) % N + N) % N;
+        if (p >= N / 2) p -= N;
+        place(cards[i], p);
+      }
+    };
+    const pxPerCard = () => 167 * (geo ? geo.k : 1);
+    const down = (e) => { drag = { x: e.clientX, t: performance.now(), v: 0 }; box.style.cursor = 'grabbing'; box.setPointerCapture && box.setPointerCapture(e.pointerId); };
+    const move = (e) => {
+      if (!drag) return;
+      const now = performance.now(), dx = e.clientX - drag.x, dts = Math.max(1, now - drag.t) / 1000;
+      const d = -dx / pxPerCard();
+      off += d;
+      drag.v = drag.v * 0.6 + (d / dts) * 0.4;
+      drag.x = e.clientX; drag.t = now;
+    };
+    const up = () => { if (!drag) return; vel = Math.max(-12, Math.min(12, drag.v)); drag = null; box.style.cursor = 'grab'; };
+    box.addEventListener('pointerdown', down);
+    box.addEventListener('pointermove', move);
+    box.addEventListener('pointerup', up);
+    box.addEventListener('pointercancel', up);
+    box.addEventListener('lostpointercapture', up);
+    const onR = () => { geo = null; };
+    window.addEventListener('resize', onR);
+    this.cylRaf = requestAnimationFrame(frame);
+    this.cylStop = () => {
+      cancelAnimationFrame(this.cylRaf);
+      window.removeEventListener('resize', onR);
+      box.removeEventListener('pointerdown', down);
+      box.removeEventListener('pointermove', move);
+      box.removeEventListener('pointerup', up);
+      box.removeEventListener('pointercancel', up);
+      box.removeEventListener('lostpointercapture', up);
+    };
+  }
+
+  setupTimeline() {
+    const root = document.querySelector('[data-tl]');
+    if (!root) return;
+    const items = [...root.querySelectorAll('[data-tl-item]')];
+    const fill = root.querySelector('[data-tl-fill]');
+    const bar = document.querySelector('[data-tl-bar]');
+    const count = document.querySelector('[data-tl-count]');
+    const left = document.querySelector('[data-tl-left]');
+    const fit = () => { if (left) left.style.position = left.offsetTop < root.offsetTop - 10 || Math.abs(left.getBoundingClientRect().left - root.getBoundingClientRect().left) < 20 ? 'relative' : 'sticky'; };
+    this.tlFit = () => { if (left) left.style.position = 'sticky'; requestAnimationFrame(fit); };
+    window.addEventListener('resize', this.tlFit);
+    requestAnimationFrame(fit);
+    let active = -1;
+    const run = () => {
+      this.tlRaf = requestAnimationFrame(run);
+      const mid = window.innerHeight * 0.55;
+      const rt = root.getBoundingClientRect();
+      let a = -1;
+      items.forEach((el, i) => { if (el.getBoundingClientRect().top < mid) a = i; });
+      const last = items[items.length - 1].getBoundingClientRect().top - rt.top + 14;
+      const h = Math.max(0, Math.min(last - 14, mid - rt.top - 14));
+      fill.style.height = h + 'px';
+      if (bar) bar.style.width = (Math.max(0, a + 1) / items.length * 100) + '%';
+      if (a === active) return;
+      active = a;
+      if (count) count.style.transform = 'translateY(' + (-Math.max(0, a) * 20) + 'px)';
+      items.forEach((el, i) => {
+        const on = i === a, past = i < a;
+        el.style.opacity = on ? '1' : past ? '.5' : '.32';
+        el.style.transform = on ? 'scale(1)' : 'scale(.72)';
+        el.style.filter = on ? 'none' : 'blur(1.5px)';
+        const d = el.querySelector('[data-tl-dot]');
+        d.style.backgroundColor = on || past ? '#1E9A08' : '#FFFFFF';
+        d.style.boxShadow = on ? '0 0 0 6px rgba(48,192,0,.16), 0 0 18px rgba(48,192,0,.55)' : past ? '0 0 0 1px rgba(14,90,6,.3)' : 'inset 0 0 0 1px rgba(12,31,14,.14), 0 2px 6px rgba(12,31,14,.08)';
+        d.style.transform = on ? 'scale(1.1)' : 'scale(.8)';
+      });
+    };
+    this.tlRaf = requestAnimationFrame(run);
+  }
+
+  setupHx() {
+    const row = document.querySelector('[data-hx-row]'), mid = document.querySelector('[data-hx-mid]');
+    this.hxFit = () => {
+      if (!row) return;
+      const narrow = window.innerWidth < 700;
+      row.style.gridTemplateColumns = narrow ? 'minmax(0, 1fr)' : 'minmax(0, 1fr) minmax(120px, .62fr) minmax(0, 1fr)';
+      if (mid) { mid.style.order = narrow ? '-1' : '0'; mid.style.minHeight = narrow ? '180px' : '200px'; mid.querySelectorAll('[data-hx-br], [data-hx-br] ~ span').forEach((e) => { if (!e.dataset.hx) e.style.display = narrow ? 'none' : ''; }); }
+    };
+    this.hxFit();
+    window.addEventListener('resize', this.hxFit);
+    const sec = document.getElementById('history');
+    const tr = {}; document.querySelectorAll('[data-tr]').forEach((e) => { tr[e.dataset.tr] = e; });
+    const cards = [...document.querySelectorAll('[data-hx-n]')].sort((a, b) => a.dataset.hxN - b.dataset.hxN);
+    cards.forEach((c, i) => { const n = c.querySelector('[data-hx-num]'); if (n) n.textContent = '0' + (i + 1); });
+    const cl = (v) => Math.max(0, Math.min(1, v));
+    cards.forEach((c) => { c.dataset.act = '1'; });
+    const T0 = performance.now(), CYC = 3400;
+    const loop = (now) => {
+      this.trRaf = requestAnimationFrame(loop);
+      if (!sec) return;
+      const r = sec.getBoundingClientRect(), vh = window.innerHeight;
+      if (r.bottom < -200 || r.top > vh + 200) return;
+      ['l', 'r'].forEach((k, si) => {
+        const L = k === 'l';
+        const tau = (((now - T0) / CYC) + si * 0.5) % 1;
+        const H = tau * 2.7, Tl = tau * 2.7 - 1.25;
+        const sh = cl(H), st = cl(Tl), bh = cl(H - 1), bt = cl(Tl - 1);
+        const hz = (hd, tl) => L ? 'inset(0 ' + (tl * 100).toFixed(2) + '% 0 ' + ((1 - hd) * 100).toFixed(2) + '%)' : 'inset(0 ' + ((1 - hd) * 100).toFixed(2) + '% 0 ' + (tl * 100).toFixed(2) + '%)';
+        if (tr[k + 's']) tr[k + 's'].style.clipPath = hz(sh, st);
+        if (tr[k + 'm']) tr[k + 'm'].style.clipPath = hz(bh, bt);
+        if (tr[k + 'u']) tr[k + 'u'].style.clipPath = 'inset(' + ((1 - bh) * 100).toFixed(2) + '% 0 ' + (bt * 100).toFixed(2) + '% 0)';
+        if (tr[k + 'd']) tr[k + 'd'].style.clipPath = 'inset(' + (bt * 100).toFixed(2) + '% 0 ' + ((1 - bh) * 100).toFixed(2) + '% 0)';
+        if (tr[k + 'o']) { const lit = sh >= 1 && bt < 0.6; tr[k + 'o'].style.backgroundColor = lit ? '#1E9A08' : '#FFFFFF'; tr[k + 'o'].style.boxShadow = lit ? '0 0 0 4px rgba(48,192,0,.15), 0 0 10px rgba(48,192,0,.6)' : 'inset 0 0 0 1.5px rgba(12,31,14,.12)'; }
+      });
+    };
+    this.trRaf = requestAnimationFrame(loop);
+    const els = [...document.querySelectorAll('[data-hx]')];
+    if (!els.length || !window.IntersectionObserver) { els.forEach(e => { e.style.opacity = 1; e.style.transform = 'none'; }); return; }
+    this.hxIO = new IntersectionObserver((en) => en.forEach((e) => {
+      const el = e.target, i = +(el.dataset.hxI || 0);
+      if (e.isIntersecting) { el.style.transitionDelay = (el.dataset.hx === 'c' ? 0 : .15 + i * .12) + 's'; el.style.opacity = 1; el.style.transform = 'none'; }
+      else if (e.boundingClientRect.top > 0) { el.style.transitionDelay = '0s'; el.style.opacity = 0; el.style.transform = el.dataset.hx === 'c' ? 'scale(.8)' : 'translateX(' + (el.dataset.hx === 'l' ? -40 : 40) + 'px)'; }
+    }), { threshold: 0.2 });
+    els.forEach((e) => this.hxIO.observe(e));
+  }
+
+  setupToTop() {
+    const C = 169.65;
+    const run = () => {
+      this.ttRaf = null;
+      const b = document.querySelector('[data-totop]');
+      if (!b) return;
+      const ring = b.querySelector('[data-totop-ring]');
+      const max = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+      const y = window.scrollY;
+      const p = Math.min(Math.max(y / max, 0), 1);
+      ring.setAttribute('stroke-dashoffset', String(C * (1 - p)));
+      const show = y > window.innerHeight * 0.6;
+      if (b.dataset.show !== (show ? '1' : '0')) {
+        b.dataset.show = show ? '1' : '0';
+        b.style.opacity = show ? '1' : '0';
+        b.style.transform = show ? 'translateY(0) scale(1)' : 'translateY(24px) scale(.85)';
+        b.style.pointerEvents = show ? 'auto' : 'none';
+      }
+    };
+    this.onTtScroll = () => { if (!this.ttRaf) this.ttRaf = requestAnimationFrame(run); };
+    this.onTtEnter = (e) => { const a = e.target.closest && e.target.closest('[data-totop]'); if (a) a.querySelector('[data-totop-arrow]').style.transform = 'translateY(-18px)'; };
+    this.onTtLeave = (e) => { const a = e.target.closest && e.target.closest('[data-totop]'); if (a && !a.contains(e.relatedTarget)) a.querySelector('[data-totop-arrow]').style.transform = 'translateY(0)'; };
+    window.addEventListener('scroll', this.onTtScroll, { passive: true });
+    window.addEventListener('resize', this.onTtScroll);
+    document.addEventListener('mouseover', this.onTtEnter);
+    document.addEventListener('mouseout', this.onTtLeave);
+    run();
+  }
+  fxSync(prev) {
+    const F = window.APNFX; if (!F) return;
+    const p = this.props || {};
+    F.setStyle(p.transitionStyle || 'Circle wipe');
+    if (!prev) { if (p.splashScreen === false) F.skipSplash(); return; }
+    if (prev.replaySplash !== p.replaySplash) F.splash();
+    if (prev.previewTransition !== p.previewTransition) F.preview(p.transitionStyle || 'Circle wipe');
+    if (prev.transitionStyle !== p.transitionStyle && prev.previewTransition === p.previewTransition) F.preview(p.transitionStyle || 'Circle wipe');
+  }
+  componentDidUpdate(prevProps) { this.fxSync(prevProps); }
+  componentDidMount() {
+    this.fxSync(null);
+    this.onMdEsc = (e) => { if (e.key === 'Escape' && (this.state.nm || this.state.lgOpen)) this.mdCloseAll(); };
+    window.addEventListener('keydown', this.onMdEsc);
+    this.setupToTop();
+    this.fitText = () => { document.querySelectorAll('[data-fit-text]').forEach(box => { const t = box.firstElementChild; if (!t) return; box.style.fontSize = '100px'; const w = t.getBoundingClientRect().width; const avail = box.clientWidth; if (w > 0 && avail > 0) box.style.fontSize = Math.max(40, (avail * 0.985 / w) * 100) + 'px'; }); };
+    requestAnimationFrame(this.fitText);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => this.fitText && this.fitText());
+    window.addEventListener('resize', this.fitText);
+    this.setupHx();
+    this.setupTimeline();
+    this.setupCyl();
+    this.pillWidth = () => {
+      const inner = this.navInnerRef.current;
+      if (!inner) return 1040;
+      const prevW = inner.style.width;
+      const prevMax = inner.style.maxWidth;
+      inner.style.width = 'max-content';
+      inner.style.maxWidth = 'none';
+      const natural = inner.getBoundingClientRect().width;
+      inner.style.width = prevW;
+      inner.style.maxWidth = prevMax;
+      return Math.min(natural + 26, inner.parentElement.clientWidth);
+    };
+
+    this.render_ = (t) => {
+      const inner = this.navInnerRef.current;
+      const logo = this.logoRef.current;
+      if (!inner) return;
+      const e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      const full = Math.min(inner.parentElement.clientWidth, 1340);
+      const target = this.pillWidth();
+      inner.style.width = '100%';
+      inner.style.maxWidth = (full + (target - full) * e) + 'px';
+      inner.style.paddingTop = (10 - 2 * e) + 'px';
+      inner.style.paddingBottom = (10 - 2 * e) + 'px';
+      inner.style.paddingLeft = (4 + 18 * e) + 'px';
+      inner.style.paddingRight = (6 + 2 * e) + 'px';
+      inner.style.backgroundColor = 'rgba(248,250,247,' + (0.66 * e).toFixed(3) + ')';
+      inner.style.boxShadow = e > 0.02
+        ? 'inset 0 1px 0 rgba(255,255,255,' + (0.9 * e).toFixed(3) + '), inset 0 0 0 1px rgba(12,31,14,' + (0.05 * e).toFixed(3) + '), 0 ' + (10 * e).toFixed(1) + 'px ' + (30 * e).toFixed(1) + 'px -14px rgba(12,31,14,' + (0.3 * e).toFixed(3) + '), 0 ' + (2 * e).toFixed(1) + 'px ' + (6 * e).toFixed(1) + 'px rgba(12,31,14,' + (0.06 * e).toFixed(3) + ')'
+        : 'none';
+      inner.style.backdropFilter = 'blur(' + (20 * e).toFixed(1) + 'px) saturate(' + (1 + 0.6 * e).toFixed(2) + ')';
+      inner.style.webkitBackdropFilter = inner.style.backdropFilter;
+      if (logo) logo.style.height = (34 - 6 * e) + 'px';
+    };
+
+    this.tTarget = 0;
+    this.tNow = 0;
+    this.tVel = 0;
+    this.lastT = 0;
+
+    this.tick = (now) => {
+      this.raf = requestAnimationFrame(this.tick);
+      if (this.lenis) this.lenis.raf(now);
+      const dt = Math.min((now - (this.lastT || now)) / 1000, 0.05);
+      this.lastT = now;
+      const stiff = 130, damp = 22;
+      const a = stiff * (this.tTarget - this.tNow) - damp * this.tVel;
+      this.tVel += a * dt;
+      this.tNow += this.tVel * dt;
+      if (Math.abs(this.tTarget - this.tNow) < 0.0004 && Math.abs(this.tVel) < 0.0015) {
+        this.tNow = this.tTarget;
+        this.tVel = 0;
+        if (this.settled) return;
+        this.settled = true;
+      } else {
+        this.settled = false;
+      }
+      this.render_(Math.min(Math.max(this.tNow, 0), 1));
+    };
+
+    this.onScroll = () => {
+      const y = this.lenis ? this.lenis.scroll : window.scrollY;
+      this.tTarget = Math.min(Math.max(y / 190, 0), 1);
+      this.settled = false;
+    };
+
+    const initLenis = () => {
+      if (this.lenis || !window.Lenis || this.lenisDead) return;
+      this.lenis = new window.Lenis({
+        duration: 1.15,
+        easing: (x) => Math.min(1, 1.001 - Math.pow(2, -10 * x)),
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 1.6
+      });
+      this.lenis.on('scroll', this.onScroll);
+        };
+    if (window.Lenis) initLenis();
+    else { let tries = 0; const wait = () => { if (this.lenisDead) return; if (window.Lenis) initLenis(); else if (++tries < 60) this.lenisWait = setTimeout(wait, 100); }; wait(); }
+    this.raf = requestAnimationFrame(this.tick);
+
+    this.onResize = () => this.onScroll();
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onAnchor = (e) => {
+      const a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const el = document.getElementById(a.getAttribute('href').slice(1));
+      if (!el) return;
+      e.preventDefault();
+      if (this.lenis) this.lenis.scrollTo(el, { offset: -10, duration: 1.6, easing: (t) => 1 - Math.pow(1 - t, 4) });
+    };
+    document.addEventListener('click', this.onAnchor);
+    this.onScroll();
+    this.tNow = this.tTarget;
+    this.render_(this.tNow);
+    const links = this.navInnerRef.current && this.navInnerRef.current.querySelector('[data-navlinks]');
+    if (links && !links.dataset.divided) {
+      links.dataset.divided = '1';
+      [...links.children].slice(1).forEach((el) => {
+        const d = document.createElement('span');
+        d.setAttribute('style', 'width:1px;height:14px;border-radius:1px;background:rgba(12,31,14,.12);flex:0 0 auto');
+        links.insertBefore(d, el);
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    this.lenisDead = true; clearTimeout(this.lenisWait);
+    clearInterval(this.tTimer);
+    clearInterval(this.ptTimer);
+    window.removeEventListener('scroll', this.onTtScroll);
+    window.removeEventListener('resize', this.onTtScroll);
+    document.removeEventListener('mouseover', this.onTtEnter);
+    document.removeEventListener('mouseout', this.onTtLeave);
+    window.removeEventListener('resize', this.fitText);
+    this.hxIO && this.hxIO.disconnect();
+    cancelAnimationFrame(this.trRaf);
+    window.removeEventListener('resize', this.hxFit);
+    cancelAnimationFrame(this.tlRaf);
+    window.removeEventListener('resize', this.tlFit);
+    this.cylStop && this.cylStop();
+    document.removeEventListener('click', this.onAnchor);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onResize);
+    cancelAnimationFrame(this.raf);
+    if (this.lenis) this.lenis.destroy();
+  }
+
+  btnEnter = (e) => {
+    const el = e.currentTarget;
+    const roll = el.querySelector('[data-roll]');
+    const arrow = el.querySelector('[data-arrow]');
+    if (roll) roll.style.transform = 'translateY(-50%)';
+    if (arrow) arrow.style.transform = 'rotate(0deg)';
+  };
+
+  btnLeave = (e) => {
+    const el = e.currentTarget;
+    const roll = el.querySelector('[data-roll]');
+    const arrow = el.querySelector('[data-arrow]');
+    if (roll) roll.style.transform = 'translateY(0)';
+    if (arrow) arrow.style.transform = 'rotate(-45deg)';
+  };
+
+  brVals() {
+    const h = this.state.hb == null ? 1 : this.state.hb;
+    const out = {};
+    for (let i = 0; i < 4; i++) {
+      const on = h === i;
+      out['brIn' + i] = () => { if ((this.state.hb == null ? 1 : this.state.hb) !== i) this.setState({ hb: i }); };
+      out['brPin' + i] = on ? 'translateY(-3px) scale(1.12)' : 'translateY(0) scale(1)';
+      out['brLab' + i] = on ? 'translateY(-4px) scale(1.03)' : 'translateY(0) scale(1)';
+      out['brSh' + i] = on ? '0 0 0 1px rgba(14,90,6,.16), 0 28px 50px -20px rgba(14,90,6,.45), inset 0 -1px 0 rgba(12,31,14,.04)' : '0 0 0 1px rgba(12,31,14,.05), 0 12px 26px -14px rgba(12,31,14,.3), inset 0 -1px 0 rgba(12,31,14,.04)';
+      out['brOp' + i] = on ? 1 : 0.88;
+      out['brLnO' + i] = on ? 1 : 0.8;
+      out['brBar' + i] = on ? '100%' : '0%';
+      out['brZ' + i] = on ? '6' : '1';
+      out['brBodyW' + i] = on ? 'clamp(220px, 19vw, 270px)' : '0px';
+      out['brBodyH' + i] = on ? '220px' : '0px';
+      out['brBodyO' + i] = on ? 1 : 0;
+      out['brChev' + i] = on ? 'rotate(-45deg)' : 'rotate(0deg)';
+      out['brChBg' + i] = on ? '#0E5A06' : 'rgba(14,90,6,.08)';
+      out['brChFg' + i] = on ? '#FFFFFF' : '#0E5A06';
+      out['brTabBg' + i] = on ? '#E4F5DC' : 'rgba(228,245,220,0)';
+      out['brTabSh' + i] = on ? 'inset 0 0 0 1px rgba(48,160,20,.35)' : 'inset 0 0 0 1px rgba(48,160,20,0)';
+      out['brGo' + i] = () => {
+        this.setState({ hb: i });
+        setTimeout(() => {
+          const card = document.querySelector('[data-br-card="' + i + '"]');
+          if (!card) return;
+          const r = card.getBoundingClientRect();
+          const target = window.scrollY + r.top + r.height / 2 - window.innerHeight / 2 + 60;
+          if (this.lenis) this.lenis.scrollTo(target, { duration: 1.2 });
+          else window.scrollTo({ top: target, behavior: 'smooth' });
+        }, 80);
+      };
+      out['brTabFg' + i] = on ? '#0E5A06' : '#3F4A3F';
+    }
+    return out;
+  }
+
+  mvVals() {
+    const a = this.state.mv == null ? 0 : this.state.mv;
+    const o = {};
+    for (let i = 0; i < 2; i++) {
+      const on = a === i;
+      o['mvIn' + i] = () => { if ((this.state.mv == null ? 0 : this.state.mv) !== i) this.setState({ mv: i }); };
+      o['mvF' + i] = on ? '1 1 0%' : '0 0 clamp(96px, 9vw, 130px)';
+      o['mvO' + i] = on ? 1 : 0;
+      o['mvT' + i] = on ? 'translateY(0)' : 'translateY(14px)';
+      o['mvD' + i] = on ? '.3s' : '0s';
+      o['mvC' + i] = on ? 0 : 1;
+      o['mvCD' + i] = on ? '0s' : '.35s';
+    }
+    return o;
+  }
+
+  qPickRef = React.createRef();
+  qVals() {
+    const PR = ['APN OMNI', 'APN TALK', 'APN VOIP', 'APN CRM'];
+    const SV = ['Call Origination in over 120 Countries', 'A to Z Termination', 'Direct Inward Dialing (DID)', 'Toll-Free Numbers (TFN/ITFN)', 'Caller-ID', 'SIP Accounts', 'Hosted PBX (cloud-based)', 'Hosted Dialer (Manual, Power and Predictive)', 'Dialer Configuration', 'Teleblock (DNC Compliance)', 'Private Leased Lines', 'Top 50 Program', 'RespOrg and Port Out services'];
+    const ALL = [...PR, ...SV], T = ALL.length;
+    const sel = this.state.qSel || [], open = !!this.state.qOpen, n = sel.length;
+    const mk = (name) => { const on = sel.includes(name); return { name, on,
+      toggle: () => this.setState(st => { const c = st.qSel || []; return { qSel: c.includes(name) ? c.filter(x => x !== name) : [...c, name] }; }),
+      bg: on ? '#EEF7EA' : 'transparent', fg: on ? '#0C1F0E' : '#4A564A',
+      tileSh: on ? 'inset 0 0 0 1px rgba(30,154,8,.45)' : 'inset 0 0 0 1px rgba(12,31,14,.08)',
+      boxBg: on ? 'linear-gradient(180deg, #23930A 0%, #0E5A06 100%)' : 'linear-gradient(#FFFFFF, #FFFFFF)',
+      boxSh: on ? 'inset 0 1px 0 rgba(255,255,255,.3), 0 2px 6px -2px rgba(14,90,6,.5)' : 'inset 0 0 0 1.5px rgba(12,31,14,.2)',
+      chk: on ? 1 : 0, chkTf: on ? 'scale(1)' : 'scale(.5)' }; };
+    const grpAll = (list) => () => this.setState(st => { const c = st.qSel || []; const full = list.every(x => c.includes(x)); return { qSel: full ? c.filter(x => !list.includes(x)) : [...c, ...list.filter(x => !c.includes(x))] }; });
+    const pN = PR.filter(x => sel.includes(x)).length, sN = SV.filter(x => sel.includes(x)).length;
+    const onDoc = (e) => { const el = this.qPickRef.current; if (el && !el.contains(e.target)) { this.setState({ qOpen: false }); document.removeEventListener('mousedown', onDoc); } };
+    const status = n === 0 ? 'No items selected' : n === T ? 'All ' + T + ' items selected' : n + ' of ' + T + ' selected';
+    return {
+      qPickRef: this.qPickRef,
+      qProducts: PR.map(mk), qServices: SV.map(mk),
+      qOpen: open ? 'true' : 'false',
+      qToggle: () => { const next = !this.state.qOpen; this.setState({ qOpen: next }); if (next) setTimeout(() => document.addEventListener('mousedown', onDoc), 0); },
+      qAll: () => this.setState({ qSel: ALL.slice() }),
+      qClear: () => this.setState({ qSel: [] }),
+      qAllP: grpAll(PR), qAllS: grpAll(SV),
+      qAllPLbl: pN === PR.length ? 'Deselect' : 'Select all', qAllSLbl: sN === SV.length ? 'Deselect' : 'Select all',
+      qCntP: pN + '/' + PR.length, qCntS: sN + '/' + SV.length,
+      qStatus: status,
+      qStatFg: n === 0 ? '#97A396' : '#1E7A08',
+      qDot: n === 0 ? '#C9D0C8' : '#30C000', qDotSh: n === 0 ? 'none' : '0 0 0 3px rgba(48,192,0,.18)',
+      qPct: Math.round(n / T * 100) + '%',
+      qTrigText: n === 0 ? 'Select services or products' : n === T ? 'All products & services' : (n > 2 ? sel.slice(0, 2).join(', ') + ' +' + (n - 2) : sel.join(', ')),
+      qTrigFg: n ? '#0C1F0E' : '#97A396', qLine: open ? '#1E9A08' : 'rgba(12,31,14,.14)',
+      qTrigSh: open ? 'inset 0 0 0 1px rgba(30,154,8,.55), 0 0 0 4px rgba(48,192,0,.1)' : 'inset 0 0 0 1px rgba(12,31,14,.1)',
+      qChev: open ? 'rotate(180deg)' : 'rotate(0deg)',
+      qPanOp: open ? 1 : 0, qPanTf: open ? 'translateY(0) scale(1)' : 'translateY(-6px) scale(.98)', qPanPe: open ? 'auto' : 'none'
+    };
+  }
+
+  mdOpen(kind, email) { this.setState({ nm: kind, nmEmail: email || '', lgOpen: false }); if (this.lenis) this.lenis.stop(); }
+  mdCloseAll() { this.setState({ nm: null, lgOpen: false, qModal: false }); if (this.lenis) this.lenis.start(); }
+  mdVals() {
+    const K = {
+      msg: ['Message', 'sent', 'Thanks for reaching out. Our team will get back to you by email shortly.', 'check', 'Done', false],
+      news: ['You’re', 'subscribed', 'We’ve sent a confirmation to your email. Watch your inbox for APN news and updates.', 'check', 'Done', false],
+      plan: ['Log in to', 'APN Central', 'Log in to APN Central to access subscription.', 'lock', 'Log In', true]
+    };
+    const kind = this.state.nm, d = K[kind || 'msg'], lg = !!this.state.lgOpen;
+    return {
+      nmOp: kind ? 1 : 0, nmPe: kind ? 'auto' : 'none', nmTf: kind ? 'translateY(0) scale(1)' : 'translateY(18px) scale(.96)',
+      nmTa: d[0], nmTb: d[1], nmBody: d[2], nmLock: d[3] === 'lock', nmCheck: d[3] === 'check',
+      nmPrimary: d[4], nmHasCancel: d[5], nmHasChip: !!this.state.nmEmail && kind !== 'plan', nmChip: this.state.nmEmail || '',
+      nmPrimaryGo: () => { if (kind === 'plan') { this.setState({ nm: null, lgOpen: true }); } else this.mdCloseAll(); },
+      nmClose: () => this.mdCloseAll(),
+      mdStop: (e) => e.stopPropagation(),
+      lgOp: lg ? 1 : 0, lgPe: lg ? 'auto' : 'none', lgTf: lg ? 'translateY(0) scale(1)' : 'translateY(18px) scale(.96)',
+      openLogin: (e) => { if (e) e.preventDefault(); this.setState({ lgOpen: true, nm: null }); if (this.lenis) this.lenis.stop(); },
+      openPlan: (e) => { if (e) e.preventDefault(); this.mdOpen('plan'); },
+      lgClose: () => this.mdCloseAll(),
+      lgSubmit: (e) => { e.preventDefault(); e.target.reset(); this.mdCloseAll(); }
+    };
+  }
+
+  renderVals() {
+    return {
+      ...this.mdVals(),
+      toTop: () => {
+        if (this.lenis) this.lenis.scrollTo(0, { duration: 1.6, easing: (t) => 1 - Math.pow(1 - t, 4) });
+        else window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+      qLabel: 'Send Message',
+      ...this.qVals(),
+      qSubmit: (e) => {
+        e.preventDefault();
+        const em = e.target.querySelector('input[type=email]');
+        this.mdOpen('msg', (em && em.value) || ''); this.setState({ qEmail: (em && em.value) || 'your email' });
+        e.target.reset();
+        if (this.lenis) this.lenis.stop();
+      },
+      qClose: () => this.mdCloseAll(),
+      qStop: (e) => e.stopPropagation(),
+      qEmail: this.state.qEmail || '',
+      qMOp: this.state.qModal ? 1 : 0,
+      qMPe: this.state.qModal ? 'auto' : 'none',
+      qMTf: this.state.qModal ? 'translateY(0) scale(1)' : 'translateY(18px) scale(.96)',
+      nlSubmit: (e) => { e.preventDefault(); const em = e.target.querySelector('input[type=email]'); this.mdOpen('news', (em && em.value) || ''); e.target.reset(); },
+      ...this.mvVals(),
+      ...this.brVals(),
+      cylRef: this.cylRef,
+      cylCards: Array.from({ length: 18 }, (_, i) => ({ src: 'assets/team-' + ((i % 5) + 1) + '.png' })),
+      navRef: this.navRef,
+      navInnerRef: this.navInnerRef,
+      logoRef: this.logoRef,
+      btnEnter: this.btnEnter,
+      btnLeave: this.btnLeave
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var s=sessionStorage.getItem('apn-nav');if(!s)return;var c=s==='Circle wipe'?'#C6DBBA':s==='Green slide'?'#0E5A06':'#EDF3EA';document.write('<style id="apn-fx-hold">html{background:'+c+' !important}html::after{content:"";position:fixed;inset:0;z-index:2147483000;background:'+c+';pointer-events:none}</style>');setTimeout(function(){var h=document.getElementById('apn-fx-hold');if(h)h.remove();},3500);}catch(e){}})();</script>
+<script src="./apn-fx.js" defer></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<style>
+  html { scrollbar-width: thin; scrollbar-color: rgba(14,90,6,.38) transparent; }
+  * { scrollbar-width: thin; scrollbar-color: rgba(14,90,6,.3) transparent; }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background-color: rgba(14,90,6,.3); border-radius: 999px; border: 1px solid transparent; background-clip: padding-box; }
+  ::-webkit-scrollbar-thumb:hover { background-color: rgba(14,90,6,.55); }
+  ::-webkit-scrollbar-corner { background: transparent; }
+  
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Poppins', system-ui, sans-serif; font-weight: 400; background: #F3F6F2; color: #0C1F0E; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #1E8A00; text-decoration: none; }
+  a:hover { color: #30C000; }
+  @keyframes apn-marquee-rev { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+  @keyframes apn-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @property --apn-trace { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+  @keyframes apn-trace { to { --apn-trace: 360deg; } }
+  @keyframes apn-vup { from { transform: translateY(0); } to { transform: translateY(calc(-50% - 9px)); } }
+  @keyframes apn-vdown { from { transform: translateY(calc(-50% - 9px)); } to { transform: translateY(0); } }
+  @keyframes apn-dash { to { stroke-dashoffset: -90; } }
+  @keyframes apn-ping { 0% { transform: scale(.6); opacity: 1; } 80%,100% { transform: scale(2.8); opacity: 0; } }
+  @keyframes apn-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-11px); } }
+  @keyframes apn-shadow { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(.86); opacity: .6; } }
+  @keyframes apn-hxr { from { left: -60%; } to { left: 100%; } }
+  @keyframes apn-hxl { from { left: 100%; } to { left: -60%; } }
+  @keyframes apn-pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .45; transform: scale(.8); } }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .6s; animation-timing-function: ease; }
+</style>
+<script src="./image-slot.js"></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+</helmet>
+<div style="--accent: #30C000; --accent-dark: #1E8A00; --ink: #0C1F0E; position: relative; width: 100%; overflow-x: clip; background: #F3F6F2;">
+
+  <div ref="{{ navRef }}" style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 22px; display: flex; justify-content: center; pointer-events: none;">
+    <div ref="{{ navInnerRef }}" style="pointer-events: auto; width: 100%; max-width: 1340px; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 10px 6px 10px 4px; border-radius: 999px; background: transparent; box-shadow: none; will-change: max-width, padding;">
+      <a href="APN Hero.dc.html" style="display: flex; align-items: center; flex-shrink: 0;">
+        <img ref="{{ logoRef }}" src="assets/logo.png" alt="Asia Pacific Network" style="height: 34px; width: auto; display: block; filter: drop-shadow(0 0 3px rgba(255,255,255,.95)) drop-shadow(0 0 10px rgba(255,255,255,.75)) drop-shadow(0 0 22px rgba(255,255,255,.45));">
+      </a>
+      <div style="display: flex; align-items: center; gap: 2px; flex-shrink: 0;" data-navlinks="1">
+        <a href="About.dc.html" style="font-size: 15px; font-weight: 400; color: #334735; letter-spacing: -0.1px; white-space: nowrap; padding: 8px 10px; border-radius: 999px; background-color: transparent; background-image: linear-gradient(90deg, rgba(48,192,0,0), #1E9A08 30%, #1E9A08 70%, rgba(48,192,0,0)); background-repeat: no-repeat; background-position: 50% calc(100% - 3px); background-size: 0% 1.5px; transition: color .4s cubic-bezier(.16,1,.3,1), background-size .55s cubic-bezier(.16,1,.3,1), text-shadow .4s ease;" style-hover="color: #0A3F05; background-size: 70% 1.5px; text-shadow: 0 0 18px rgba(48,192,0,.35);">About</a>
+        <a href="Services.dc.html" style="font-size: 15px; font-weight: 400; color: #334735; letter-spacing: -0.1px; white-space: nowrap; padding: 8px 10px; border-radius: 999px; background-color: transparent; background-image: linear-gradient(90deg, rgba(48,192,0,0), #1E9A08 30%, #1E9A08 70%, rgba(48,192,0,0)); background-repeat: no-repeat; background-position: 50% calc(100% - 3px); background-size: 0% 1.5px; transition: color .4s cubic-bezier(.16,1,.3,1), background-size .55s cubic-bezier(.16,1,.3,1), text-shadow .4s ease;" style-hover="color: #0A3F05; background-size: 70% 1.5px; text-shadow: 0 0 18px rgba(48,192,0,.35);">Services</a>
+        <a href="Products.dc.html" style="font-size: 15px; font-weight: 400; color: #334735; letter-spacing: -0.1px; white-space: nowrap; padding: 8px 10px; border-radius: 999px; background-color: transparent; background-image: linear-gradient(90deg, rgba(48,192,0,0), #1E9A08 30%, #1E9A08 70%, rgba(48,192,0,0)); background-repeat: no-repeat; background-position: 50% calc(100% - 3px); background-size: 0% 1.5px; transition: color .4s cubic-bezier(.16,1,.3,1), background-size .55s cubic-bezier(.16,1,.3,1), text-shadow .4s ease;" style-hover="color: #0A3F05; background-size: 70% 1.5px; text-shadow: 0 0 18px rgba(48,192,0,.35);">Products</a>
+        
+        <a href="Contact.dc.html" style="font-size: 15px; font-weight: 400; color: #334735; letter-spacing: -0.1px; white-space: nowrap; padding: 8px 10px; border-radius: 999px; background-color: transparent; background-image: linear-gradient(90deg, rgba(48,192,0,0), #1E9A08 30%, #1E9A08 70%, rgba(48,192,0,0)); background-repeat: no-repeat; background-position: 50% calc(100% - 3px); background-size: 0% 1.5px; transition: color .4s cubic-bezier(.16,1,.3,1), background-size .55s cubic-bezier(.16,1,.3,1), text-shadow .4s ease;" style-hover="color: #0A3F05; background-size: 70% 1.5px; text-shadow: 0 0 18px rgba(48,192,0,.35);">Contact Us</a>
+      </div>
+      <a href="#login" onClick="{{ openLogin }}" onMouseEnter="{{ btnEnter }}" onMouseLeave="{{ btnLeave }}" style="flex-shrink: 0; display: inline-flex; align-items: center; gap: 10px; padding: 5px 5px 5px 20px; border-radius: 999px; background-color: rgba(255,255,255,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); color: #0C1F0E; font-size: 14px; font-weight: 500; letter-spacing: -0.1px; box-shadow: inset 0 1px 0 rgba(255,255,255,.95), inset 0 0 0 1px rgba(12,31,14,.05), 0 6px 16px -6px rgba(12,31,14,.22); transition: box-shadow .35s ease, transform .35s ease, background-color .35s ease;" style-hover="background-color: rgba(255,255,255,.92); box-shadow: inset 0 1px 0 rgba(255,255,255,1), inset 0 0 0 1px rgba(48,192,0,.22), 0 10px 24px -8px rgba(12,31,14,.26); transform: translateY(-1px); color: #0C1F0E;">
+        <span style="display: block; height: 19px; overflow: hidden; white-space: nowrap;">
+          <span data-roll="1" style="display: block; width: max-content; white-space: nowrap; transition: transform .45s cubic-bezier(.16,1,.3,1);">
+            <span style="display: block; height: 19px; line-height: 19px; white-space: nowrap;">Log In</span>
+            <span style="display: block; height: 19px; line-height: 19px; white-space: nowrap;">Log In</span>
+          </span>
+        </span>
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 999px; background-image: linear-gradient(180deg, #4CC02E 0%, #2E9A18 100%); color: #FFFFFF; box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 2px 6px -1px rgba(46,154,24,.45);">
+          <span data-arrow="1" style="display: inline-flex; transform: rotate(-45deg); transition: transform .45s cubic-bezier(.16,1,.3,1);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <section id="top" data-screen-label="Legal Hero" style="position: relative; width: 100%; padding: 170px 24px clamp(40px, 4vw, 70px); display: flex; flex-direction: column; align-items: center; overflow: hidden;">
+    <div style="position: absolute; inset: 0; z-index: 0; background: linear-gradient(180deg, #E6EFE2 0%, #EFF5EC 45%, #FFFFFF 100%);"></div>
+    <div style="position: absolute; inset: 0; z-index: 0; opacity: .5; background: radial-gradient(50% 70% at 50% 0%, rgba(48,192,0,.18) 0%, rgba(48,192,0,0) 70%), radial-gradient(35% 55% at 100% 30%, rgba(143,224,0,.14) 0%, rgba(143,224,0,0) 70%);"></div>
+    <div style="position: relative; z-index: 2; width: 100%; max-width: 860px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <span style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px 8px 14px; border-radius: 999px; background-image: linear-gradient(180deg, #D3E9C7 0%, #E4F2DB 100%); box-shadow: inset 0 2px 4px rgba(14,90,6,.16), inset 0 -1px 1px rgba(255,255,255,.85), 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(30,138,0,.1); font-size: 14px; font-weight: 400; color: #1F5A14; letter-spacing: -0.1px; text-shadow: 0 1px 0 rgba(255,255,255,.6);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1E8A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto;"><path d="M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6l8-3z"></path><polyline points="8.5 12 11 14.5 15.5 10"></polyline></svg>Legal</span>
+      <h1 style="margin: 24px 0 0; font-size: clamp(38px, 4.6vw, 64px); line-height: 1.06; font-weight: 500; letter-spacing: -0.045em; color: #0C1F0E; text-wrap: balance;">APN Philippines Omni End-User License Agreement</h1>
+      <span style="margin-top: 20px; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: #6B776A;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1E9A08" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"></rect><line x1="3" y1="10" x2="21" y2="10"></line><line x1="8" y1="3" x2="8" y2="7"></line><line x1="16" y1="3" x2="16" y2="7"></line></svg>Updated: May 07, 2024</span>
+    </div>
+  </section>
+
+  <section id="document" data-screen-label="Legal Document" style="position: relative; z-index: 3; width: 100%; padding: 0 clamp(16px, 3vw, 48px) clamp(90px, 8vw, 140px); background-color: #FFFFFF;">
+    <div style="width: 100%; max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(20px, 2.6vw, 40px);">
+      <aside style="position: sticky; top: 110px; flex: 1 1 260px; max-width: 320px; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
+        <div style="padding: 16px 10px 12px; border-radius: 24px; background-image: linear-gradient(180deg, #FFFFFF 0%, #F2F5F0 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(12,31,14,.07), 0 4px 0 #DCE3D9, 0 20px 40px -28px rgba(12,31,14,.35);"><span style="display: block; padding: 0 12px 10px; font-size: 12px; font-weight: 500; letter-spacing: 1.4px; color: #7A887A;">ON THIS PAGE</span><div data-lenis-prevent="1" style="max-height: calc(100vh - 380px); overflow-y: auto; scrollbar-width: none;"><div style="display: flex; flex-direction: column; gap: 2px;"><a href="#sec-1" style="display: flex; gap: 12px; align-items: baseline; padding: 9px 12px; border-radius: 12px; font-size: 14px; line-height: 1.4; color: #4F5E50; text-decoration: none; transition: background-color .3s ease, color .3s ease;" style-hover="background-color: rgba(48,192,0,.08); color: #0E5A06;"><span style="flex: 0 0 auto; font-size: 12px; color: #97A396; font-variant-numeric: tabular-nums;">01</span>Scope of License</a><a href="#sec-2" style="display: flex; gap: 12px; align-items: baseline; padding: 9px 12px; border-radius: 12px; font-size: 14px; line-height: 1.4; color: #4F5E50; text-decoration: none; transition: background-color .3s ease, color .3s ease;" style-hover="background-color: rgba(48,192,0,.08); color: #0E5A06;"><span style="flex: 0 0 auto; font-size: 12px; color: #97A396; font-variant-numeric: tabular-nums;">02</span>Consent to Use of Data</a><a href="#sec-3" style="display: flex; gap: 12px; align-items: baseline; padding: 9px 12px; border-radius: 12px; font-size: 14px; line-height: 1.4; color: #4F5E50; text-decoration: none; transition: background-color .3s ease, color .3s ease;" style-hover="background-color: rgba(48,192,0,.08); color: #0E5A06;"><span style="flex: 0 0 auto; font-size: 12px; color: #97A396; font-variant-numeric: tabular-nums;">03</span>Termination</a><a href="#sec-4" style="display: flex; gap: 12px; align-items: baseline; padding: 9px 12px; border-radius: 12px; font-size: 14px; line-height: 1.4; color: #4F5E50; text-decoration: none; transition: background-color .3s ease, color .3s ease;" style-hover="background-color: rgba(48,192,0,.08); color: #0E5A06;"><span style="flex: 0 0 auto; font-size: 12px; color: #97A396; font-variant-numeric: tabular-nums;">04</span>Third-Party Apps</a><a href="#sec-5" style="display: flex; gap: 12px; align-items: baseline; padding: 9px 12px; border-radius: 12px; font-size: 14px; line-height: 1.4; color: #4F5E50; text-decoration: none; transition: background-color .3s ease, color .3s ease;" style-hover="background-color: rgba(48,192,0,.08); color: #0E5A06;"><span style="flex: 0 0 auto; font-size: 12px; color: #97A396; font-variant-numeric: tabular-nums;">05</span>No Warranty</a><a href="#sec-6" style="display: flex; gap: 12px; align-items: baseline; padding: 9px 12px; border-radius: 12px; font-size: 14px; line-height: 1.4; color: #4F5E50; text-decoration: none; transition: background-color .3s ease, color .3s ease;" style-hover="background-color: rgba(48,192,0,.08); color: #0E5A06;"><span style="flex: 0 0 auto; font-size: 12px; color: #97A396; font-variant-numeric: tabular-nums;">06</span>Limitation of Liability</a><a href="#sec-7" style="display: flex; gap: 12px; align-items: baseline; padding: 9px 12px; border-radius: 12px; font-size: 14px; line-height: 1.4; color: #4F5E50; text-decoration: none; transition: background-color .3s ease, color .3s ease;" style-hover="background-color: rgba(48,192,0,.08); color: #0E5A06;"><span style="flex: 0 0 auto; font-size: 12px; color: #97A396; font-variant-numeric: tabular-nums;">07</span>Governing Law and Venue of Action</a></div></div></div>
+        <div style="padding: 16px 14px; border-radius: 22px; background-color: rgba(233,238,231,.7); box-shadow: inset 0 2px 4px rgba(12,31,14,.1), inset 0 -1px 1px rgba(255,255,255,.8);">
+          <span style="display: block; padding: 0 6px 8px; font-size: 12px; font-weight: 500; letter-spacing: 1.4px; color: #7A887A;">MORE LEGAL</span>
+          <a href="Omni Privacy Statement.dc.html" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 6px; font-size: 14px; color: #3F4A3F; text-decoration: none; transition: color .3s ease;" style-hover="color: #0E5A06;">Omni Privacy Statement<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1E9A08" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg></a><a href="Acceptable Use Policy.dc.html" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 6px; font-size: 14px; color: #3F4A3F; text-decoration: none; transition: color .3s ease;" style-hover="color: #0E5A06;">Acceptable Use Policy<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1E9A08" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg></a>
+        </div>
+      </aside>
+      <article style="flex: 999 1 560px; min-width: 0; padding: clamp(26px, 4vw, 60px); box-sizing: border-box; border-radius: 32px; background-color: #FFFFFF; box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(12,31,14,.07), 0 5px 0 #E2E8E0, 0 30px 60px -40px rgba(12,31,14,.35);">
+        <p style="margin: 0 0 0; font-size: 16px; line-height: 1.75; color: #3F4A3F; text-wrap: pretty;">By accessing, downloading, and/or using the APN Philippines Omnichannel Application ("Omni"), you agree and bind yourself to comply with the terms of this End Users License Agreement. We reserve the right to change or modify this Agreement, including our Policies incorporated herein, at any time. It is strongly recommended that you read this Agreement regularly. You will be deemed to have agreed to the amendments by your continued use of Omni following the date on which the amendments are posted.</p><p style="margin: 16px 0 0; font-size: 16px; line-height: 1.75; color: #3F4A3F; text-wrap: pretty;">Omni and any third-party communication app available in Omni are licensed to you subject to your prior acceptance of either this End Users License Agreement ("Standard EULA") or the respective end users license agreement of each third-party communication app available in Omni. You license to Omni is granted by APN Philippines Inc. ("Licensor") and your license to any third-party app is granted by the application provider of that third-party app. The Licensor reserves all rights in and to Omni not expressly granted to you under this Standard EULA.</p><div id="sec-1" style="margin-top: clamp(28px, 2.6vw, 40px); scroll-margin-top: 120px; padding-top: clamp(24px, 2.2vw, 34px); border-top: 1px solid rgba(12,31,14,.08);"><h2 style="margin: 0; display: flex; align-items: center; gap: 14px; font-size: clamp(20px, 1.5vw, 24px); font-weight: 500; letter-spacing: -0.03em; color: #0C1F0E;"><span style="font-size: 13px; letter-spacing: 1px; color: #1E9A08; font-variant-numeric: tabular-nums;">01</span>Scope of License</h2><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.75; color: #3F4A3F; text-wrap: pretty;">Licensor grants you a non-transferrable license to use Omni as permitted by its Acceptable Use Policy. The terms of this Standard EULA will govern any content, materials, or services accessible through Omni as well as upgrades provided by Licensor that replace or supplement the original version of Omni, unless such upgrade is accompanied by a specific EULA. You may not distribute, transfer, redistribute, or sublicense Omni. You may not copy, reverse-engineer, disassemble, attempt to derive the source code of, modify, or create derivative works of Omni, its original version, any updates thereto, or any part thereof (except as and only to the extent that may be permitted by terms governing use of any open-sourced components included in Omni, if any).</p></div><div id="sec-2" style="margin-top: clamp(28px, 2.6vw, 40px); scroll-margin-top: 120px; padding-top: clamp(24px, 2.2vw, 34px); border-top: 1px solid rgba(12,31,14,.08);"><h2 style="margin: 0; display: flex; align-items: center; gap: 14px; font-size: clamp(20px, 1.5vw, 24px); font-weight: 500; letter-spacing: -0.03em; color: #0C1F0E;"><span style="font-size: 13px; letter-spacing: 1px; color: #1E9A08; font-variant-numeric: tabular-nums;">02</span>Consent to Use of Data</h2><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.75; color: #3F4A3F; text-wrap: pretty;">You agree that Licensor may collect and use technical data and related information - including but not limited to technical information about your device, system and application software, and peripherals - that is gathered periodically to facilitate the provision of software updates, product support, and other services to you. Licensor may use this information, as long as it is anonymized, to improve its products or to provide services or technologies and solutions to you. Licensor does not collect your log in credentials to third-party apps. However, subject to the Acceptable Use Policy, you may opt to save in your Omni user data storage your log in credentials and any contents from the third-party apps you use.</p></div><div id="sec-3" style="margin-top: clamp(28px, 2.6vw, 40px); scroll-margin-top: 120px; padding-top: clamp(24px, 2.2vw, 34px); border-top: 1px solid rgba(12,31,14,.08);"><h2 style="margin: 0; display: flex; align-items: center; gap: 14px; font-size: clamp(20px, 1.5vw, 24px); font-weight: 500; letter-spacing: -0.03em; color: #0C1F0E;"><span style="font-size: 13px; letter-spacing: 1px; color: #1E9A08; font-variant-numeric: tabular-nums;">03</span>Termination</h2><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.75; color: #3F4A3F; text-wrap: pretty;">This Standard EULA is effective until terminated by you or Licensor. Your rights under this Standard EULA will terminate automatically if you fail to comply with any of its terms and that of its Fair Use Policy.</p></div><div id="sec-4" style="margin-top: clamp(28px, 2.6vw, 40px); scroll-margin-top: 120px; padding-top: clamp(24px, 2.2vw, 34px); border-top: 1px solid rgba(12,31,14,.08);"><h2 style="margin: 0; display: flex; align-items: center; gap: 14px; font-size: clamp(20px, 1.5vw, 24px); font-weight: 500; letter-spacing: -0.03em; color: #0C1F0E;"><span style="font-size: 13px; letter-spacing: 1px; color: #1E9A08; font-variant-numeric: tabular-nums;">04</span>Third-Party Apps</h2><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.75; color: #3F4A3F; text-wrap: pretty;">Omni may enable to access Licensor's and/or Third-Party Services and websites ("External Services"). You agree to use the External Services at your sole risk. Licensor is not responsible for examining or evaluating the content or accuracy of any third-party External Services and shall not be liable for any such third-party External Services. Data displayed by any External Service, including but not limited to financial, medical and location information, is for general informational purposes only and is not guaranteed by Licensor or its agents. To the extent you choose to use the External Services, you are solely responsible for compliance with any applicable laws. Licensor reserves the right to change, suspend, remove, disable, or impose access restrictions or limits on any External Services at any time without notice or liability to you.</p></div><div id="sec-5" style="margin-top: clamp(28px, 2.6vw, 40px); scroll-margin-top: 120px; padding-top: clamp(24px, 2.2vw, 34px); border-top: 1px solid rgba(12,31,14,.08);"><h2 style="margin: 0; display: flex; align-items: center; gap: 14px; font-size: clamp(20px, 1.5vw, 24px); font-weight: 500; letter-spacing: -0.03em; color: #0C1F0E;"><span style="font-size: 13px; letter-spacing: 1px; color: #1E9A08; font-variant-numeric: tabular-nums;">05</span>No Warranty</h2><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.75; color: #3F4A3F; text-wrap: pretty;">You expressly acknowledge and agree that use of Omni is at your sole risk. To the maximum extent permitted by applicable law, Omni and any services performed or provided in Omni are provided "as is" and "as available," with all faults and without warranty of any kind. Licensor hereby disclaims all warranties and conditions with respect to Omni and any services, either express, implied, or statutory, including but not limited to the implied warranties and/or conditions of merchantability, of satisfactory quality, of fitness for a particular purpose, of accuracy, of quiet enjoyment, and of non-infringement of third-party rights. No oral or written information or advice is given by Licensor, or its authorized representative shall create a warranty.</p></div><div id="sec-6" style="margin-top: clamp(28px, 2.6vw, 40px); scroll-margin-top: 120px; padding-top: clamp(24px, 2.2vw, 34px); border-top: 1px solid rgba(12,31,14,.08);"><h2 style="margin: 0; display: flex; align-items: center; gap: 14px; font-size: clamp(20px, 1.5vw, 24px); font-weight: 500; letter-spacing: -0.03em; color: #0C1F0E;"><span style="font-size: 13px; letter-spacing: 1px; color: #1E9A08; font-variant-numeric: tabular-nums;">06</span>Limitation of Liability</h2><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.75; color: #3F4A3F; text-wrap: pretty;">To the extent not prohibited by law, in no event shall Licensor be liable for personal injury or any incidental, special, indirect, or consequential damages whatsoever, including without limitation, damages for loss of profits, loss of data, arising out of or related to your use of or inability to use Omni, however caused, regardless of the theory of liability (contract, tort, or otherwise) and even if Licensor has been advised of the possibility of such damages. In no event shall Licensor's total liability to you for all damages exceed the amount of your cost of acquisition of the license to use Omni.</p></div><div id="sec-7" style="margin-top: clamp(28px, 2.6vw, 40px); scroll-margin-top: 120px; padding-top: clamp(24px, 2.2vw, 34px); border-top: 1px solid rgba(12,31,14,.08);"><h2 style="margin: 0; display: flex; align-items: center; gap: 14px; font-size: clamp(20px, 1.5vw, 24px); font-weight: 500; letter-spacing: -0.03em; color: #0C1F0E;"><span style="font-size: 13px; letter-spacing: 1px; color: #1E9A08; font-variant-numeric: tabular-nums;">07</span>Governing Law and Venue of Action</h2><p style="margin: 12px 0 0; font-size: 16px; line-height: 1.75; color: #3F4A3F; text-wrap: pretty;">Except to the extent expressly provided in the following paragraph, this Agreement and the relationship between you and APN Philippines Inc. shall be governed by the laws of the Republic of the Philippines. You agree to submit to the exclusive jurisdiction of the appropriate courts in Makati City, Metro Manila, Philippines, to resolve any dispute or claim arising from this Agreement.</p></div>
+        <div style="margin-top: clamp(40px, 3.4vw, 56px); padding: 18px 20px; border-radius: 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; background-color: rgba(233,238,231,.6); box-shadow: inset 0 2px 4px rgba(12,31,14,.08);">
+          <span style="font-size: 14.5px; color: #4F5E50;">Questions about this document?</span>
+          <a href="mailto:info@apntelecom.com" style="display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 18px; border-radius: 999px; font-size: 14px; font-weight: 500; color: #FFFFFF; text-decoration: none; background-image: linear-gradient(180deg, #23930A 0%, #0E5A06 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 8px 18px -8px rgba(14,90,6,.55); transition: filter .3s ease;" style-hover="filter: brightness(1.12); color: #FFFFFF;">Email us</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer data-screen-label="Footer" style="position: relative; z-index: 3; width: 100%; overflow: hidden; padding: clamp(48px, 5vw, 90px) clamp(20px, 3.7vw, 70px) clamp(24px, 2.4vw, 40px); box-sizing: border-box; background-color: #FFFFFF;">
+    <div style="position: relative; width: 100%; max-width: 1760px; margin: 0 auto;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 48px clamp(32px, 4vw, 80px);">
+        <div style="flex: 1 1 300px; max-width: 460px; min-width: min(100%, 280px); display: flex; flex-direction: column;">
+          <a href="#top" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 12px; font-size: clamp(22px, 1.7vw, 28px); font-weight: 500; letter-spacing: -0.6px; color: #0C1F0E; text-decoration: none;"><img src="assets/pin-logo.png" alt="" style="width: 38px; height: 38px; object-fit: contain;">Asia Pacific Network</a>
+          <p style="margin: 14px 0 0; max-width: 540px; font-size: 16px; line-height: 1.65; color: #6B776A; text-wrap: pretty;">Texas-based provider of VoIP and value-added services, connecting the US and every major continent through <span style="font-weight: 500; color: #176B00;">Tier-1 carriers</span>. From One Wilshire in Los Angeles to our offices in Manila, Cebu and Davao, we keep businesses connected <span style="font-weight: 500; color: #176B00;">24/7/365</span>.</p>
+          <span style="margin-top: clamp(22px, 2vw, 30px); font-size: 15px; font-weight: 500; color: #0C1F0E;">Newsletter</span>
+          <form onSubmit="{{ nlSubmit }}" style="margin: 12px 0 0; position: relative; max-width: 460px; display: flex; align-items: center; height: 50px; padding: 4px; box-sizing: border-box; border-radius: 999px; background-color: #FFFFFF; box-shadow: inset 0 1px 2px rgba(12,31,14,.06), 0 0 0 1px rgba(12,31,14,.1), 0 2px 6px -2px rgba(12,31,14,.08); transition: box-shadow .3s ease;" style-focus-within="box-shadow: inset 0 1px 2px rgba(12,31,14,.06), 0 0 0 1px #1E9A08, 0 0 0 4px rgba(48,192,0,.14);">
+            <input type="email" required="required" placeholder="name@email.com" aria-label="Email address" style="flex: 1 1 auto; min-width: 0; height: 100%; padding: 0 16px 0 18px; border: 0; outline: none; background: transparent; font-family: inherit; font-size: 15px; color: #0C1F0E;">
+            <button type="submit" style="flex: 0 0 auto; height: 100%; padding: 0 20px; border: 0; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 500; color: #FFFFFF; cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; gap: 7px; background-image: linear-gradient(180deg, #4FA53A 0%, #2F8420 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.4), inset 0 -1px 0 rgba(20,70,12,.25), 0 6px 14px -6px rgba(47,132,32,.55); transition: filter .3s ease, box-shadow .4s ease;" style-hover="filter: brightness(1.08); box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -1px 0 rgba(20,70,12,.25), 0 10px 20px -8px rgba(47,132,32,.65);">Register<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg></button>
+          </form>
+          <div style="margin-top: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; font-size: 13px; color: #7A887A;"><span style="white-space: nowrap;">Get product updates and announcements.</span><span style="color: #B5C0B4;">•</span><a href="#" style="color: #3F4A3F; text-decoration: none; border-bottom: 1px solid rgba(12,31,14,.35); padding-bottom: 1px; transition: color .3s ease, border-color .3s ease;" style-hover="color: #0E5A06; border-bottom-color: #1E9A08;">Unsubscribe</a></div>
+          <div style="margin-top: 20px; display: flex; gap: 10px;"><a href="#" aria-label="Facebook" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: #4F5E50; text-decoration: none; background-color: #F2F5F0; box-shadow: inset 0 2px 3px rgba(12,31,14,.12), inset 0 -1px 1px rgba(255,255,255,.95), 0 1px 0 rgba(255,255,255,.9), 0 0 0 1px rgba(12,31,14,.05); transition: color .3s ease, background-color .3s ease, box-shadow .3s ease;" style-hover="color: #0E5A06; background-color: #E7F2E1; box-shadow: inset 0 2px 4px rgba(14,90,6,.2), inset 0 -1px 1px rgba(255,255,255,.95), 0 1px 0 rgba(255,255,255,.9), 0 0 0 1px rgba(48,192,0,.22);"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"></path></svg></a><a href="#" aria-label="Instagram" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: #4F5E50; text-decoration: none; background-color: #F2F5F0; box-shadow: inset 0 2px 3px rgba(12,31,14,.12), inset 0 -1px 1px rgba(255,255,255,.95), 0 1px 0 rgba(255,255,255,.9), 0 0 0 1px rgba(12,31,14,.05); transition: color .3s ease, background-color .3s ease, box-shadow .3s ease;" style-hover="color: #0E5A06; background-color: #E7F2E1; box-shadow: inset 0 2px 4px rgba(14,90,6,.2), inset 0 -1px 1px rgba(255,255,255,.95), 0 1px 0 rgba(255,255,255,.9), 0 0 0 1px rgba(48,192,0,.22);"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"></circle></svg></a><a href="#" aria-label="LinkedIn" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: #4F5E50; text-decoration: none; background-color: #F2F5F0; box-shadow: inset 0 2px 3px rgba(12,31,14,.12), inset 0 -1px 1px rgba(255,255,255,.95), 0 1px 0 rgba(255,255,255,.9), 0 0 0 1px rgba(12,31,14,.05); transition: color .3s ease, background-color .3s ease, box-shadow .3s ease;" style-hover="color: #0E5A06; background-color: #E7F2E1; box-shadow: inset 0 2px 4px rgba(14,90,6,.2), inset 0 -1px 1px rgba(255,255,255,.95), 0 1px 0 rgba(255,255,255,.9), 0 0 0 1px rgba(48,192,0,.22);"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><line x1="8" y1="10.5" x2="8" y2="16.5"></line><circle cx="8" cy="7.5" r=".6" fill="currentColor"></circle><path d="M12 16.5v-6M12 13a2.5 2.5 0 0 1 5 0v3.5"></path></svg></a></div>
+        </div>
+        <div style="flex: 0 1 auto; margin-left: auto; display: flex; flex-wrap: wrap; gap: 40px clamp(24px, 3vw, 64px);">
+          <div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px;">
+            <span style="margin-bottom: 6px; font-size: 15px; font-weight: 500; color: #0C1F0E;">Legal</span>
+            <a href="Omni Privacy Statement.dc.html" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">Omni Privacy Statement</a><a href="Omni EULA.dc.html" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">Omni EULA</a><a href="Acceptable Use Policy.dc.html" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">Acceptable Use Policy</a>
+          </div><div style="display: flex; flex-direction: column; gap: 10px; min-width: 110px;">
+            <span style="margin-bottom: 6px; font-size: 15px; font-weight: 500; color: #0C1F0E;">Company</span>
+            <a href="APN Hero.dc.html" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">Home</a><a href="About.dc.html" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">About</a><a href="Services.dc.html" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">Services</a><a href="Products.dc.html" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">Products</a><a href="Contact.dc.html" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">Contact Us</a>
+</div>
+          
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <span style="font-size: 15px; font-weight: 500; color: #0C1F0E;">Contact</span>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 12px; color: #8A978A;">Email</span><a href="mailto:info@apntelecom.com" style="align-self: flex-start; font-size: 15px; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">info@apntelecom.com</a></div>
+            <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 12px; color: #8A978A;">US Toll-Free</span><a href="tel:+18003305349" style="align-self: flex-start; font-size: 15px; white-space: nowrap; font-variant-numeric: tabular-nums; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">+1 800 330-5349</a></div>
+            <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 12px; color: #8A978A;">PH Landline</span><a href="tel:+63272118720" style="align-self: flex-start; font-size: 15px; white-space: nowrap; font-variant-numeric: tabular-nums; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">+63 (2) 7211-8720</a><a href="tel:+63286727800" style="align-self: flex-start; font-size: 15px; white-space: nowrap; font-variant-numeric: tabular-nums; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">+63 (2) 8672-7800</a></div>
+            <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 12px; color: #8A978A;">PH Mobile</span><a href="tel:+639985696638" style="align-self: flex-start; font-size: 15px; white-space: nowrap; font-variant-numeric: tabular-nums; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">+63 998 569-6638</a><a href="tel:+639178240133" style="align-self: flex-start; font-size: 15px; white-space: nowrap; font-variant-numeric: tabular-nums; line-height: 1.4; color: #5D6F5E; text-decoration: none; background-image: linear-gradient(#1E9A08, #1E9A08); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 2px; transition: color .3s ease, background-size .45s cubic-bezier(.16,1,.3,1);" style-hover="color: #0E5A06; background-size: 100% 1px;">+63 917 824-0133</a></div></div>
+          </div>
+        </div>
+      </div>
+      <div data-fit-text="1" aria-hidden="true" style="margin-top: clamp(40px, 5vw, 90px); overflow: hidden; text-align: center; white-space: nowrap; line-height: 1.2; padding: .1em 0 .06em; user-select: none; font-size: clamp(56px, 15vw, 320px);"><span style="display: inline-block; font-weight: 700; letter-spacing: -0.05em; color: transparent; background-image: linear-gradient(180deg, #CFE6C4 0%, #A9D493 45%, #74B955 80%, #52A236 100%); -webkit-background-clip: text; background-clip: text; text-shadow: 0 -1.5px 1px rgba(10,64,4,.2), 0 4px 4px rgba(255,255,255,.55), 0 1.5px 1px rgba(255,255,255,.5);">APN PHILS INC</span></div>
+      <div style="margin-top: clamp(24px, 2.6vw, 40px); padding-top: 22px; border-top: 1px solid rgba(12,31,14,.1); display: flex; flex-wrap: wrap; align-items: center; gap: 16px 48px;">
+        <span style="flex: 1 1 auto; min-width: 0; text-align: center; font-size: 13.5px; color: #3E5A3F;">© Asia Pacific Network, Corp. All Rights Reserved.</span>
+        
+        
+        
+      </div>
+    </div>
+  </footer>
+
+  
+
+  <div role="dialog" aria-modal="true" aria-label="{{ nmTa }}" onClick="{{ nmClose }}" style="position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; background-color: rgba(8,24,10,.38); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); opacity: {{ nmOp }}; pointer-events: {{ nmPe }}; transition: opacity .45s ease;">
+    <div onClick="{{ mdStop }}" style="position: relative; width: 100%; max-width: 440px; box-sizing: border-box; padding: 36px 34px 28px; border-radius: 28px; background-color: #F6F8F5; background-image: radial-gradient(rgba(12,31,14,.06) 1px, transparent 1px); background-size: 14px 14px; box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(12,31,14,.06), 0 5px 0 #DCE3D9, 0 40px 80px -30px rgba(8,24,10,.55); text-align: center; transform: {{ nmTf }}; transition: transform .6s cubic-bezier(.16,1,.3,1);">
+      <button type="button" aria-label="Close" onClick="{{ nmClose }}" style="position: absolute; top: 16px; right: 16px; width: 34px; height: 34px; border: 0; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #4F5E50; background-color: #EEF1EC; box-shadow: inset 0 2px 3px rgba(12,31,14,.12), inset 0 -1px 1px rgba(255,255,255,.95), 0 1px 0 rgba(255,255,255,.9); transition: color .3s ease;" style-hover="color: #0E5A06;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg></button>
+      <sc-if value="{{ nmLock }}" hint-placeholder-val="{{ false }}"><div style="margin: 0 auto; width: 84px; height: 84px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(180deg, #E1E6DF 0%, #EDF0EB 100%); box-shadow: inset 0 3px 6px rgba(12,31,14,.16), inset 0 -2px 2px rgba(255,255,255,.9), 0 1px 0 rgba(255,255,255,.95);"><div style="width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(180deg, #2BA60C 0%, #0E5A06 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 8px 18px -6px rgba(14,90,6,.55);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></div></div></sc-if>
+      <sc-if value="{{ nmCheck }}" hint-placeholder-val="{{ false }}"><div style="margin: 0 auto; width: 84px; height: 84px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(180deg, #E1E6DF 0%, #EDF0EB 100%); box-shadow: inset 0 3px 6px rgba(12,31,14,.16), inset 0 -2px 2px rgba(255,255,255,.9), 0 1px 0 rgba(255,255,255,.95);"><div style="width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(180deg, #2BA60C 0%, #0E5A06 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 8px 18px -6px rgba(14,90,6,.55);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12.5 10 17.5 19 7.5"></polyline></svg></div></div></sc-if>
+      <h3 style="margin: 24px 0 0; font-size: 26px; font-weight: 500; letter-spacing: -0.8px; line-height: 1.15; color: #0C1F0E; text-wrap: balance;">{{ nmTa }} <span style="color: #2A9A0E;">{{ nmTb }}</span></h3>
+      <p style="margin: 10px auto 0; max-width: 330px; font-size: 15px; line-height: 1.6; color: #6B776A; text-wrap: pretty;">{{ nmBody }}</p>
+      <sc-if value="{{ nmHasChip }}" hint-placeholder-val="{{ false }}"><div style="margin: 20px auto 0; display: inline-flex; align-items: center; gap: 9px; max-width: 100%; padding: 9px 16px; border-radius: 999px; background-image: linear-gradient(180deg, #DCE1DA 0%, #E9ECE7 100%); box-shadow: inset 0 2px 4px rgba(12,31,14,.14), inset 0 -1px 1px rgba(255,255,255,.85), 0 1px 0 rgba(255,255,255,.95); font-size: 14px; color: #3F4A3F;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#176B00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto;"><rect x="3" y="5" width="18" height="14" rx="2"></rect><polyline points="3 7 12 13 21 7"></polyline></svg><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ nmChip }}</span></div></sc-if>
+      <div style="margin-top: 26px; display: flex; flex-direction: column; gap: 4px;">
+        <button type="button" onClick="{{ nmPrimaryGo }}" style="appearance: none; width: 100%; height: 50px; border: 0; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 15px; font-weight: 500; color: #FFFFFF; background-image: linear-gradient(180deg, #23930A 0%, #0E5A06 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -1px 0 rgba(12,31,14,.2), 0 10px 24px -8px rgba(14,90,6,.5), 0 2px 6px rgba(12,31,14,.14); transition: box-shadow .35s ease, transform .35s ease;" style-hover="transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,.6), inset 0 -1px 0 rgba(12,31,14,.22), 0 16px 34px -10px rgba(14,90,6,.6), 0 3px 8px rgba(12,31,14,.16);">{{ nmPrimary }}</button>
+        <sc-if value="{{ nmHasCancel }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ nmClose }}" style="appearance: none; width: 100%; height: 46px; border: 0; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 14.5px; font-weight: 500; color: #3F4A3F; background-color: transparent; transition: color .3s ease;" style-hover="color: #0E5A06;">Not now</button></sc-if>
+      </div>
+    </div>
+  </div>
+
+  <div role="dialog" aria-modal="true" aria-label="Log in to Central" onClick="{{ lgClose }}" style="position: fixed; inset: 0; z-index: 1001; display: flex; align-items: center; justify-content: center; padding: 20px; background-color: rgba(8,24,10,.38); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); opacity: {{ lgOp }}; pointer-events: {{ lgPe }}; transition: opacity .45s ease;">
+    <form onClick="{{ mdStop }}" onSubmit="{{ lgSubmit }}" style="position: relative; width: 100%; max-width: 440px; box-sizing: border-box; padding: 36px 34px 28px; border-radius: 28px; background-color: #F6F8F5; background-image: radial-gradient(rgba(12,31,14,.06) 1px, transparent 1px); background-size: 14px 14px; box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(12,31,14,.06), 0 5px 0 #DCE3D9, 0 40px 80px -30px rgba(8,24,10,.55); text-align: center; transform: {{ lgTf }}; transition: transform .6s cubic-bezier(.16,1,.3,1);">
+      <button type="button" aria-label="Close" onClick="{{ lgClose }}" style="position: absolute; top: 16px; right: 16px; width: 34px; height: 34px; border: 0; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #4F5E50; background-color: #EEF1EC; box-shadow: inset 0 2px 3px rgba(12,31,14,.12), inset 0 -1px 1px rgba(255,255,255,.95), 0 1px 0 rgba(255,255,255,.9); transition: color .3s ease;" style-hover="color: #0E5A06;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg></button>
+      <div style="margin: 0 auto; width: 72px; height: 72px; border-radius: 22px; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(180deg, #FFFFFF 0%, #EEF2EC 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(12,31,14,.07), 0 4px 0 #DCE3D9, 0 14px 24px -14px rgba(12,31,14,.35);"><img src="assets/pin-logo.png" alt="" style="width: 40px; height: 40px; object-fit: contain;"></div>
+      <h3 style="margin: 22px 0 0; font-size: 26px; font-weight: 500; letter-spacing: -0.8px; line-height: 1.15; color: #0C1F0E;">Log in to <span style="color: #2A9A0E;">Central</span></h3>
+      <p style="margin: 8px auto 0; max-width: 320px; font-size: 14.5px; line-height: 1.6; color: #6B776A;">Access your APN Central account and subscriptions.</p>
+      <div style="margin-top: 22px; display: flex; flex-direction: column; gap: 16px;">
+        <label style="display: flex; flex-direction: column; gap: 6px; text-align: left;"><span style="font-size: 12.5px; color: #7A887A;">Email</span><input type="email" required="required" placeholder="name@company.com" autocomplete="email" style="height: 44px; padding: 0; border: 0; border-bottom: 1px solid rgba(12,31,14,.14); border-radius: 0; outline: none; background: transparent; font-family: inherit; font-size: 15px; color: #0C1F0E; transition: border-color .3s ease;" style-focus="border-bottom-color: #1E9A08;"></label>
+        <label style="display: flex; flex-direction: column; gap: 6px; text-align: left;"><span style="font-size: 12.5px; color: #7A887A;">Password</span><input type="password" required="required" placeholder="••••••••" autocomplete="current-password" style="height: 44px; padding: 0; border: 0; border-bottom: 1px solid rgba(12,31,14,.14); border-radius: 0; outline: none; background: transparent; font-family: inherit; font-size: 15px; color: #0C1F0E; transition: border-color .3s ease;" style-focus="border-bottom-color: #1E9A08;"></label>
+      </div>
+      <div style="margin-top: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px;">
+        <label style="display: inline-flex; align-items: center; gap: 8px; color: #4F5E50; cursor: pointer;"><input type="checkbox" style="width: 15px; height: 15px; margin: 0; accent-color: #1E9A08;">Remember me</label>
+        <a href="mailto:support@apntelecom.com" style="color: #0E5A06; text-decoration: none;" style-hover="color: #1E9A08;">Forgot password?</a>
+      </div>
+      <button type="submit" style="appearance: none; width: 100%; height: 50px; border: 0; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 15px; font-weight: 500; color: #FFFFFF; background-image: linear-gradient(180deg, #23930A 0%, #0E5A06 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -1px 0 rgba(12,31,14,.2), 0 10px 24px -8px rgba(14,90,6,.5), 0 2px 6px rgba(12,31,14,.14); transition: box-shadow .35s ease, transform .35s ease; margin-top: 24px;" style-hover="transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,.6), inset 0 -1px 0 rgba(12,31,14,.22), 0 16px 34px -10px rgba(14,90,6,.6), 0 3px 8px rgba(12,31,14,.16);">Log In</button>
+      <p style="margin: 16px 0 0; font-size: 13px; color: #7A887A;">Need an account? <a href="Contact.dc.html" style="color: #0E5A06; font-weight: 500; text-decoration: none;" style-hover="color: #1E9A08;">Contact sales</a></p>
+    </form>
+  </div>
+
+  <button type="button" data-totop="1" aria-label="Scroll to top" onClick="{{ toTop }}" style="position: fixed; right: clamp(16px, 2vw, 32px); bottom: clamp(16px, 2vw, 32px); z-index: 60; width: 60px; height: 60px; padding: 0; border: 0; border-radius: 50%; cursor: pointer; background: none; opacity: 0; transform: translateY(24px) scale(.85); pointer-events: none; transition: opacity .5s ease, transform .6s cubic-bezier(.16,1,.3,1);">
+    <svg width="60" height="60" viewBox="0 0 60 60" style="position: absolute; inset: 0; transform: rotate(-90deg); overflow: visible;">
+      <defs><linearGradient id="apnTopG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6FE016"></stop><stop offset="1" stop-color="#0E7A06"></stop></linearGradient></defs>
+      <circle cx="30" cy="30" r="27" fill="none" stroke="rgba(14,90,6,.14)" stroke-width="3"></circle>
+      <circle data-totop-ring="1" cx="30" cy="30" r="27" fill="none" stroke="url(#apnTopG)" stroke-width="3" stroke-linecap="round" stroke-dasharray="169.65" stroke-dashoffset="169.65" style="filter: drop-shadow(0 0 4px rgba(111,224,22,.6));"></circle>
+    </svg>
+    <span style="position: absolute; inset: 6px; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; background-image: linear-gradient(180deg, rgba(255,255,255,.92) 0%, rgba(240,247,236,.88) 100%); -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4); box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 0 0 1px rgba(14,90,6,.1), 0 14px 30px -12px rgba(14,90,6,.45); color: #0E5A06; transition: background-color .4s ease, color .4s ease;" style-hover="background-image: linear-gradient(180deg, #23930A 0%, #0E5A06 100%); color: #FFFFFF;">
+      <span style="position: relative; display: block; width: 18px; height: 18px; overflow: hidden;">
+        <span data-totop-arrow="1" style="position: absolute; left: 0; top: 0; display: flex; flex-direction: column; transition: transform .5s cubic-bezier(.16,1,.3,1);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="6 11 12 5 18 11"></polyline></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="6 11 12 5 18 11"></polyline></svg>
+        </span>
+      </span>
+    </span>
+  </button>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;splashScreen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page effects&quot;},&quot;replaySplash&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page effects&quot;},&quot;transitionStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Circle wipe&quot;,&quot;options&quot;:[&quot;Circle wipe&quot;,&quot;Green slide&quot;,&quot;Light slide&quot;,&quot;Fade&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Page effects&quot;},&quot;previewTransition&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page effects&quot;}}">
+class Component extends DCLogic {
+  state = {};
+  navRef = React.createRef();
+  navInnerRef = React.createRef();
+  logoRef = React.createRef();
+
+  cylRef = React.createRef();
+  setupCyl() {
+    const box = this.cylRef.current;
+    if (!box) return;
+    const N = 18, MAXS = 4.6;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const AUTO = reduce ? 0 : N / 70;
+    let off = 0, vel = AUTO, last = 0, drag = null, geo = null;
+    const measure = () => {
+      const cw = box.clientWidth;
+      const k = cw >= 760 ? cw / 1895 : cw / 1000;
+      const W = 144 * k * MAXS, H = W / 0.7;
+      box.querySelectorAll('[data-cyl]').forEach((el) => {
+        el.style.width = W + 'px'; el.style.height = H + 'px';
+        el.style.marginLeft = (-W / 2) + 'px'; el.style.marginTop = (-H / 2) + 'px';
+        el.style.borderRadius = (14 * k * MAXS) + 'px';
+      });
+      geo = { k, P: W * 1.98, half: cw / 2 };
+    };
+    const place = (el, p) => {
+      const a = Math.abs(p), sg = p < 0 ? -1 : 1;
+      const x = sg * (165.5 * a + 2.48 * a * a * a) * geo.k;
+      if (a > 4.8 || Math.abs(x) > geo.half + 300 * geo.k) { if (el.style.visibility !== 'hidden') el.style.visibility = 'hidden'; return; }
+      const sc = Math.exp(0.065 * a * a) / MAXS;
+      const r = -sg * Math.min(66, 11 * a + 0.15 * a * a * a);
+      el.style.visibility = 'visible';
+      el.style.zIndex = String(10 + Math.round(a * 10));
+      el.style.transform = 'translate3d(' + x.toFixed(2) + 'px,0,0) scale(' + sc.toFixed(4) + ') perspective(' + geo.P.toFixed(0) + 'px) rotateY(' + r.toFixed(3) + 'deg)';
+    };
+    const frame = (now) => {
+      this.cylRaf = requestAnimationFrame(frame);
+      const dt = Math.min((now - (last || now)) / 1000, 0.05); last = now;
+      if (!geo) measure();
+      if (!drag) { vel += (AUTO - vel) * (1 - Math.exp(-dt * 1.6)); off += vel * dt; }
+      off = ((off % N) + N) % N;
+      const cards = box.querySelectorAll('[data-cyl]');
+      for (let i = 0; i < cards.length; i++) {
+        let p = ((i - off) % N + N) % N;
+        if (p >= N / 2) p -= N;
+        place(cards[i], p);
+      }
+    };
+    const pxPerCard = () => 167 * (geo ? geo.k : 1);
+    const down = (e) => { drag = { x: e.clientX, t: performance.now(), v: 0 }; box.style.cursor = 'grabbing'; box.setPointerCapture && box.setPointerCapture(e.pointerId); };
+    const move = (e) => {
+      if (!drag) return;
+      const now = performance.now(), dx = e.clientX - drag.x, dts = Math.max(1, now - drag.t) / 1000;
+      const d = -dx / pxPerCard();
+      off += d;
+      drag.v = drag.v * 0.6 + (d / dts) * 0.4;
+      drag.x = e.clientX; drag.t = now;
+    };
+    const up = () => { if (!drag) return; vel = Math.max(-12, Math.min(12, drag.v)); drag = null; box.style.cursor = 'grab'; };
+    box.addEventListener('pointerdown', down);
+    box.addEventListener('pointermove', move);
+    box.addEventListener('pointerup', up);
+    box.addEventListener('pointercancel', up);
+    box.addEventListener('lostpointercapture', up);
+    const onR = () => { geo = null; };
+    window.addEventListener('resize', onR);
+    this.cylRaf = requestAnimationFrame(frame);
+    this.cylStop = () => {
+      cancelAnimationFrame(this.cylRaf);
+      window.removeEventListener('resize', onR);
+      box.removeEventListener('pointerdown', down);
+      box.removeEventListener('pointermove', move);
+      box.removeEventListener('pointerup', up);
+      box.removeEventListener('pointercancel', up);
+      box.removeEventListener('lostpointercapture', up);
+    };
+  }
+
+  setupTimeline() {
+    const root = document.querySelector('[data-tl]');
+    if (!root) return;
+    const items = [...root.querySelectorAll('[data-tl-item]')];
+    const fill = root.querySelector('[data-tl-fill]');
+    const bar = document.querySelector('[data-tl-bar]');
+    const count = document.querySelector('[data-tl-count]');
+    const left = document.querySelector('[data-tl-left]');
+    const fit = () => { if (left) left.style.position = left.offsetTop < root.offsetTop - 10 || Math.abs(left.getBoundingClientRect().left - root.getBoundingClientRect().left) < 20 ? 'relative' : 'sticky'; };
+    this.tlFit = () => { if (left) left.style.position = 'sticky'; requestAnimationFrame(fit); };
+    window.addEventListener('resize', this.tlFit);
+    requestAnimationFrame(fit);
+    let active = -1;
+    const run = () => {
+      this.tlRaf = requestAnimationFrame(run);
+      const mid = window.innerHeight * 0.55;
+      const rt = root.getBoundingClientRect();
+      let a = -1;
+      items.forEach((el, i) => { if (el.getBoundingClientRect().top < mid) a = i; });
+      const last = items[items.length - 1].getBoundingClientRect().top - rt.top + 14;
+      const h = Math.max(0, Math.min(last - 14, mid - rt.top - 14));
+      fill.style.height = h + 'px';
+      if (bar) bar.style.width = (Math.max(0, a + 1) / items.length * 100) + '%';
+      if (a === active) return;
+      active = a;
+      if (count) count.style.transform = 'translateY(' + (-Math.max(0, a) * 20) + 'px)';
+      items.forEach((el, i) => {
+        const on = i === a, past = i < a;
+        el.style.opacity = on ? '1' : past ? '.5' : '.32';
+        el.style.transform = on ? 'scale(1)' : 'scale(.72)';
+        el.style.filter = on ? 'none' : 'blur(1.5px)';
+        const d = el.querySelector('[data-tl-dot]');
+        d.style.backgroundColor = on || past ? '#1E9A08' : '#FFFFFF';
+        d.style.boxShadow = on ? '0 0 0 6px rgba(48,192,0,.16), 0 0 18px rgba(48,192,0,.55)' : past ? '0 0 0 1px rgba(14,90,6,.3)' : 'inset 0 0 0 1px rgba(12,31,14,.14), 0 2px 6px rgba(12,31,14,.08)';
+        d.style.transform = on ? 'scale(1.1)' : 'scale(.8)';
+      });
+    };
+    this.tlRaf = requestAnimationFrame(run);
+  }
+
+  setupHx() {
+    const row = document.querySelector('[data-hx-row]'), mid = document.querySelector('[data-hx-mid]');
+    this.hxFit = () => {
+      if (!row) return;
+      const narrow = window.innerWidth < 700;
+      row.style.gridTemplateColumns = narrow ? 'minmax(0, 1fr)' : 'minmax(0, 1fr) minmax(120px, .62fr) minmax(0, 1fr)';
+      if (mid) { mid.style.order = narrow ? '-1' : '0'; mid.style.minHeight = narrow ? '180px' : '200px'; mid.querySelectorAll('[data-hx-br], [data-hx-br] ~ span').forEach((e) => { if (!e.dataset.hx) e.style.display = narrow ? 'none' : ''; }); }
+    };
+    this.hxFit();
+    window.addEventListener('resize', this.hxFit);
+    const sec = document.getElementById('history');
+    const tr = {}; document.querySelectorAll('[data-tr]').forEach((e) => { tr[e.dataset.tr] = e; });
+    const cards = [...document.querySelectorAll('[data-hx-n]')].sort((a, b) => a.dataset.hxN - b.dataset.hxN);
+    cards.forEach((c, i) => { const n = c.querySelector('[data-hx-num]'); if (n) n.textContent = '0' + (i + 1); });
+    const cl = (v) => Math.max(0, Math.min(1, v));
+    cards.forEach((c) => { c.dataset.act = '1'; });
+    const T0 = performance.now(), CYC = 3400;
+    const loop = (now) => {
+      this.trRaf = requestAnimationFrame(loop);
+      if (!sec) return;
+      const r = sec.getBoundingClientRect(), vh = window.innerHeight;
+      if (r.bottom < -200 || r.top > vh + 200) return;
+      ['l', 'r'].forEach((k, si) => {
+        const L = k === 'l';
+        const tau = (((now - T0) / CYC) + si * 0.5) % 1;
+        const H = tau * 2.7, Tl = tau * 2.7 - 1.25;
+        const sh = cl(H), st = cl(Tl), bh = cl(H - 1), bt = cl(Tl - 1);
+        const hz = (hd, tl) => L ? 'inset(0 ' + (tl * 100).toFixed(2) + '% 0 ' + ((1 - hd) * 100).toFixed(2) + '%)' : 'inset(0 ' + ((1 - hd) * 100).toFixed(2) + '% 0 ' + (tl * 100).toFixed(2) + '%)';
+        if (tr[k + 's']) tr[k + 's'].style.clipPath = hz(sh, st);
+        if (tr[k + 'm']) tr[k + 'm'].style.clipPath = hz(bh, bt);
+        if (tr[k + 'u']) tr[k + 'u'].style.clipPath = 'inset(' + ((1 - bh) * 100).toFixed(2) + '% 0 ' + (bt * 100).toFixed(2) + '% 0)';
+        if (tr[k + 'd']) tr[k + 'd'].style.clipPath = 'inset(' + (bt * 100).toFixed(2) + '% 0 ' + ((1 - bh) * 100).toFixed(2) + '% 0)';
+        if (tr[k + 'o']) { const lit = sh >= 1 && bt < 0.6; tr[k + 'o'].style.backgroundColor = lit ? '#1E9A08' : '#FFFFFF'; tr[k + 'o'].style.boxShadow = lit ? '0 0 0 4px rgba(48,192,0,.15), 0 0 10px rgba(48,192,0,.6)' : 'inset 0 0 0 1.5px rgba(12,31,14,.12)'; }
+      });
+    };
+    this.trRaf = requestAnimationFrame(loop);
+    const els = [...document.querySelectorAll('[data-hx]')];
+    if (!els.length || !window.IntersectionObserver) { els.forEach(e => { e.style.opacity = 1; e.style.transform = 'none'; }); return; }
+    this.hxIO = new IntersectionObserver((en) => en.forEach((e) => {
+      const el = e.target, i = +(el.dataset.hxI || 0);
+      if (e.isIntersecting) { el.style.transitionDelay = (el.dataset.hx === 'c' ? 0 : .15 + i * .12) + 's'; el.style.opacity = 1; el.style.transform = 'none'; }
+      else if (e.boundingClientRect.top > 0) { el.style.transitionDelay = '0s'; el.style.opacity = 0; el.style.transform = el.dataset.hx === 'c' ? 'scale(.8)' : 'translateX(' + (el.dataset.hx === 'l' ? -40 : 40) + 'px)'; }
+    }), { threshold: 0.2 });
+    els.forEach((e) => this.hxIO.observe(e));
+  }
+
+  setupToTop() {
+    const C = 169.65;
+    const run = () => {
+      this.ttRaf = null;
+      const b = document.querySelector('[data-totop]');
+      if (!b) return;
+      const ring = b.querySelector('[data-totop-ring]');
+      const max = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+      const y = window.scrollY;
+      const p = Math.min(Math.max(y / max, 0), 1);
+      ring.setAttribute('stroke-dashoffset', String(C * (1 - p)));
+      const show = y > window.innerHeight * 0.6;
+      if (b.dataset.show !== (show ? '1' : '0')) {
+        b.dataset.show = show ? '1' : '0';
+        b.style.opacity = show ? '1' : '0';
+        b.style.transform = show ? 'translateY(0) scale(1)' : 'translateY(24px) scale(.85)';
+        b.style.pointerEvents = show ? 'auto' : 'none';
+      }
+    };
+    this.onTtScroll = () => { if (!this.ttRaf) this.ttRaf = requestAnimationFrame(run); };
+    this.onTtEnter = (e) => { const a = e.target.closest && e.target.closest('[data-totop]'); if (a) a.querySelector('[data-totop-arrow]').style.transform = 'translateY(-18px)'; };
+    this.onTtLeave = (e) => { const a = e.target.closest && e.target.closest('[data-totop]'); if (a && !a.contains(e.relatedTarget)) a.querySelector('[data-totop-arrow]').style.transform = 'translateY(0)'; };
+    window.addEventListener('scroll', this.onTtScroll, { passive: true });
+    window.addEventListener('resize', this.onTtScroll);
+    document.addEventListener('mouseover', this.onTtEnter);
+    document.addEventListener('mouseout', this.onTtLeave);
+    run();
+  }
+  svData = [
+    ['Global reach', 'Receive calls from over 120 countries.', 'Call Origination', 'Local and toll-free origination in over 120 countries, routed over Tier-1 carriers into your call center.', 'Inbound Traffic Overview', 'Countries connected', '120+', [['United States', '38%'], ['Philippines', '24%'], ['United Kingdom', '11%']]],
+    ['Worldwide termination', 'Terminate calls to any destination, A to Z.', 'A–Z Termination', 'Premium and wholesale routes to every destination, with carrier-grade quality and competitive rates.', 'Route Quality', 'Answer-seizure ratio', '62.4%', [['Premium routes', 'ASR 64%'], ['Standard routes', 'ASR 58%'], ['Avg. post-dial delay', '2.1s']]],
+    ['Local presence', 'Give every market a local number.', 'DID Numbers', 'Direct Inward Dialing numbers that connect callers straight to your agents, provisioned in minutes.', 'DID Inventory', 'Active numbers', '4,812', [['US local', '2,940'], ['UK local', '1,106'], ['Australia', '766']]],
+    ['Free for your callers', 'Make it free for customers to reach you.', 'Toll-Free', 'Domestic and international toll-free numbers (TFN/ITFN) with RespOrg and port-out support.', 'Toll-Free Calls Today', 'Calls answered', '18,540', [['TFN (US/CA)', '12,210'], ['ITFN', '4,905'], ['Avg. wait', '0:18']]],
+    ['Trusted identity', 'Show a number your customers recognize.', 'Caller-ID', 'Reliable Caller-ID presentation that improves answer rates on outbound campaigns.', 'Outbound Answer Rate', 'Answer rate uplift', '+27%', [['Local presence', '41%'], ['Toll-free CLI', '33%'], ['Unknown CLI', '14%']]],
+    ['Flexible connectivity', 'Connect any softphone or device.', 'SIP Accounts', 'Secure SIP accounts for agents and devices, ready for any softphone, IP phone or dialer.', 'SIP Registrations', 'Online endpoints', '1,284', [['Softphones', '842'], ['IP phones', '319'], ['Dialers', '123']]],
+    ['Cloud telephony', 'Run your phone system from the cloud.', 'Hosted PBX', 'A cloud-based PBX with IVR, queues, recordings and extensions, without hardware on site.', 'PBX Activity', 'Calls in progress', '316', [['Queued', '24'], ['In IVR', '41'], ['Recording', '251']]]
+  ];
+  svIcons = {"globe":"M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18c-2.6-2.6-2.6-15.4 0-18","inbound":"M17 7L7 17M7 9v8h8M20 4v6M17 4h6","route":"M6 19a2 2 0 1 0 0-4a2 2 0 1 0 0 4M18 9a2 2 0 1 0 0-4a2 2 0 1 0 0 4M8 17h6a4 4 0 0 0 0-8H10a4 4 0 0 1 0-8","signal":"M4 20v-4M9 20v-8M14 20v-12M19 20V4","tag":"M3 12V4h8l10 10-8 8L3 12M7.5 7.5h.01","hash":"M5 9h14M5 15h14M10 3L8 21M16 3l-2 18","pin":"M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21M12 7.5a2 2 0 1 0 0 4a2 2 0 1 0 0-4","bolt":"M13 2L4 14h7l-1 8 9-12h-7l1-8","phoneIn":"M22 16.9v3a2 2 0 0 1-2.2 2a19.8 19.8 0 0 1-8.6-3.1a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z","world2":"M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M3.6 9h16.8M3.6 15h16.8","clock":"M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 7v5l3 2","shield":"M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6l8-3M8.5 12l2.5 2.5 4.5-5","id":"M4 5h16v14H4zM9 10a2 2 0 1 0 0-.01M6.5 16c.5-1.5 1.5-2.2 2.5-2.2s2 .7 2.5 2.2M14 10h4M14 13h3","up":"M4 17l6-6 4 4 6-7M14 8h6v6","key":"M15 7a4 4 0 1 0 0 .01M12.2 9.8L4 18v3h3l1-1v-2h2v-2h2l1.2-1.2","monitor":"M3 4h18v12H3zM8 20h8M12 16v4","lock":"M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4","tree":"M12 3v6M12 9H6v4M12 9h6v4M4 13h4v4H4zM16 13h4v4h-4z","users":"M9 5a3 3 0 1 0 0 6a3 3 0 1 0 0-6M3.5 19c.9-3 3-4.5 5.5-4.5s4.6 1.5 5.5 4.5M17 6.6a2.4 2.4 0 1 0 0 4.8M15 14.8c2.2 0 3.8 1.3 4.6 4.2","mic":"M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3M5 11a7 7 0 0 0 14 0M12 18v3"};
+  svFeats = [[["globe","120+ countries"],["inbound","Inbound"],["route","Tier-1 routes"]],[["route","A–Z routes"],["signal","Quality"],["tag","Rates"]],[["hash","Numbers"],["pin","Local"],["bolt","Instant"]],[["phoneIn","TFN"],["world2","ITFN"],["clock","Wait time"]],[["shield","Verified"],["id","Branded"],["up","Answer rate"]],[["key","Accounts"],["monitor","Devices"],["lock","Secure"]],[["tree","IVR"],["users","Queues"],["mic","Recording"]]];
+  svDragRef = React.createRef();
+  svCurRef = React.createRef();
+  svCursor(e) {
+    const c = this.svCurRef.current; if (!c) return; return;
+    if (!e || e.pointerType === 'touch') { c.style.opacity = '0'; c.style.scale = '.4'; this.svLastPt = null; return; }
+    this.svLastPt = { clientX: e.clientX, clientY: e.clientY, target: e.target, pointerType: e.pointerType };
+    const overUi = !this.svDragging && e.target && e.target.closest && e.target.closest('a,button');
+    c.style.transform = 'translate3d(' + e.clientX + 'px,' + e.clientY + 'px,0)';
+    c.style.opacity = overUi ? '0' : '1';
+    c.style.scale = overUi ? '.4' : (this.svDragging ? '.82' : '1');
+  }
+  svGo(to) {
+    const n = this.svData.length, next = ((to % n) + n) % n;
+    this.svT0 = performance.now();
+    this.setState({ sv: next });
+    clearInterval(this.svTimer);
+    this.svTimer = setInterval(() => this.svGo((this.state.sv || 0) + 1), 6000);
+  }
+  svVals() {
+    const i = this.state.sv || 0, n = this.svData.length;
+    const seed = (j, k) => 30 + ((j * 37 + k * 53) % 70);
+    const svCards = this.svData.map((d, j) => {
+      let off = ((j - i) % n + n) % n; if (off > n / 2) off -= n;
+      const on = off === 0, dist = Math.abs(off);
+      const o = { kick: d[0], title: d[1], name: d[2], desc: d[3], mock: d[4], bigLabel: d[5], big: d[6],
+        rows: d[7].map(([k, v]) => ({ k, v })), bars: Array.from({ length: 16 }, (_, k) => ({ h: (on ? seed(j, k) : 12) + '%' })),
+        num: String(j + 1).padStart(2, '0'), op: 1, tf: 'none', bar: on ? '100%' : '0%', barT: on ? '6s linear' : '0s',
+        sc: on ? 'translateX(0px) scale(1)' : 'translateX(calc(' + (off * 100) + '% + ' + (off * 28) + 'px)) scale(.94)', o: dist <= 2 ? 1 : 0, z: String(10 - dist), f: 'none', vo: on ? 0 : 1, pe: dist > 1 ? 'none' : 'auto',  cur: on ? 'default' : 'pointer',
+        go: () => { if (j !== i) this.svGo(j); } };
+      o.feats = this.svFeats[j].map((ft, t) => { const lit = t === Math.floor(((this.state.svTick || 0)) % 3) && j === i; return { d: this.svIcons[ft[0]], label: ft[1], bg: (t === 0) ? 'linear-gradient(180deg, #2BA60C 0%, #0E5A06 100%)' : 'linear-gradient(180deg, #FFFFFF 0%, #F2F5F0 100%)', fg: (t === 0) ? '#FFFFFF' : '#2F3B30' }; });
+      for (let q = 0; q < 7; q++) o['k' + q] = j === q;
+      return o;
+    });
+    return {
+      svCards,
+      svX: 'calc(50vw - min(1040px, 70vw) / 2 - ' + i + ' * min(1040px, 70vw))',
+      svDragRef: this.svDragRef,
+      svNoDrag: (e) => e.preventDefault(),
+      svClickCap: (e) => { if (this.svMoved) { e.stopPropagation(); e.preventDefault(); this.svMoved = false; } },
+      svCurRef: this.svCurRef,
+      svHover: (e) => this.svCursor(e),
+      svHoverOut: () => this.svCursor(null),
+      svDown: (e) => {
+        if (e.button !== undefined && e.button !== 0) return;
+        if (e.target.closest && e.target.closest('a,button')) return;
+        const el = this.svDragRef.current; if (!el) return;
+        const cards = el.querySelectorAll('[data-svcard]');
+        const x0 = e.clientX, y0 = e.clientY; let dx = 0, locked = null, raf = 0, vx = 0, lx = e.clientX, lt = performance.now();
+        try { el.setPointerCapture(e.pointerId); } catch (_) {}
+        this.svMoved = false; this.svDragging = true; clearInterval(this.svTimer);
+        el.style.cursor = 'grabbing'; document.body.style.cursor = 'grabbing';
+        this.svCursor(e);
+        const move = (ev) => {
+          dx = ev.clientX - x0;
+          const now = performance.now(), dt = Math.max(1, now - lt);
+          vx = vx * .6 + ((ev.clientX - lx) / dt) * .4; lx = ev.clientX; lt = now;
+          if (locked === null && (Math.abs(dx) > 5 || Math.abs(ev.clientY - y0) > 5)) {
+            locked = Math.abs(dx) > Math.abs(ev.clientY - y0);
+            if (locked) { clearTimeout(this.svRelT); } if (locked) cards.forEach(c => { c.style.transition = 'opacity 1.1s cubic-bezier(.72,0,.18,1), transform 1.1s cubic-bezier(.72,0,.18,1)'; });
+          }
+          if (!locked) return;
+          if (ev.cancelable) ev.preventDefault();
+          this.svMoved = true;
+          this.svCursor(ev);
+          const w = cards[0] ? cards[0].offsetWidth : 1000;
+          const a = Math.abs(dx), r = Math.sign(dx) * (a < w * .6 ? a : w * .6 + (a - w * .6) * .35);
+          cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(() => el.style.setProperty('--svd', r + 'px'));
+        };
+        const up = () => {
+          window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); window.removeEventListener('pointercancel', up);
+          cancelAnimationFrame(raf);
+          this.svDragging = false;
+          el.style.cursor = 'grab'; document.body.style.cursor = '';
+          const w = cards[0] ? cards[0].offsetWidth : 1000, th = Math.min(80, w * .07);
+          const cur = this.state.sv || 0;
+          let to = cur;
+          if (performance.now() - lt > 90) vx = 0;
+          if (locked && (dx <= -th || (vx < -.45 && dx < -12))) to = cur + 1; else if (locked && (dx >= th || (vx > .45 && dx > 12))) to = cur - 1;
+          const sp = Math.min(Math.abs(vx), 2.5), dur = (0.95 - sp * 0.12).toFixed(2) + 's', ez = 'cubic-bezier(.16,1,.3,1)';
+          cards.forEach(c => { c.style.transition = 'transform ' + dur + ' ' + ez + ', translate ' + dur + ' ' + ez + ', opacity ' + dur + ' ' + ez; });
+          el.style.setProperty('--svd', '0px');
+          this.svGo(to);
+          clearTimeout(this.svRelT);
+          this.svRelT = setTimeout(() => cards.forEach(c => { c.style.transition = ''; }), 1000);
+          this.svCursor(this.svLastPt || null);
+          setTimeout(() => { this.svMoved = false; }, 0);
+        };
+        window.addEventListener('pointermove', move, { passive: false }); window.addEventListener('pointerup', up); window.addEventListener('pointercancel', up);
+      },
+      svPrev: (e) => { e && e.stopPropagation(); this.svGo(i - 1); },
+      svX: '0px',
+      svNext: (e) => { e && e.stopPropagation(); this.svGo(i + 1); }
+    };
+  }
+
+
+  fxSync(prev) {
+    const F = window.APNFX; if (!F) return;
+    const p = this.props || {};
+    F.setStyle(p.transitionStyle || 'Circle wipe');
+    if (!prev) { if (p.splashScreen === false) F.skipSplash(); return; }
+    if (prev.replaySplash !== p.replaySplash) F.splash();
+    if (prev.previewTransition !== p.previewTransition) F.preview(p.transitionStyle || 'Circle wipe');
+    if (prev.transitionStyle !== p.transitionStyle && prev.previewTransition === p.previewTransition) F.preview(p.transitionStyle || 'Circle wipe');
+  }
+  componentDidUpdate(prevProps) { this.fxSync(prevProps); }
+  componentDidMount() {
+    this.fxSync(null);
+    this.onMdEsc = (e) => { if (e.key === 'Escape' && (this.state.nm || this.state.lgOpen)) this.mdCloseAll(); };
+    window.addEventListener('keydown', this.onMdEsc);
+    this.setupToTop();
+
+    this.setupReveal();
+    this.onEscQ = (e) => { if (e.key === 'Escape' && this.state.qModal) { this.setState({ qModal: false }); if (this.lenis) this.lenis.start(); } };
+    window.addEventListener('keydown', this.onEscQ);
+    this.fitText = () => { document.querySelectorAll('[data-fit-text]').forEach(box => { const t = box.firstElementChild; if (!t) return; box.style.fontSize = '100px'; const w = t.getBoundingClientRect().width; const avail = box.clientWidth; if (w > 0 && avail > 0) box.style.fontSize = Math.max(40, (avail * 0.985 / w) * 100) + 'px'; }); };
+    requestAnimationFrame(this.fitText);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => this.fitText && this.fitText());
+    window.addEventListener('resize', this.fitText);
+    this.setupHx();
+    this.setupTimeline();
+    this.setupCyl();
+    this.pillWidth = () => {
+      const inner = this.navInnerRef.current;
+      if (!inner) return 1040;
+      const prevW = inner.style.width;
+      const prevMax = inner.style.maxWidth;
+      inner.style.width = 'max-content';
+      inner.style.maxWidth = 'none';
+      const natural = inner.getBoundingClientRect().width;
+      inner.style.width = prevW;
+      inner.style.maxWidth = prevMax;
+      return Math.min(natural + 26, inner.parentElement.clientWidth);
+    };
+
+    this.render_ = (t) => {
+      const inner = this.navInnerRef.current;
+      const logo = this.logoRef.current;
+      if (!inner) return;
+      const e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      const full = Math.min(inner.parentElement.clientWidth, 1340);
+      const target = this.pillWidth();
+      inner.style.width = '100%';
+      inner.style.maxWidth = (full + (target - full) * e) + 'px';
+      inner.style.paddingTop = (10 - 2 * e) + 'px';
+      inner.style.paddingBottom = (10 - 2 * e) + 'px';
+      inner.style.paddingLeft = (4 + 18 * e) + 'px';
+      inner.style.paddingRight = (6 + 2 * e) + 'px';
+      inner.style.backgroundColor = 'rgba(248,250,247,' + (0.66 * e).toFixed(3) + ')';
+      inner.style.boxShadow = e > 0.02
+        ? 'inset 0 1px 0 rgba(255,255,255,' + (0.9 * e).toFixed(3) + '), inset 0 0 0 1px rgba(12,31,14,' + (0.05 * e).toFixed(3) + '), 0 ' + (10 * e).toFixed(1) + 'px ' + (30 * e).toFixed(1) + 'px -14px rgba(12,31,14,' + (0.3 * e).toFixed(3) + '), 0 ' + (2 * e).toFixed(1) + 'px ' + (6 * e).toFixed(1) + 'px rgba(12,31,14,' + (0.06 * e).toFixed(3) + ')'
+        : 'none';
+      inner.style.backdropFilter = 'blur(' + (20 * e).toFixed(1) + 'px) saturate(' + (1 + 0.6 * e).toFixed(2) + ')';
+      inner.style.webkitBackdropFilter = inner.style.backdropFilter;
+      if (logo) logo.style.height = (34 - 6 * e) + 'px';
+    };
+
+    this.tTarget = 0;
+    this.tNow = 0;
+    this.tVel = 0;
+    this.lastT = 0;
+
+    this.tick = (now) => {
+      this.raf = requestAnimationFrame(this.tick);
+      if (this.lenis) this.lenis.raf(now);
+      const dt = Math.min((now - (this.lastT || now)) / 1000, 0.05);
+      this.lastT = now;
+      const stiff = 130, damp = 22;
+      const a = stiff * (this.tTarget - this.tNow) - damp * this.tVel;
+      this.tVel += a * dt;
+      this.tNow += this.tVel * dt;
+      if (Math.abs(this.tTarget - this.tNow) < 0.0004 && Math.abs(this.tVel) < 0.0015) {
+        this.tNow = this.tTarget;
+        this.tVel = 0;
+        if (this.settled) return;
+        this.settled = true;
+      } else {
+        this.settled = false;
+      }
+      this.render_(Math.min(Math.max(this.tNow, 0), 1));
+    };
+
+    this.onScroll = () => {
+      const y = this.lenis ? this.lenis.scroll : window.scrollY;
+      this.tTarget = Math.min(Math.max(y / 190, 0), 1);
+      this.settled = false;
+    };
+
+    if (window.Lenis) {
+      this.lenis = new window.Lenis({
+        duration: 1.15,
+        easing: (x) => Math.min(1, 1.001 - Math.pow(2, -10 * x)),
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 1.6
+      });
+      this.lenis.on('scroll', this.onScroll);
+    }
+    this.raf = requestAnimationFrame(this.tick);
+
+    this.onResize = () => this.onScroll();
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onAnchor = (e) => {
+      const a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const el = document.getElementById(a.getAttribute('href').slice(1));
+      if (!el) return;
+      e.preventDefault();
+      if (this.lenis) this.lenis.scrollTo(el, { offset: -10, duration: 1.6, easing: (t) => 1 - Math.pow(1 - t, 4) });
+    };
+    document.addEventListener('click', this.onAnchor);
+    this.onScroll();
+    this.tNow = this.tTarget;
+    this.render_(this.tNow);
+    const links = this.navInnerRef.current && this.navInnerRef.current.querySelector('[data-navlinks]');
+    if (links && !links.dataset.divided) {
+      links.dataset.divided = '1';
+      [...links.children].slice(1).forEach((el) => {
+        const d = document.createElement('span');
+        d.setAttribute('style', 'width:1px;height:14px;border-radius:1px;background:rgba(12,31,14,.12);flex:0 0 auto');
+        links.insertBefore(d, el);
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.pRaf); clearTimeout(this.pSwap);
+    window.removeEventListener('scroll', this.onPScroll);
+    window.removeEventListener('keydown', this.onEscQ);
+    clearInterval(this.svTimer); clearTimeout(this.svTo);
+    clearInterval(this.tTimer);
+    clearInterval(this.ptTimer);
+    window.removeEventListener('scroll', this.onTtScroll);
+    window.removeEventListener('resize', this.onTtScroll);
+    document.removeEventListener('mouseover', this.onTtEnter);
+    document.removeEventListener('mouseout', this.onTtLeave);
+    window.removeEventListener('resize', this.fitText);
+    this.hxIO && this.hxIO.disconnect();
+    cancelAnimationFrame(this.trRaf);
+    window.removeEventListener('resize', this.hxFit);
+    cancelAnimationFrame(this.tlRaf);
+    window.removeEventListener('resize', this.tlFit);
+    this.cylStop && this.cylStop();
+    document.removeEventListener('click', this.onAnchor);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onResize);
+    cancelAnimationFrame(this.raf);
+    if (this.lenis) this.lenis.destroy();
+  }
+
+  btnEnter = (e) => {
+    const el = e.currentTarget;
+    const roll = el.querySelector('[data-roll]');
+    const arrow = el.querySelector('[data-arrow]');
+    if (roll) roll.style.transform = 'translateY(-50%)';
+    if (arrow) arrow.style.transform = 'rotate(0deg)';
+  };
+
+  btnLeave = (e) => {
+    const el = e.currentTarget;
+    const roll = el.querySelector('[data-roll]');
+    const arrow = el.querySelector('[data-arrow]');
+    if (roll) roll.style.transform = 'translateY(0)';
+    if (arrow) arrow.style.transform = 'rotate(-45deg)';
+  };
+
+  brVals() {
+    const h = this.state.hb == null ? 1 : this.state.hb;
+    const out = {};
+    for (let i = 0; i < 4; i++) {
+      const on = h === i;
+      out['brIn' + i] = () => { if ((this.state.hb == null ? 1 : this.state.hb) !== i) this.setState({ hb: i }); };
+      out['brPin' + i] = on ? 'translateY(-3px) scale(1.12)' : 'translateY(0) scale(1)';
+      out['brLab' + i] = on ? 'translateY(-4px) scale(1.03)' : 'translateY(0) scale(1)';
+      out['brSh' + i] = on ? '0 0 0 1px rgba(14,90,6,.16), 0 28px 50px -20px rgba(14,90,6,.45), inset 0 -1px 0 rgba(12,31,14,.04)' : '0 0 0 1px rgba(12,31,14,.05), 0 12px 26px -14px rgba(12,31,14,.3), inset 0 -1px 0 rgba(12,31,14,.04)';
+      out['brOp' + i] = on ? 1 : 0.88;
+      out['brLnO' + i] = on ? 1 : 0.8;
+      out['brBar' + i] = on ? '100%' : '0%';
+      out['brZ' + i] = on ? '6' : '1';
+      out['brBodyW' + i] = on ? 'clamp(220px, 19vw, 270px)' : '0px';
+      out['brBodyH' + i] = on ? '220px' : '0px';
+      out['brBodyO' + i] = on ? 1 : 0;
+      out['brChev' + i] = on ? 'rotate(-45deg)' : 'rotate(0deg)';
+      out['brChBg' + i] = on ? '#0E5A06' : 'rgba(14,90,6,.08)';
+      out['brChFg' + i] = on ? '#FFFFFF' : '#0E5A06';
+      out['brTabBg' + i] = on ? '#E4F5DC' : 'rgba(228,245,220,0)';
+      out['brTabSh' + i] = on ? 'inset 0 0 0 1px rgba(48,160,20,.35)' : 'inset 0 0 0 1px rgba(48,160,20,0)';
+      out['brGo' + i] = () => {
+        this.setState({ hb: i });
+        setTimeout(() => {
+          const card = document.querySelector('[data-br-card="' + i + '"]');
+          if (!card) return;
+          const r = card.getBoundingClientRect();
+          const target = window.scrollY + r.top + r.height / 2 - window.innerHeight / 2 + 60;
+          if (this.lenis) this.lenis.scrollTo(target, { duration: 1.2 });
+          else window.scrollTo({ top: target, behavior: 'smooth' });
+        }, 80);
+      };
+      out['brTabFg' + i] = on ? '#0E5A06' : '#3F4A3F';
+    }
+    return out;
+  }
+
+  mvVals() {
+    const a = this.state.mv == null ? 0 : this.state.mv;
+    const o = {};
+    for (let i = 0; i < 2; i++) {
+      const on = a === i;
+      o['mvIn' + i] = () => { if ((this.state.mv == null ? 0 : this.state.mv) !== i) this.setState({ mv: i }); };
+      o['mvF' + i] = on ? '1 1 0%' : '0 0 clamp(96px, 9vw, 130px)';
+      o['mvO' + i] = on ? 1 : 0;
+      o['mvT' + i] = on ? 'translateY(0)' : 'translateY(14px)';
+      o['mvD' + i] = on ? '.3s' : '0s';
+      o['mvC' + i] = on ? 0 : 1;
+      o['mvCD' + i] = on ? '0s' : '.35s';
+    }
+    return o;
+  }
+
+  qPickRef = React.createRef();
+  qVals() {
+    const PR = ['APN OMNI', 'APN TALK', 'APN VOIP', 'APN CRM'];
+    const SV = ['Call Origination in over 120 Countries', 'A to Z Termination', 'Direct Inward Dialing (DID)', 'Toll-Free Numbers (TFN/ITFN)', 'Caller-ID', 'SIP Accounts', 'Hosted PBX (cloud-based)', 'Hosted Dialer (Manual, Power and Predictive)', 'Dialer Configuration', 'Teleblock (DNC Compliance)', 'Private Leased Lines', 'Top 50 Program', 'RespOrg and Port Out services'];
+    const ALL = [...PR, ...SV], T = ALL.length;
+    const sel = this.state.qSel || [], open = !!this.state.qOpen, n = sel.length;
+    const mk = (name) => { const on = sel.includes(name); return { name, on,
+      toggle: () => this.setState(st => { const c = st.qSel || []; return { qSel: c.includes(name) ? c.filter(x => x !== name) : [...c, name] }; }),
+      bg: on ? '#EEF7EA' : 'transparent', fg: on ? '#0C1F0E' : '#4A564A',
+      tileSh: on ? 'inset 0 0 0 1px rgba(30,154,8,.45)' : 'inset 0 0 0 1px rgba(12,31,14,.08)',
+      boxBg: on ? 'linear-gradient(180deg, #23930A 0%, #0E5A06 100%)' : 'linear-gradient(#FFFFFF, #FFFFFF)',
+      boxSh: on ? 'inset 0 1px 0 rgba(255,255,255,.3), 0 2px 6px -2px rgba(14,90,6,.5)' : 'inset 0 0 0 1.5px rgba(12,31,14,.2)',
+      chk: on ? 1 : 0, chkTf: on ? 'scale(1)' : 'scale(.5)' }; };
+    const grpAll = (list) => () => this.setState(st => { const c = st.qSel || []; const full = list.every(x => c.includes(x)); return { qSel: full ? c.filter(x => !list.includes(x)) : [...c, ...list.filter(x => !c.includes(x))] }; });
+    const pN = PR.filter(x => sel.includes(x)).length, sN = SV.filter(x => sel.includes(x)).length;
+    const onDoc = (e) => { const el = this.qPickRef.current; if (el && !el.contains(e.target)) { this.setState({ qOpen: false }); document.removeEventListener('mousedown', onDoc); } };
+    const status = n === 0 ? 'No items selected' : n === T ? 'All ' + T + ' items selected' : n + ' of ' + T + ' selected';
+    return {
+      qPickRef: this.qPickRef,
+      qProducts: PR.map(mk), qServices: SV.map(mk),
+      qOpen: open ? 'true' : 'false',
+      qToggle: () => { const next = !this.state.qOpen; this.setState({ qOpen: next }); if (next) setTimeout(() => document.addEventListener('mousedown', onDoc), 0); },
+      qAll: () => this.setState({ qSel: ALL.slice() }),
+      qClear: () => this.setState({ qSel: [] }),
+      qAllP: grpAll(PR), qAllS: grpAll(SV),
+      qAllPLbl: pN === PR.length ? 'Deselect' : 'Select all', qAllSLbl: sN === SV.length ? 'Deselect' : 'Select all',
+      qCntP: pN + '/' + PR.length, qCntS: sN + '/' + SV.length,
+      qStatus: status,
+      qStatFg: n === 0 ? '#97A396' : '#1E7A08',
+      qDot: n === 0 ? '#C9D0C8' : '#30C000', qDotSh: n === 0 ? 'none' : '0 0 0 3px rgba(48,192,0,.18)',
+      qPct: Math.round(n / T * 100) + '%',
+      qTrigText: n === 0 ? 'Select services or products' : n === T ? 'All products & services' : (n > 2 ? sel.slice(0, 2).join(', ') + ' +' + (n - 2) : sel.join(', ')),
+      qTrigFg: n ? '#0C1F0E' : '#97A396', qLine: open ? '#1E9A08' : 'rgba(12,31,14,.14)',
+      qTrigSh: open ? 'inset 0 0 0 1px rgba(30,154,8,.55), 0 0 0 4px rgba(48,192,0,.1)' : 'inset 0 0 0 1px rgba(12,31,14,.1)',
+      qChev: open ? 'rotate(180deg)' : 'rotate(0deg)',
+      qPanOp: open ? 1 : 0, qPanTf: open ? 'translateY(0) scale(1)' : 'translateY(-6px) scale(.98)', qPanPe: open ? 'auto' : 'none'
+    };
+  }
+
+  pmVals() {
+    const annual = this.state.annual == null ? true : this.state.annual;
+    const m = [49, 99, 199], old = 129;
+    const f = (v) => '$' + (annual ? Math.round(v * 0.8) : v);
+    return {
+      pmToggle: () => this.setState({ annual: !annual }),
+      pmTrack: annual ? 'linear-gradient(180deg, #23930A 0%, #0E5A06 100%)' : 'linear-gradient(180deg, #CBD3CA 0%, #BAC4B9 100%)',
+      pmKnob: annual ? 'translateX(24px)' : 'translateX(0)',
+      pmMonthlyC: annual ? '#6B776A' : '#0C1F0E',
+      pmAnnualC: annual ? '#0C1F0E' : '#6B776A',
+      price0: f(m[0]), price1: f(m[1]), price2: f(m[2]), priceOld1: f(old)
+    };
+  }
+
+  qPickRef = React.createRef();
+  qVals() {
+    const PR = ['APN OMNI', 'APN TALK', 'APN VOIP', 'APN CRM'];
+    const SV = ['Call Origination in over 120 Countries', 'A to Z Termination', 'Direct Inward Dialing (DID)', 'Toll-Free Numbers (TFN/ITFN)', 'Caller-ID', 'SIP Accounts', 'Hosted PBX (cloud-based)', 'Hosted Dialer (Manual, Power and Predictive)', 'Dialer Configuration', 'Teleblock (DNC Compliance)', 'Private Leased Lines', 'Top 50 Program', 'RespOrg and Port Out services'];
+    const ALL = [...PR, ...SV], T = ALL.length;
+    const sel = this.state.qSel || [], open = !!this.state.qOpen, n = sel.length;
+    const mk = (name) => { const on = sel.includes(name); return { name, on,
+      toggle: () => this.setState(st => { const c = st.qSel || []; return { qSel: c.includes(name) ? c.filter(x => x !== name) : [...c, name] }; }),
+      bg: on ? '#EEF7EA' : 'transparent', fg: on ? '#0C1F0E' : '#4A564A',
+      tileSh: on ? 'inset 0 0 0 1px rgba(30,154,8,.45)' : 'inset 0 0 0 1px rgba(12,31,14,.08)',
+      boxBg: on ? 'linear-gradient(180deg, #23930A 0%, #0E5A06 100%)' : 'linear-gradient(#FFFFFF, #FFFFFF)',
+      boxSh: on ? 'inset 0 1px 0 rgba(255,255,255,.3), 0 2px 6px -2px rgba(14,90,6,.5)' : 'inset 0 0 0 1.5px rgba(12,31,14,.2)',
+      chk: on ? 1 : 0, chkTf: on ? 'scale(1)' : 'scale(.5)' }; };
+    const grpAll = (list) => () => this.setState(st => { const c = st.qSel || []; const full = list.every(x => c.includes(x)); return { qSel: full ? c.filter(x => !list.includes(x)) : [...c, ...list.filter(x => !c.includes(x))] }; });
+    const pN = PR.filter(x => sel.includes(x)).length, sN = SV.filter(x => sel.includes(x)).length;
+    const onDoc = (e) => { const el = this.qPickRef.current; if (el && !el.contains(e.target)) { this.setState({ qOpen: false }); document.removeEventListener('mousedown', onDoc); } };
+    const status = n === 0 ? 'No items selected' : n === T ? 'All ' + T + ' items selected' : n + ' of ' + T + ' selected';
+    return {
+      qPickRef: this.qPickRef,
+      qProducts: PR.map(mk), qServices: SV.map(mk),
+      qOpen: open ? 'true' : 'false',
+      qToggle: () => { const next = !this.state.qOpen; this.setState({ qOpen: next }); if (next) setTimeout(() => document.addEventListener('mousedown', onDoc), 0); },
+      qAll: () => this.setState({ qSel: ALL.slice() }),
+      qClear: () => this.setState({ qSel: [] }),
+      qAllP: grpAll(PR), qAllS: grpAll(SV),
+      qAllPLbl: pN === PR.length ? 'Deselect' : 'Select all', qAllSLbl: sN === SV.length ? 'Deselect' : 'Select all',
+      qCntP: pN + '/' + PR.length, qCntS: sN + '/' + SV.length,
+      qStatus: status,
+      qStatFg: n === 0 ? '#97A396' : '#1E7A08',
+      qDot: n === 0 ? '#C9D0C8' : '#30C000', qDotSh: n === 0 ? 'none' : '0 0 0 3px rgba(48,192,0,.18)',
+      qPct: Math.round(n / T * 100) + '%',
+      qTrigText: n === 0 ? 'Select services or products' : n === T ? 'All products & services' : (n > 2 ? sel.slice(0, 2).join(', ') + ' +' + (n - 2) : sel.join(', ')),
+      qTrigFg: n ? '#0C1F0E' : '#97A396', qLine: open ? '#1E9A08' : 'rgba(12,31,14,.14)',
+      qTrigSh: open ? 'inset 0 0 0 1px rgba(30,154,8,.55), 0 0 0 4px rgba(48,192,0,.1)' : 'inset 0 0 0 1px rgba(12,31,14,.1)',
+      qChev: open ? 'rotate(180deg)' : 'rotate(0deg)',
+      qPanOp: open ? 1 : 0, qPanTf: open ? 'translateY(0) scale(1)' : 'translateY(-6px) scale(.98)', qPanPe: open ? 'auto' : 'none'
+    };
+  }
+
+  faqVals() {
+    const o = this.state.faq == null ? -1 : this.state.faq;
+    const out = {};
+    for (let i = 0; i < 6; i++) {
+      const on = o === i;
+      out['faqTog' + i] = () => { const cur = this.state.faq == null ? -1 : this.state.faq; this.setState({ faq: cur === i ? -1 : i }); };
+      out['faqRows' + i] = on ? '1fr' : '0fr';
+      out['faqRot' + i] = on ? 'rotate(135deg)' : 'rotate(0deg)';
+      out['faqOp' + i] = on ? 1 : 0;
+      out['faqDy' + i] = on ? 'translateY(0)' : 'translateY(-8px)';
+      out['faqQc' + i] = on ? '#0E5A06' : '#0C1F0E';
+      out['faqBg' + i] = on ? '#0E5A06' : 'rgba(48,192,0,.1)';
+      out['faqFg' + i] = on ? '#FFFFFF' : '#1E9A08';
+    }
+    return out;
+  }
+
+  setupReveal() {
+    const items = [...document.querySelectorAll('[data-reveal]')];
+    if (!items.length) return;
+    const ease = 'cubic-bezier(.16,1,.3,1)';
+    const baseDelay = (el, i) => (el.dataset.revealDelay != null ? el.dataset.revealDelay : i * 0.14) + 's';
+    const hide = (el, instant) => {
+      el.dataset.shown = '';
+      el.style.transition = instant ? 'none' : 'opacity .6s ' + ease + ', transform .8s ' + ease + ', filter .6s ' + ease;
+      el.style.transitionDelay = '0s';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(70px) scale(.97)';
+      el.style.filter = 'blur(6px)';
+      el.querySelectorAll('[data-bar]').forEach((bar) => { bar.style.width = '0%'; });
+    };
+    const show = (el, i) => {
+      el.dataset.shown = '1';
+      el.style.transition = 'opacity 1s ' + ease + ', transform 1.2s ' + ease + ', filter 1s ' + ease;
+      el.style.transitionDelay = baseDelay(el, i);
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      el.style.filter = 'none';
+      el.querySelectorAll('[data-bar]').forEach((bar) => { bar.style.width = bar.dataset.bar + '%'; });
+    };
+    items.forEach((el) => hide(el, true));
+    const check = () => {
+      const vh = window.innerHeight;
+      items.forEach((el, i) => {
+        const top = el.parentElement.getBoundingClientRect().top;
+        if (!el.dataset.shown && top < vh * 0.88) show(el, i);
+        else if (el.dataset.shown && top > vh * 0.98) hide(el, false);
+      });
+    };
+    this.stopReveal = () => {
+      window.removeEventListener('scroll', check);
+      clearInterval(this.revealSweep);
+    };
+    window.addEventListener('scroll', check, { passive: true });
+    this.revealSweep = setInterval(check, 200);
+    check();
+  }
+
+  pVals() {
+    const a = this.state.pa || 0, fade = !!this.state.pFade, hv = this.state.pHov, pin = !!this.state.pIn, o = {};
+    const rest = [0, 1, 2, 3].filter(k => k !== a);
+    for (let i = 0; i < 4; i++) {
+      const f = i === a, slot = f ? -1 : rest.indexOf(i);
+      o['pOrd' + i] = f ? 0 : slot + 1;
+      o['pCol' + i] = f ? '1 / -1' : 'auto';
+      o['pDir' + i] = f ? 'row' : 'column';
+      o['pWrap' + i] = f ? 'wrap' : 'nowrap';
+      o['pImgF' + i] = f ? '1.1 1 460px' : '0 0 auto';
+      o['pImgAr' + i] = f ? 'auto' : '16 / 11';
+      o['pImgMw' + i] = f ? 'min(100%, 280px)' : '0px';
+      o['pImgW' + i] = f ? 'auto' : '100%';
+      o['pImgMh' + i] = f ? 'clamp(300px, 34vw, 540px)' : '0px';
+      o['pPad' + i] = f ? 'clamp(16px, 1.6vw, 24px) clamp(16px, 1.8vw, 26px) 16px clamp(20px, 2.4vw, 36px)' : '20px 16px 16px 16px';
+      o['pTxMh' + i] = f ? '0px' : '210px';
+      o['pGap' + i] = f ? '48px' : '18px';
+      o['pTs' + i] = f ? 'clamp(26px, 2.6vw, 44px)' : 'clamp(19px, 1.45vw, 23px)';
+      o['pLm' + i] = f ? '28px' : '22px';
+      o['pFeat' + i] = f; o['pSmall' + i] = !f;
+      o['pCur' + i] = f ? 'default' : 'pointer';
+      o['pOp' + i] = 1;
+      const hov = !f && !fade && hv === i;
+      o['pTf' + i] = 'translateY(0)';
+      o['pDl' + i] = '0s';
+      o['pSh' + i] = hov ? 'inset 0 0 0 1px rgba(48,192,0,.32), 0 26px 46px -28px rgba(14,90,6,.4)' : 'inset 0 0 0 1px rgba(12,31,14,.05)';
+      o['pZm' + i] = hov ? 'scale(1.05)' : 'scale(1)';
+      o['pEnter' + i] = () => { if (!f) this.setState({ pHov: i, pIn: false }); };
+      o['pPick' + i] = (e) => { if (e.target.closest && e.target.closest('a')) return; if (!f) this.pGo(i); };
+    }
+    o.pArrIn = (e) => { const a = e.currentTarget.querySelector('[data-parr]'); if (a) a.style.transform = 'translateX(-25px)'; };
+    o.pArrOut = (e) => { const a = e.currentTarget.querySelector('[data-parr]'); if (a) a.style.transform = 'translateX(25px)'; };
+    o.pLeave = () => this.setState({ pHov: null });
+    o.pgItems = [0, 1, 2, 3].map(k => ({ label: '0' + (k + 1), aria: 'Show product ' + (k + 1), cur: k === a ? 'true' : 'false', go: () => { if (k !== a) this.pGo(k); }, fg: k === a ? '#0E5A06' : '#6B776A', bg: 'transparent', sh: 'none' }));
+    o.pgInd = 'translateX(' + (a * 52) + 'px)';
+    o.pgPrev = () => this.pGo(a - 1);
+    o.pgNext = () => this.pGo(a + 1);
+    o.pHoverIn = () => { this.pPaused = true; };
+    o.pHoverOut = () => { this.pPaused = false; };
+    return o;
+  }
+  pGo(to) {
+    if (this.pBusy) return;
+    const next = ((to % 4) + 4) % 4;
+    this.pT = 0;
+    const apply = () => new Promise(r => this.setState({ pa: next, pHov: null }, r));
+    const grid = document.querySelector('[data-pcard]');
+    const r = grid && grid.parentElement.getBoundingClientRect();
+    const seen = r && r.bottom > 0 && r.top < window.innerHeight;
+    if (seen && !this.pScrolling && document.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this.pBusy = true;
+      const vt = document.startViewTransition(apply);
+      vt.finished.finally(() => { this.pBusy = false; this.pT = 0; });
+    } else apply();
+  }
+
+  pStart() {
+    this.onPScroll = () => { this.pScrolling = true; clearTimeout(this.pScT); this.pScT = setTimeout(() => { this.pScrolling = false; }, 250); };
+    window.addEventListener('scroll', this.onPScroll, { passive: true });
+    this.pT = 0; let last = performance.now();
+    const D = 5000;
+    const loop = (now) => {
+      const dt = now - last; last = now;
+      if (!this.pPaused && !this.pBusy && !document.hidden) this.pT += dt;
+      const a = this.state.pa || 0, pr = Math.min(this.pT / D, 1);
+      document.querySelectorAll('[data-pp]').forEach(el => { const k = +el.getAttribute('data-pp'); el.style.width = (k < a ? 100 : k === a ? pr * 100 : 0) + '%'; });
+      if (this.pT >= D) { this.pT = 0; this.pGo(a + 1); }
+      this.pRaf = requestAnimationFrame(loop);
+    };
+    this.pRaf = requestAnimationFrame(loop);
+  }
+
+  lcData = [{"q":"Alabang, Muntinlupa City, Metro Manila, Philippines","reg":"Luzon"},{"q":"City of San Fernando, Pampanga, Philippines","reg":"Luzon"},{"q":"Cebu City, Cebu, Philippines","reg":"Visayas"},{"q":"Davao City, Davao del Sur, Philippines","reg":"Mindanao"}];
+  lcVals() {
+    const sel = this.state.lcSel == null ? 0 : this.state.lcSel, flt = this.state.lcF || 0, open = this.state.lcOpen !== false;
+    const regs = ['All', 'Luzon', 'Visayas', 'Mindanao'];
+    const q = sel >= 0 ? this.lcData[sel].q : (flt === 0 ? 'Philippines' : regs[flt] + ', Philippines');
+    const z = sel >= 0 ? 13 : (flt === 0 ? 6 : 7);
+    const shown = this.lcData.filter(d => flt === 0 || d.reg === regs[flt]).length;
+    const o = {
+      lcSrc: 'https://maps.google.com/maps?q=' + encodeURIComponent(q) + '&z=' + z + '&output=embed',
+      lcOpen: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q),
+      lcCount: shown + (shown === 1 ? ' location' : ' locations') + (flt ? ' in ' + regs[flt] : ' nationwide'),
+      lcToggle: () => this.setState({ lcOpen: !open }),
+      lcTogRot: open ? 'rotate(0deg)' : 'rotate(180deg)',
+      lcPanB: open ? '16px' : 'calc(100% - 150px)',
+      lcListOp: open ? 1 : 0,
+      lcInd: 'translateX(calc(' + flt + ' * (100% + 4px)))'
+    };
+    for (let k = 0; k < 4; k++) {
+      const on = flt === k;
+      o['lcF' + k] = () => this.setState({ lcF: k, lcSel: -1, lcOpen: true });
+      o['lcFFg' + k] = on ? '#0E5A06' : '#6B776A';
+      o['lcFBg' + k] = 'transparent';
+      o['lcFSh' + k] = 'none';
+    }
+    for (let i = 0; i < 4; i++) {
+      const on = sel === i, reg = this.lcData[i].reg;
+      o['lcShow' + i] = flt === 0 || regs[flt] === reg;
+      o['lcPick' + i] = () => this.setState({ lcSel: on ? -1 : i });
+      o['lcBg' + i] = on ? 'linear-gradient(180deg, #FFFFFF 0%, #F4F8F2 100%)' : 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%)';
+      o['lcSh' + i] = on ? 'inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(12,31,14,.07), 0 3px 0 #D6DED3, 0 14px 26px -16px rgba(14,90,6,.35)' : 'none';
+      o['lcRows' + i] = on ? '1fr' : '0fr';
+      o['lcDOp' + i] = on ? 1 : 0;
+      o['lcNumFg' + i] = on ? '#FFFFFF' : '#4A564A';
+      o['lcNumBg' + i] = on ? 'linear-gradient(180deg, #2BA60C 0%, #0E5A06 100%)' : 'linear-gradient(180deg, #DCE1DA 0%, #E9ECE7 100%)';
+      o['lcNumSh' + i] = on ? 'inset 0 1px 0 rgba(255,255,255,.35), 0 6px 14px -6px rgba(14,90,6,.55)' : 'inset 0 2px 4px rgba(12,31,14,.14), inset 0 -1px 1px rgba(255,255,255,.85), 0 1px 0 rgba(255,255,255,.95)';
+      o['lcChFg' + i] = on ? '#FFFFFF' : '#6B776A';
+      o['lcChBg' + i] = on ? '#0E5A06' : 'rgba(12,31,14,.05)';
+      o['lcChRot' + i] = on ? 'rotate(90deg)' : 'rotate(0deg)';
+      o['lcDir' + i] = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(this.lcData[i].q);
+    }
+    return o;
+  }
+
+  mdOpen(kind, email) { this.setState({ nm: kind, nmEmail: email || '', lgOpen: false }); if (this.lenis) this.lenis.stop(); }
+  mdCloseAll() { this.setState({ nm: null, lgOpen: false, qModal: false }); if (this.lenis) this.lenis.start(); }
+  mdVals() {
+    const K = {
+      msg: ['Message', 'sent', 'Thanks for reaching out. Our team will get back to you by email shortly.', 'check', 'Done', false],
+      news: ['You’re', 'subscribed', 'We’ve sent a confirmation to your email. Watch your inbox for APN news and updates.', 'check', 'Done', false],
+      plan: ['Log in to', 'APN Central', 'Log in to APN Central to access subscription.', 'lock', 'Log In', true]
+    };
+    const kind = this.state.nm, d = K[kind || 'msg'], lg = !!this.state.lgOpen;
+    return {
+      nmOp: kind ? 1 : 0, nmPe: kind ? 'auto' : 'none', nmTf: kind ? 'translateY(0) scale(1)' : 'translateY(18px) scale(.96)',
+      nmTa: d[0], nmTb: d[1], nmBody: d[2], nmLock: d[3] === 'lock', nmCheck: d[3] === 'check',
+      nmPrimary: d[4], nmHasCancel: d[5], nmHasChip: !!this.state.nmEmail && kind !== 'plan', nmChip: this.state.nmEmail || '',
+      nmPrimaryGo: () => { if (kind === 'plan') { this.setState({ nm: null, lgOpen: true }); } else this.mdCloseAll(); },
+      nmClose: () => this.mdCloseAll(),
+      mdStop: (e) => e.stopPropagation(),
+      lgOp: lg ? 1 : 0, lgPe: lg ? 'auto' : 'none', lgTf: lg ? 'translateY(0) scale(1)' : 'translateY(18px) scale(.96)',
+      openLogin: (e) => { if (e) e.preventDefault(); this.setState({ lgOpen: true, nm: null }); if (this.lenis) this.lenis.stop(); },
+      openPlan: (e) => { if (e) e.preventDefault(); this.mdOpen('plan'); },
+      lgClose: () => this.mdCloseAll(),
+      lgSubmit: (e) => { e.preventDefault(); e.target.reset(); this.mdCloseAll(); }
+    };
+  }
+
+  renderVals() {
+    return {
+      ...this.mdVals(),
+      ...this.lcVals(),
+      ...this.pVals(),
+      ...this.pmVals(),
+      ...this.faqVals(),
+      ...this.qVals(),
+      qLabel: 'Send Message',
+      qSubmit: (e) => {
+        e.preventDefault();
+        const em = e.target.querySelector('input[type=email]');
+        this.mdOpen('msg', (em && em.value) || ''); this.setState({ qEmail: (em && em.value) || 'your email' });
+        e.target.reset();
+        if (this.lenis) this.lenis.stop();
+      },
+      qClose: () => this.mdCloseAll(),
+      qStop: (e) => e.stopPropagation(),
+      qEmail: this.state.qEmail || '',
+      qMOp: this.state.qModal ? 1 : 0,
+      qMPe: this.state.qModal ? 'auto' : 'none',
+      qMTf: this.state.qModal ? 'translateY(0) scale(1)' : 'translateY(18px) scale(.96)',
+      nlSubmit: e => { e.preventDefault(); const em = e.target.querySelector('input[type=email]'); this.mdOpen('news', (em && em.value) || ''); e.target.reset(); },
+      ...this.svVals(),
+      toTop: () => {
+        if (this.lenis) this.lenis.scrollTo(0, { duration: 1.6, easing: (t) => 1 - Math.pow(1 - t, 4) });
+        else window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+      qLabel: 'Send Message',
+      ...this.qVals(),
+      qSubmit: (e) => {
+        e.preventDefault();
+        const em = e.target.querySelector('input[type=email]');
+        this.setState({ qModal: true, qEmail: (em && em.value) || 'your email' });
+        e.target.reset();
+        if (this.lenis) this.lenis.stop();
+      },
+      qClose: () => { this.setState({ qModal: false }); if (this.lenis) this.lenis.start(); },
+      qStop: (e) => e.stopPropagation(),
+      qEmail: this.state.qEmail || '',
+      qMOp: this.state.qModal ? 1 : 0,
+      qMPe: this.state.qModal ? 'auto' : 'none',
+      qMTf: this.state.qModal ? 'translateY(0) scale(1)' : 'translateY(18px) scale(.96)',
+      nlSubmit: (e) => { e.preventDefault(); e.target.reset(); },
+      ...this.mvVals(),
+      ...this.brVals(),
+      cylRef: this.cylRef,
+      cylCards: Array.from({ length: 18 }, (_, i) => ({ src: 'assets/about/0' + ((i % 6) + 1) + '.png' })),
+      navRef: this.navRef,
+      navInnerRef: this.navInnerRef,
+      logoRef: this.logoRef,
+      btnEnter: this.btnEnter,
+      btnLeave: this.btnLeave
+    };
+  }
+}
+</script>
+</body>
+</html>

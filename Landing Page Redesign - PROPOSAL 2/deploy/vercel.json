@@ -1,0 +1,45 @@
+{
+  "cleanUrls": false,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/APN Hero.dc.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/About.dc.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/Services.dc.html"
+    },
+    {
+      "source": "/products",
+      "destination": "/Products.dc.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/Contact.dc.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.dc\\.html",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    }
+  ]
+}
